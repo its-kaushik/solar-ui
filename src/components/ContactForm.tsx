@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Send, Loader2 } from 'lucide-react';
+import { trackFormSubmit } from '@/lib/analytics';
 
 interface ContactFormProps {
   compact?: boolean;
@@ -49,6 +50,7 @@ export default function ContactForm({ compact = false }: ContactFormProps) {
 
       if (res.ok) {
         setStatus('success');
+        trackFormSubmit(formData.propertyType, formData.location);
         setFormData({ name: '', phone: '', email: '', propertyType: '', location: '', message: '', website: '' });
       } else {
         setStatus('error');

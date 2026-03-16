@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import WhatsAppFloatingButton from '@/components/WhatsAppFloatingButton';
 import MobileCTABar from '@/components/MobileCTABar';
+import GoogleAnalytics from '@/components/GoogleAnalytics';
 import './globals.css';
 
 const inter = Inter({
@@ -45,6 +46,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${plusJakarta.variable}`}>
       <body className="font-body antialiased">
+        <GoogleAnalytics />
         <Header />
         <main>{children}</main>
         <Footer />
