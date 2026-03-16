@@ -1,0 +1,56 @@
+import type { Metadata } from 'next';
+import { Inter, Plus_Jakarta_Sans } from 'next/font/google';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import WhatsAppFloatingButton from '@/components/WhatsAppFloatingButton';
+import MobileCTABar from '@/components/MobileCTABar';
+import './globals.css';
+
+const inter = Inter({
+  variable: '--font-inter',
+  subsets: ['latin'],
+  weight: ['400', '500', '600'],
+  display: 'swap',
+});
+
+const plusJakarta = Plus_Jakarta_Sans({
+  variable: '--font-plus-jakarta-sans',
+  subsets: ['latin'],
+  weight: ['600', '700', '800'],
+  display: 'swap',
+});
+
+export const metadata: Metadata = {
+  title: {
+    default: 'Kaushik Solar Power — Rooftop Solar Installation in Delhi',
+    template: '%s — Kaushik Solar Power',
+  },
+  description:
+    'Get rooftop solar panels installed in Delhi with up to ₹1,08,000 government subsidy. BSES Rajdhani registered. Free consultation & 5 years maintenance.',
+  openGraph: {
+    title: 'Kaushik Solar Power — Rooftop Solar Installation in Delhi',
+    description:
+      'Get rooftop solar panels installed in Delhi with up to ₹1,08,000 government subsidy.',
+    type: 'website',
+    locale: 'en_IN',
+    siteName: 'Kaushik Solar Power',
+  },
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en" className={`${inter.variable} ${plusJakarta.variable}`}>
+      <body className="font-body antialiased">
+        <Header />
+        <main>{children}</main>
+        <Footer />
+        <WhatsAppFloatingButton />
+        <MobileCTABar />
+      </body>
+    </html>
+  );
+}

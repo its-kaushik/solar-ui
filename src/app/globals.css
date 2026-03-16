@@ -1,0 +1,46 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-primary: #1E3A5F;
+  --color-primary-light: #2A4F7F;
+  --color-primary-dark: #142942;
+  --color-secondary: #F59E0B;
+  --color-secondary-light: #FBBF24;
+  --color-accent: #10B981;
+  --color-accent-light: #34D399;
+  --color-bg: #F3F4F6;
+  --color-bg-white: #FFFFFF;
+  --color-text: #1F2937;
+  --color-text-light: #6B7280;
+  --color-text-inverse: #FFFFFF;
+
+  --font-heading: var(--font-plus-jakarta-sans);
+  --font-body: var(--font-inter);
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body), sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), sans-serif;
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ensure sticky mobile CTA bar doesn't overlap page content */
+main {
+  padding-bottom: 3.5rem; /* h-14 = 56px */
+}
+
+@media (min-width: 1024px) {
+  main {
+    padding-bottom: 0;
+  }
+}
