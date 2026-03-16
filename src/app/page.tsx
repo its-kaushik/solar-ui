@@ -39,6 +39,7 @@ import CTAButton from '@/components/CTAButton';
 
 import { testimonials } from '@/data/testimonials';
 import { projects } from '@/data/projects';
+import { getAllPosts } from '@/lib/blog';
 
 export const metadata: Metadata = {
   title: 'Kaushik Solar Power — Rooftop Solar Installation in Delhi',
@@ -139,35 +140,7 @@ const stepItems = [
   },
 ];
 
-const placeholderBlogPosts = [
-  {
-    slug: 'pm-surya-ghar-subsidy-guide',
-    title: 'PM Surya Ghar Yojana: How to Get Rs 78,000 Subsidy for Solar Panels',
-    excerpt: 'A complete guide to applying for the PM Surya Ghar Muft Bijli Yojana subsidy in Delhi.',
-    date: '2026-03-15',
-    readTime: '8 min read',
-    featuredImage: '/images/blog/placeholder.jpg',
-    tags: ['subsidy', 'pm-surya-ghar', 'guide'],
-  },
-  {
-    slug: 'on-grid-vs-off-grid-vs-hybrid',
-    title: 'On-Grid vs Off-Grid vs Hybrid Solar: Which is Right for You?',
-    excerpt: 'Understand the differences between solar system types and find the best fit for your home or business.',
-    date: '2026-03-10',
-    readTime: '6 min read',
-    featuredImage: '/images/blog/placeholder.jpg',
-    tags: ['solar', 'guide', 'comparison'],
-  },
-  {
-    slug: 'delhi-solar-savings-guide',
-    title: 'How Much Can You Save with Rooftop Solar in Delhi?',
-    excerpt: 'Calculate your potential savings from rooftop solar including subsidies, GBI, and electricity bill reduction.',
-    date: '2026-03-05',
-    readTime: '5 min read',
-    featuredImage: '/images/blog/placeholder.jpg',
-    tags: ['savings', 'delhi', 'calculator'],
-  },
-];
+const blogPosts = getAllPosts().slice(0, 3);
 
 export default function HomePage() {
   const phone = process.env.NEXT_PUBLIC_PHONE_NUMBER || '';
@@ -293,7 +266,7 @@ export default function HomePage() {
           subtitle="Learn about solar energy, subsidies, and savings."
         />
         <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {placeholderBlogPosts.map((post) => (
+          {blogPosts.map((post) => (
             <BlogCard key={post.slug} post={post} />
           ))}
         </div>
