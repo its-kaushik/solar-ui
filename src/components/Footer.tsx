@@ -77,11 +77,11 @@ export default function Footer() {
                 </a>
               )}
               <a
-                href="mailto:info@kaushiksolar.com"
+                href="mailto:info@kaushiksolarpower.com"
                 className="flex items-center gap-2 text-sm text-gray-300 transition-colors hover:text-white"
               >
                 <Mail className="h-4 w-4 shrink-0" />
-                info@kaushiksolar.com
+                info@kaushiksolarpower.com
               </a>
               <div className="flex items-start gap-2 text-sm text-gray-300">
                 <MapPin className="h-4 w-4 shrink-0 mt-0.5" />

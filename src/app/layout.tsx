@@ -22,7 +22,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://kaushiksolarpower.com'),
+  metadataBase: new URL('https://solar-ui-iota.vercel.app'),
   title: {
     default: 'Kaushik Solar Power — Rooftop Solar Installation in Delhi',
     template: '%s — Kaushik Solar Power',

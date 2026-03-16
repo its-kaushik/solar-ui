@@ -70,7 +70,7 @@ export default function AboutPage() {
             '@type': 'Organization',
             name: 'Kaushik Solar Power OPC Pvt Ltd',
             description: 'Delhi-based solar power installation company.',
-            url: 'https://kaushiksolar.com',
+            url: 'https://solar-ui-iota.vercel.app',
           }),
         }}
       />

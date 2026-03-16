@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: '/api/',
       },
     ],
-    sitemap: 'https://kaushiksolarpower.com/sitemap.xml',
+    sitemap: 'https://solar-ui-iota.vercel.app/sitemap.xml',
   };
 }

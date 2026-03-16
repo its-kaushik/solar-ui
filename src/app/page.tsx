@@ -157,9 +157,9 @@ export default function HomePage() {
             '@type': 'LocalBusiness',
             name: 'Kaushik Solar Power OPC Pvt Ltd',
             description: 'Rooftop solar panel installation in Delhi with government subsidy assistance.',
-            url: 'https://kaushiksolar.com',
+            url: 'https://solar-ui-iota.vercel.app',
             telephone: phone ? `+91${phone}` : undefined,
-            email: 'info@kaushiksolar.com',
+            email: 'info@kaushiksolarpower.com',
             address: {
               '@type': 'PostalAddress',
               addressLocality: 'South Delhi',
@@ -322,11 +322,11 @@ export default function HomePage() {
                 )}
 
                 <a
-                  href="mailto:info@kaushiksolar.com"
+                  href="mailto:info@kaushiksolarpower.com"
                   className="flex items-center gap-3 rounded-xl bg-primary/10 p-3 text-sm font-medium text-primary transition-colors hover:bg-primary/20"
                 >
                   <Mail className="h-5 w-5" />
-                  info@kaushiksolar.com
+                  info@kaushiksolarpower.com
                 </a>
 
                 <div className="flex items-start gap-3 rounded-xl bg-primary/10 p-3 text-sm text-text-light">

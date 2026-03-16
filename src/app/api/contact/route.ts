@@ -124,7 +124,7 @@ export async function POST(request: NextRequest) {
     const resend = getResend();
     if (resend && process.env.CONTACT_EMAIL_TO) {
       await resend.emails.send({
-        from: 'Kaushik Solar <noreply@kaushiksolarpower.com>',
+        from: process.env.RESEND_FROM_EMAIL || 'Kaushik Solar <onboarding@resend.dev>',
         to: process.env.CONTACT_EMAIL_TO,
         subject: `New Lead: ${body.name} — ${body.propertyType} — ${body.location}`,
         html: buildEmailHTML(body),
