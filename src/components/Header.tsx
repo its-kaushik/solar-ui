@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Menu, X, Phone, MessageCircle } from 'lucide-react';
 
@@ -28,90 +28,97 @@ export default function Header() {
   const phone = process.env.NEXT_PUBLIC_PHONE_NUMBER || '';
   const whatsapp = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '';
 
+  useEffect(() => {
+    document.body.style.overflow = mobileMenuOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [mobileMenuOpen]);
+
   return (
-    <header className="sticky top-0 z-50 border-b border-gray-200 bg-white/95 backdrop-blur-sm">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
-          <span className="font-heading text-lg font-bold text-primary sm:text-xl">
-            Kaushik Solar Power
-          </span>
-        </Link>
+    <>
+      <header className="sticky top-0 z-50 border-b border-gray-200 bg-white/95 backdrop-blur-sm">
+        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-2">
+            <span className="font-heading text-lg font-bold text-primary sm:text-xl">
+              Kaushik Solar Power
+            </span>
+          </Link>
 
-        {/* Desktop nav */}
-        <nav className="hidden items-center gap-1 lg:flex" aria-label="Main navigation">
-          {navLinks.map((link) => (
-            <div key={link.href} className="group relative">
-              <Link
-                href={link.href}
-                className="rounded-lg px-3 py-2 text-sm font-medium text-text transition-colors hover:bg-bg hover:text-primary"
-              >
-                {link.label}
-              </Link>
-              {link.children && (
-                <div className="invisible absolute left-0 top-full z-50 min-w-48 rounded-xl border border-gray-200 bg-white py-2 opacity-0 shadow-lg transition-all group-hover:visible group-hover:opacity-100">
-                  {link.children.map((child) => (
-                    <Link
-                      key={child.href}
-                      href={child.href}
-                      className="block px-4 py-2 text-sm text-text transition-colors hover:bg-bg hover:text-primary"
-                    >
-                      {child.label}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
-          ))}
-        </nav>
+          {/* Desktop nav */}
+          <nav className="hidden items-center gap-1 lg:flex" aria-label="Main navigation">
+            {navLinks.map((link) => (
+              <div key={link.href} className="group relative">
+                <Link
+                  href={link.href}
+                  className="rounded-lg px-3 py-2 text-sm font-medium text-text transition-colors hover:bg-bg hover:text-primary"
+                >
+                  {link.label}
+                </Link>
+                {link.children && (
+                  <div className="invisible absolute left-0 top-full z-50 min-w-48 rounded-xl border border-gray-200 bg-white py-2 opacity-0 shadow-lg transition-all group-hover:visible group-hover:opacity-100">
+                    {link.children.map((child) => (
+                      <Link
+                        key={child.href}
+                        href={child.href}
+                        className="block px-4 py-2 text-sm text-text transition-colors hover:bg-bg hover:text-primary"
+                      >
+                        {child.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </nav>
 
-        {/* Desktop CTA buttons */}
-        <div className="hidden items-center gap-2 lg:flex">
-          <a
-            href={`tel:+91${phone}`}
-            aria-label="Call us"
-            className="inline-flex h-10 items-center gap-2 rounded-lg px-3 text-sm font-medium text-primary transition-colors hover:bg-bg"
-          >
-            <Phone className="h-4 w-4" />
-            Call Us
-          </a>
-          <a
-            href={`https://wa.me/${whatsapp}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Chat on WhatsApp"
-            className="inline-flex h-10 items-center gap-2 rounded-lg bg-[#25D366] px-4 text-sm font-medium text-white transition-colors hover:bg-[#1da851]"
-          >
-            <MessageCircle className="h-4 w-4" />
-            WhatsApp
-          </a>
+          {/* Desktop CTA buttons */}
+          <div className="hidden items-center gap-2 lg:flex">
+            <a
+              href={`tel:+91${phone}`}
+              aria-label="Call us"
+              className="inline-flex h-10 items-center gap-2 rounded-lg px-3 text-sm font-medium text-primary transition-colors hover:bg-bg"
+            >
+              <Phone className="h-4 w-4" />
+              Call Us
+            </a>
+            <a
+              href={`https://wa.me/${whatsapp}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Chat on WhatsApp"
+              className="inline-flex h-10 items-center gap-2 rounded-lg bg-[#25D366] px-4 text-sm font-medium text-white transition-colors hover:bg-[#1da851]"
+            >
+              <MessageCircle className="h-4 w-4" />
+              WhatsApp
+            </a>
+          </div>
+
+          {/* Mobile: call button + hamburger */}
+          <div className="flex items-center gap-2 lg:hidden">
+            <a
+              href={`tel:+91${phone}`}
+              aria-label="Call us"
+              className="flex h-10 w-10 items-center justify-center rounded-lg text-primary transition-colors hover:bg-bg"
+            >
+              <Phone className="h-5 w-5" />
+            </a>
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={mobileMenuOpen}
+              className="flex h-10 w-10 items-center justify-center rounded-lg text-text transition-colors hover:bg-bg"
+            >
+              {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
         </div>
+      </header>
 
-        {/* Mobile: call button + hamburger */}
-        <div className="flex items-center gap-2 lg:hidden">
-          <a
-            href={`tel:+91${phone}`}
-            aria-label="Call us"
-            className="flex h-10 w-10 items-center justify-center rounded-lg text-primary transition-colors hover:bg-bg"
-          >
-            <Phone className="h-5 w-5" />
-          </a>
-          <button
-            type="button"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
-            aria-expanded={mobileMenuOpen}
-            className="flex h-10 w-10 items-center justify-center rounded-lg text-text transition-colors hover:bg-bg"
-          >
-            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile menu overlay */}
+      {/* Mobile menu overlay — outside header to avoid stacking context issues */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 top-16 z-40 bg-white lg:hidden">
-          <nav className="flex flex-col p-4" aria-label="Mobile navigation">
+        <div className="fixed inset-0 top-16 z-50 overflow-y-auto bg-white lg:hidden">
+          <nav className="flex min-h-full flex-col bg-white p-4" aria-label="Mobile navigation">
             {navLinks.map((link) => (
               <div key={link.href}>
                 <Link
@@ -162,6 +169,6 @@ export default function Header() {
           </nav>
         </div>
       )}
-    </header>
+    </>
   );
 }
