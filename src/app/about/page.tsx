@@ -71,6 +71,23 @@ export default function AboutPage() {
             name: 'Raytrix Energy (OPC) Private Limited',
             description: 'Delhi-based solar power installation company.',
             url: 'https://www.raytrixenergy.com',
+            email: 'raytrixenergy@gmail.com',
+            address: {
+              '@type': 'PostalAddress',
+              addressLocality: 'Delhi',
+              addressRegion: 'Delhi',
+              addressCountry: 'IN',
+            },
+            areaServed: [
+              { '@type': 'City', name: 'Delhi' },
+              { '@type': 'City', name: 'Faridabad' },
+              { '@type': 'City', name: 'Gurgaon' },
+            ],
+            sameAs: [
+              'https://www.instagram.com/raytrixenergy',
+              'https://www.facebook.com/raytrixenergy/',
+              'https://x.com/raytrixenergy',
+            ],
           }),
         }}
       />

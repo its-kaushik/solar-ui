@@ -173,6 +173,11 @@ export default function HomePage() {
               { '@type': 'City', name: 'Gurgaon' },
             ],
             serviceType: 'Solar Panel Installation',
+            sameAs: [
+              'https://www.instagram.com/raytrixenergy',
+              'https://www.facebook.com/raytrixenergy/',
+              'https://x.com/raytrixenergy',
+            ],
           }),
         }}
       />

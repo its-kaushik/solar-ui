@@ -37,6 +37,10 @@ export const metadata: Metadata = {
     locale: 'en_IN',
     siteName: 'Raytrix Energy',
   },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@raytrixenergy',
+  },
 };
 
 export default function RootLayout({
