@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import FAQSection from '@/components/FAQSection';
 import {
   Zap,
   BatteryCharging,
@@ -233,6 +234,31 @@ export default function ResidentialSolarPage() {
           </div>
         </div>
       </SectionWrapper>
+
+      <FAQSection
+        faqs={[
+          {
+            q: 'How much does rooftop solar cost for a home in Delhi?',
+            a: 'A 3KW on-grid system typically costs Rs 1.8–2.2 lakh before subsidy. After the combined central and Delhi state subsidy of up to Rs 1,08,000, your effective cost can be as low as Rs 70,000–1,10,000.',
+          },
+          {
+            q: 'How much electricity can a residential solar system generate?',
+            a: 'In Delhi, 1 KW of solar generates approximately 120 units per month (about 4 units/day). A 3KW system produces around 360 units/month, enough for most households.',
+          },
+          {
+            q: 'What is the difference between On-Grid, Off-Grid, and Hybrid solar?',
+            a: 'On-Grid connects to the DISCOM grid and qualifies for net metering and subsidies. Off-Grid uses batteries and works independently. Hybrid combines both — grid-connected with battery backup for power cuts.',
+          },
+          {
+            q: 'Do solar panels work during monsoon or cloudy weather?',
+            a: 'Yes, solar panels generate electricity even on cloudy days, though at reduced capacity (about 30–50% of peak output). Annual averages already account for monsoon months.',
+          },
+          {
+            q: 'How long do solar panels last?',
+            a: 'Solar panels come with a 25-year performance warranty and can last 30+ years. Inverters typically last 10–15 years. We provide 5 years of free maintenance with every installation.',
+          },
+        ]}
+      />
 
       {/* CTA */}
       <SectionWrapper className="bg-bg-white">

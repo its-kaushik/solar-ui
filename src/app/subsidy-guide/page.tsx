@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, IndianRupee, Building, Zap } from 'lucide-react';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import FAQSection from '@/components/FAQSection';
 import SectionWrapper from '@/components/SectionWrapper';
 import SectionHeading from '@/components/SectionHeading';
 import CTAButton from '@/components/CTAButton';
@@ -45,34 +46,6 @@ const subsidyCards = [
 export default function SubsidyGuidePage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'FAQPage',
-            mainEntity: [
-              {
-                '@type': 'Question',
-                name: 'How much subsidy can I get for solar panels in Delhi?',
-                acceptedAnswer: {
-                  '@type': 'Answer',
-                  text: 'You can get up to Rs 1,08,000 in combined subsidies — Rs 78,000 from the central government (PM Surya Ghar) and up to Rs 30,000 from the Delhi state government for a 3KW residential system.',
-                },
-              },
-              {
-                '@type': 'Question',
-                name: 'Who is eligible for solar subsidy in Delhi?',
-                acceptedAnswer: {
-                  '@type': 'Answer',
-                  text: 'Residential consumers with a valid electricity connection from BSES (Delhi) are eligible for both central and state subsidies. The system must be on-grid with net metering.',
-                },
-              },
-            ],
-          }),
-        }}
-      />
-
       <section className="bg-primary py-12 sm:py-16">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Subsidy Guide' }]} />
@@ -146,6 +119,27 @@ export default function SubsidyGuidePage() {
           </div>
         </div>
       </SectionWrapper>
+
+      <FAQSection
+        faqs={[
+          {
+            q: 'How much subsidy can I get for solar panels in Delhi?',
+            a: 'You can get up to Rs 1,08,000 in combined subsidies — Rs 78,000 from the central government (PM Surya Ghar) and up to Rs 30,000 from the Delhi state government for a 3KW residential system.',
+          },
+          {
+            q: 'Who is eligible for solar subsidy in Delhi?',
+            a: 'Residential consumers with a valid electricity connection from BSES (Delhi) are eligible for both central and state subsidies. The system must be on-grid with net metering.',
+          },
+          {
+            q: 'Do I need to apply for subsidy myself?',
+            a: 'No. We handle the entire subsidy application process on your behalf — from BSES registration and PM Surya Ghar portal submission to net metering and subsidy disbursement.',
+          },
+          {
+            q: 'How long does it take to get the subsidy money?',
+            a: 'After installation and commissioning, the central subsidy (PM Surya Ghar) typically takes 2–3 months for DBT. Delhi state subsidy takes a similar timeframe. We follow up with all agencies.',
+          },
+        ]}
+      />
 
       {/* CTA */}
       <SectionWrapper className="bg-bg-white">

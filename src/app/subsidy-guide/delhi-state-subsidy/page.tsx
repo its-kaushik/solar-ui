@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, Gift } from 'lucide-react';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import FAQSection from '@/components/FAQSection';
 import SectionWrapper from '@/components/SectionWrapper';
 import SectionHeading from '@/components/SectionHeading';
 import CTAButton from '@/components/CTAButton';
@@ -160,6 +161,27 @@ export default function DelhiStateSubsidyPage() {
           ))}
         </div>
       </SectionWrapper>
+
+      <FAQSection
+        faqs={[
+          {
+            q: 'Who is eligible for Delhi state solar subsidy?',
+            a: 'Residential consumers with a valid BSES electricity connection in Delhi are eligible. The system must be on-grid with net metering. Both new and existing homes qualify.',
+          },
+          {
+            q: 'Can I get both central and Delhi state subsidy?',
+            a: 'Yes. The PM Surya Ghar (central) and Delhi state subsidy are separate schemes and can be combined. For a 3KW system, you can get up to Rs 78,000 + Rs 30,000 = Rs 1,08,000 total.',
+          },
+          {
+            q: 'How is the GBI amount credited?',
+            a: 'The Generation-Based Incentive is first adjusted against your monthly electricity bill. Any surplus after bill adjustment is deposited directly into your bank account by the DISCOM.',
+          },
+          {
+            q: 'How long does Delhi state subsidy disbursement take?',
+            a: 'After system commissioning and net meter installation, the state subsidy is typically disbursed within 2–3 months via bank transfer. We follow up with the DISCOM on your behalf.',
+          },
+        ]}
+      />
 
       {/* Related */}
       <SectionWrapper>

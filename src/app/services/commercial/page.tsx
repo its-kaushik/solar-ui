@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import FAQSection from '@/components/FAQSection';
 import {
   TrendingDown,
   Receipt,
@@ -206,6 +207,27 @@ export default function CommercialSolarPage() {
           ))}
         </div>
       </SectionWrapper>
+
+      <FAQSection
+        faqs={[
+          {
+            q: 'What is the ROI for commercial solar installation?',
+            a: 'Most commercial systems pay for themselves in 3–4 years through electricity savings. With accelerated depreciation (40%) and Generation-Based Incentive, ROI is even faster. After payback, you get 20+ years of near-free electricity.',
+          },
+          {
+            q: 'Can housing societies install rooftop solar?',
+            a: 'Yes. Housing societies can install solar on common areas to offset common electricity bills. The system can be connected to the society meter with net metering. Both central and state subsidies apply.',
+          },
+          {
+            q: 'What tax benefits are available for commercial solar?',
+            a: 'Businesses can claim 40% accelerated depreciation on solar assets in the first year, significantly reducing taxable income. GST input credit is also available on the solar system purchase.',
+          },
+          {
+            q: 'How much roof space is needed for commercial solar?',
+            a: 'Approximately 100 sq ft of shadow-free roof space per KW. A 10KW system needs about 1,000 sq ft. We conduct a free site survey to assess your available rooftop area.',
+          },
+        ]}
+      />
 
       {/* CTA */}
       <SectionWrapper>
