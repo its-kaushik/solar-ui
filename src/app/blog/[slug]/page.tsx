@@ -52,11 +52,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     datePublished: post.date,
     author: {
       '@type': 'Organization',
-      name: 'Kaushik Solar Power OPC Pvt Ltd',
+      name: 'Raytrix Energy (OPC) Private Limited',
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Kaushik Solar Power OPC Pvt Ltd',
+      name: 'Raytrix Energy (OPC) Private Limited',
     },
   };
 

@@ -1,6 +1,6 @@
 import { ImageResponse } from 'next/og';
 
-export const alt = 'Kaushik Solar Power — Rooftop Solar Installation in Delhi';
+export const alt = 'Raytrix Energy — Rooftop Solar Installation in Delhi';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -50,7 +50,7 @@ export default function OGImage() {
             textAlign: 'center',
           }}
         >
-          Kaushik Solar Power
+          Raytrix Energy
         </div>
 
         <div

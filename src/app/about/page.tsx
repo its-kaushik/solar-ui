@@ -18,7 +18,7 @@ import CTAButton from '@/components/CTAButton';
 export const metadata: Metadata = {
   title: 'About Us',
   description:
-    'Learn about Kaushik Solar Power OPC Pvt Ltd — a Delhi-based solar installation company registered with BSES Rajdhani and MNRE. Our mission, values, and credentials.',
+    'Learn about Raytrix Energy (OPC) Private Limited — a Delhi-based solar installation company registered with BSES Rajdhani and MNRE. Our mission, values, and credentials.',
 };
 
 const values = [
@@ -68,9 +68,9 @@ export default function AboutPage() {
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'Organization',
-            name: 'Kaushik Solar Power OPC Pvt Ltd',
+            name: 'Raytrix Energy (OPC) Private Limited',
             description: 'Delhi-based solar power installation company.',
-            url: 'https://solar-ui-iota.vercel.app',
+            url: 'https://www.raytrixenergy.com',
           }),
         }}
       />
@@ -79,7 +79,7 @@ export default function AboutPage() {
       <section className="bg-primary py-12 sm:py-16">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <h1 className="font-heading text-3xl font-bold text-text-inverse sm:text-4xl">
-            About Kaushik Solar Power
+            About Raytrix Energy
           </h1>
           <p className="mx-auto mt-3 max-w-2xl text-base text-gray-300 sm:text-lg">
             Powering Delhi&apos;s homes and businesses with clean, affordable solar energy.
@@ -123,7 +123,7 @@ export default function AboutPage() {
           <SectionHeading title="Our Story" />
           <div className="prose prose-gray mx-auto max-w-none text-text-light">
             <p>
-              Kaushik Solar Power OPC Pvt Ltd was founded with a simple belief — solar energy should
+              Raytrix Energy (OPC) Private Limited was founded with a simple belief — solar energy should
               be accessible to everyone, not just those who can navigate the complex world of subsidies,
               approvals, and installations on their own.
             </p>
@@ -156,7 +156,7 @@ export default function AboutPage() {
                 <p className="text-sm font-medium text-primary">Founder & Director</p>
                 <p className="mt-2 text-sm leading-relaxed text-text-light">
                   With a passion for renewable energy and a commitment to quality service,
-                  Mayank founded Kaushik Solar Power to make solar energy accessible to every
+                  Mayank founded Raytrix Energy to make solar energy accessible to every
                   household in Delhi. He personally oversees every installation to ensure the
                   highest standards of quality and customer satisfaction.
                 </p>

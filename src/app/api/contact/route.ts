@@ -23,7 +23,7 @@ function validatePhone(phone: string): boolean {
 
 function buildEmailHTML(body: ContactBody): string {
   const timestamp = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' });
-  const whatsappLink = `https://wa.me/91${body.phone}?text=${encodeURIComponent(`Hi ${body.name}, thank you for contacting Kaushik Solar Power. `)}`;
+  const whatsappLink = `https://wa.me/91${body.phone}?text=${encodeURIComponent(`Hi ${body.name}, thank you for contacting Raytrix Energy. `)}`;
 
   return `
     <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -76,7 +76,7 @@ function buildEmailHTML(body: ContactBody): string {
         </div>
       </div>
       <div style="padding: 12px 24px; background: #F3F4F6; border-radius: 0 0 12px 12px; border: 1px solid #E5E7EB; border-top: none;">
-        <p style="margin: 0; font-size: 12px; color: #9CA3AF;">This lead was submitted via kaushiksolarpower.com. Please respond within 24 hours.</p>
+        <p style="margin: 0; font-size: 12px; color: #9CA3AF;">This lead was submitted via raytrixenergy.com. Please respond within 24 hours.</p>
       </div>
     </div>
   `;
@@ -124,7 +124,7 @@ export async function POST(request: NextRequest) {
     const resend = getResend();
     if (resend && process.env.CONTACT_EMAIL_TO) {
       await resend.emails.send({
-        from: process.env.RESEND_FROM_EMAIL || 'Kaushik Solar <onboarding@resend.dev>',
+        from: process.env.RESEND_FROM_EMAIL || 'Raytrix Energy <onboarding@resend.dev>',
         to: process.env.CONTACT_EMAIL_TO,
         subject: `New Lead: ${body.name} — ${body.propertyType} — ${body.location}`,
         html: buildEmailHTML(body),

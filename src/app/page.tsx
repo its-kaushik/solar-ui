@@ -42,11 +42,11 @@ import { projects } from '@/data/projects';
 import { getAllPosts } from '@/lib/blog';
 
 export const metadata: Metadata = {
-  title: 'Kaushik Solar Power — Rooftop Solar Installation in Delhi',
+  title: 'Raytrix Energy — Rooftop Solar Installation in Delhi',
   description:
     'Get rooftop solar panels installed in Delhi with up to ₹1,08,000 government subsidy. BSES Rajdhani registered, MNRE enrolled. Free consultation & 5 years maintenance.',
   openGraph: {
-    title: 'Kaushik Solar Power — Rooftop Solar Installation in Delhi',
+    title: 'Raytrix Energy — Rooftop Solar Installation in Delhi',
     description:
       'Get rooftop solar panels installed in Delhi with up to ₹1,08,000 government subsidy.',
     type: 'website',
@@ -155,11 +155,11 @@ export default function HomePage() {
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'LocalBusiness',
-            name: 'Kaushik Solar Power OPC Pvt Ltd',
+            name: 'Raytrix Energy (OPC) Private Limited',
             description: 'Rooftop solar panel installation in Delhi with government subsidy assistance.',
-            url: 'https://solar-ui-iota.vercel.app',
+            url: 'https://www.raytrixenergy.com',
             telephone: phone ? `+91${phone}` : undefined,
-            email: 'info@kaushiksolarpower.com',
+            email: 'raytrixenergy@gmail.com',
             address: {
               '@type': 'PostalAddress',
               addressLocality: 'South Delhi',
@@ -185,7 +185,7 @@ export default function HomePage() {
       {/* 3. Why Choose Us */}
       <SectionWrapper>
         <SectionHeading
-          title="Why Choose Kaushik Solar Power?"
+          title="Why Choose Raytrix Energy?"
           subtitle="Trusted credentials, end-to-end service, and a commitment to quality."
         />
         <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -322,11 +322,11 @@ export default function HomePage() {
                 )}
 
                 <a
-                  href="mailto:info@kaushiksolarpower.com"
+                  href="mailto:raytrixenergy@gmail.com"
                   className="flex items-center gap-3 rounded-xl bg-primary/10 p-3 text-sm font-medium text-primary transition-colors hover:bg-primary/20"
                 >
                   <Mail className="h-5 w-5" />
-                  info@kaushiksolarpower.com
+                  raytrixenergy@gmail.com
                 </a>
 
                 <div className="flex items-start gap-3 rounded-xl bg-primary/10 p-3 text-sm text-text-light">

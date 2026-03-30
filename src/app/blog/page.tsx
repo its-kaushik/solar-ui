@@ -7,7 +7,7 @@ import { getAllPosts } from '@/lib/blog';
 export const metadata: Metadata = {
   title: 'Blog — Solar Knowledge Hub',
   description:
-    'Learn about rooftop solar, government subsidies, savings calculations, and more. Expert guides from Kaushik Solar Power.',
+    'Learn about rooftop solar, government subsidies, savings calculations, and more. Expert guides from Raytrix Energy.',
 };
 
 export default function BlogPage() {

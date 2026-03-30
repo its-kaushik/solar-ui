@@ -2,8 +2,8 @@ import type { MetadataRoute } from 'next';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Kaushik Solar Power',
-    short_name: 'Kaushik Solar',
+    name: 'Raytrix Energy',
+    short_name: 'Raytrix Energy',
     description:
       'Rooftop solar installation in Delhi with up to Rs 1,08,000 government subsidy. BSES Rajdhani registered.',
     start_url: '/',

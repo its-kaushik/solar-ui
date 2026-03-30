@@ -22,20 +22,20 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://solar-ui-iota.vercel.app'),
+  metadataBase: new URL('https://www.raytrixenergy.com'),
   title: {
-    default: 'Kaushik Solar Power — Rooftop Solar Installation in Delhi',
-    template: '%s — Kaushik Solar Power',
+    default: 'Raytrix Energy — Rooftop Solar Installation in Delhi',
+    template: '%s — Raytrix Energy',
   },
   description:
     'Get rooftop solar panels installed in Delhi with up to ₹1,08,000 government subsidy. BSES Rajdhani registered. Free consultation & 5 years maintenance.',
   openGraph: {
-    title: 'Kaushik Solar Power — Rooftop Solar Installation in Delhi',
+    title: 'Raytrix Energy — Rooftop Solar Installation in Delhi',
     description:
       'Get rooftop solar panels installed in Delhi with up to ₹1,08,000 government subsidy.',
     type: 'website',
     locale: 'en_IN',
-    siteName: 'Kaushik Solar Power',
+    siteName: 'Raytrix Energy',
   },
 };
 

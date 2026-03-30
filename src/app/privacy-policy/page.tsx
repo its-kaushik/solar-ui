@@ -4,7 +4,7 @@ import SectionWrapper from '@/components/SectionWrapper';
 export const metadata: Metadata = {
   title: 'Privacy Policy',
   description:
-    'Privacy policy for Kaushik Solar Power OPC Pvt Ltd. How we collect, use, and protect your personal information.',
+    'Privacy policy for Raytrix Energy (OPC) Private Limited. How we collect, use, and protect your personal information.',
 };
 
 export default function PrivacyPolicyPage() {
@@ -23,9 +23,9 @@ export default function PrivacyPolicyPage() {
         <div className="prose prose-sm mx-auto max-w-3xl text-text prose-headings:font-heading prose-headings:text-text prose-p:text-text-light prose-li:text-text-light prose-a:text-primary">
           <h2>1. Introduction</h2>
           <p>
-            Kaushik Solar Power OPC Pvt Ltd (&ldquo;we&rdquo;, &ldquo;our&rdquo;, or &ldquo;us&rdquo;) respects your privacy and is
+            Raytrix Energy (OPC) Private Limited (&ldquo;we&rdquo;, &ldquo;our&rdquo;, or &ldquo;us&rdquo;) respects your privacy and is
             committed to protecting the personal information you share with us through our website
-            kaushiksolarpower.com (&ldquo;the Website&rdquo;).
+            raytrixenergy.com (&ldquo;the Website&rdquo;).
           </p>
           <p>
             This Privacy Policy explains what information we collect, how we use it, and your rights
@@ -61,7 +61,7 @@ export default function PrivacyPolicyPage() {
           <h2>4. Data Storage & Security</h2>
           <p>
             Your contact form submissions are stored securely and access is restricted to authorized
-            personnel at Kaushik Solar Power. We use industry-standard security measures to protect
+            personnel at Raytrix Energy. We use industry-standard security measures to protect
             your data from unauthorized access, alteration, or destruction.
           </p>
 
@@ -117,7 +117,7 @@ export default function PrivacyPolicyPage() {
             contact us:
           </p>
           <ul>
-            <li>Email: info@kaushiksolarpower.com</li>
+            <li>Email: raytrixenergy@gmail.com</li>
             <li>Phone: Available on our Contact page</li>
           </ul>
         </div>

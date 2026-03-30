@@ -48,7 +48,7 @@ export default function Footer() {
           {/* Brand column */}
           <div className="lg:col-span-1">
             <Link href="/" className="font-heading text-xl font-bold text-white">
-              Kaushik Solar Power
+              Raytrix Energy
             </Link>
             <p className="mt-2 text-sm text-gray-300">
               Powering Delhi, One Rooftop at a Time
@@ -77,11 +77,11 @@ export default function Footer() {
                 </a>
               )}
               <a
-                href="mailto:info@kaushiksolarpower.com"
+                href="mailto:raytrixenergy@gmail.com"
                 className="flex items-center gap-2 text-sm text-gray-300 transition-colors hover:text-white"
               >
                 <Mail className="h-4 w-4 shrink-0" />
-                info@kaushiksolarpower.com
+                raytrixenergy@gmail.com
               </a>
               <div className="flex items-start gap-2 text-sm text-gray-300">
                 <MapPin className="h-4 w-4 shrink-0 mt-0.5" />
@@ -125,7 +125,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="mt-6 border-t border-gray-700 pt-6 text-center text-xs text-gray-500">
-          <p>&copy; {new Date().getFullYear()} Kaushik Solar Power OPC Pvt Ltd. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Raytrix Energy (OPC) Private Limited. All rights reserved.</p>
         </div>
       </div>
     </footer>

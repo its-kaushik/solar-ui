@@ -26,8 +26,8 @@ const contactDetails = [
   {
     icon: Mail,
     label: 'Email',
-    value: 'info@kaushiksolarpower.com',
-    href: 'mailto:info@kaushiksolarpower.com',
+    value: 'raytrixenergy@gmail.com',
+    href: 'mailto:raytrixenergy@gmail.com',
   },
   {
     icon: MapPin,

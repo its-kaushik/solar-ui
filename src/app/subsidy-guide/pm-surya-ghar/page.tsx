@@ -23,7 +23,7 @@ const eligibility = [
   'Electricity connection under BSES Rajdhani (for South Delhi)',
   'System must be on-grid with net metering',
   'Only one subsidy per household',
-  'System must be installed by a registered vendor (like Kaushik Solar Power)',
+  'System must be installed by a registered vendor (like Raytrix Energy)',
 ];
 
 const documents = [
@@ -37,7 +37,7 @@ const documents = [
 
 const process = [
   { step: 1, title: 'Register on PM Surya Ghar Portal', description: 'Create an account on pmsuryaghar.gov.in with your electricity consumer number.' },
-  { step: 2, title: 'Choose a Registered Vendor', description: 'Select Kaushik Solar Power as your installation vendor from the portal.' },
+  { step: 2, title: 'Choose a Registered Vendor', description: 'Select Raytrix Energy as your installation vendor from the portal.' },
   { step: 3, title: 'Site Survey & Installation', description: 'We visit your site, design the system, and complete the installation.' },
   { step: 4, title: 'Net Meter Installation', description: 'BSES installs a bi-directional meter and inspects the system.' },
   { step: 5, title: 'Upload Commissioning Report', description: 'We upload all required documents and the commissioning report on the portal.' },
@@ -67,7 +67,7 @@ const faqs = [
   },
   {
     q: 'Do I need to apply myself?',
-    a: 'No. Kaushik Solar Power handles the entire application process on your behalf — from registration to document upload to follow-up.',
+    a: 'No. Raytrix Energy handles the entire application process on your behalf — from registration to document upload to follow-up.',
   },
 ];
 

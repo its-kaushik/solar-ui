@@ -69,7 +69,7 @@ export default function CommercialSolarPage() {
             '@context': 'https://schema.org',
             '@type': 'Service',
             name: 'Commercial Solar Installation',
-            provider: { '@type': 'Organization', name: 'Kaushik Solar Power OPC Pvt Ltd' },
+            provider: { '@type': 'Organization', name: 'Raytrix Energy (OPC) Private Limited' },
             areaServed: ['South Delhi', 'Faridabad', 'Gurgaon'],
             serviceType: 'Commercial Solar Panel Installation',
           }),

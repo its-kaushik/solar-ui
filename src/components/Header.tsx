@@ -40,7 +40,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <span className="font-heading text-lg font-bold text-primary sm:text-xl">
-              Kaushik Solar Power
+              Raytrix Energy
             </span>
           </Link>
 

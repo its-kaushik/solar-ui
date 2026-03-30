@@ -4,7 +4,7 @@ import SectionWrapper from '@/components/SectionWrapper';
 export const metadata: Metadata = {
   title: 'Terms & Conditions',
   description:
-    'Terms and conditions for using the Kaushik Solar Power website and services.',
+    'Terms and conditions for using the Raytrix Energy website and services.',
 };
 
 export default function TermsPage() {
@@ -23,14 +23,14 @@ export default function TermsPage() {
         <div className="prose prose-sm mx-auto max-w-3xl text-text prose-headings:font-heading prose-headings:text-text prose-p:text-text-light prose-li:text-text-light prose-a:text-primary">
           <h2>1. Acceptance of Terms</h2>
           <p>
-            By accessing and using the website of Kaushik Solar Power OPC Pvt Ltd
-            (&ldquo;kaushiksolarpower.com&rdquo;), you agree to be bound by these Terms and Conditions. If you
+            By accessing and using the website of Raytrix Energy (OPC) Private Limited
+            (&ldquo;raytrixenergy.com&rdquo;), you agree to be bound by these Terms and Conditions. If you
             do not agree with any part of these terms, please do not use the website.
           </p>
 
           <h2>2. About the Company</h2>
           <p>
-            Kaushik Solar Power OPC Pvt Ltd is a registered One Person Company providing solar power
+            Raytrix Energy (OPC) Private Limited is a registered One Person Company providing solar power
             system installation services. The company is registered with BSES Rajdhani Power Ltd
             (BRPL) as an authorized solar installation vendor and is enrolled with the Ministry of
             New and Renewable Energy (MNRE).
@@ -44,7 +44,7 @@ export default function TermsPage() {
           </p>
           <p>
             Actual service terms, pricing, system specifications, and timelines are agreed upon
-            through separate written agreements between the customer and Kaushik Solar Power.
+            through separate written agreements between the customer and Raytrix Energy.
           </p>
 
           <h2>4. Subsidy & Financial Information</h2>
@@ -60,7 +60,7 @@ export default function TermsPage() {
             <li>Subsidy disbursement timelines are indicative and depend on government processing</li>
           </ul>
           <p>
-            Kaushik Solar Power does not guarantee specific subsidy amounts or disbursement
+            Raytrix Energy does not guarantee specific subsidy amounts or disbursement
             timelines, as these are controlled by government authorities.
           </p>
 
@@ -83,7 +83,7 @@ export default function TermsPage() {
           <h2>6. Intellectual Property</h2>
           <p>
             All content on this website — including text, graphics, logos, images, and design — is
-            the property of Kaushik Solar Power OPC Pvt Ltd and is protected by applicable
+            the property of Raytrix Energy (OPC) Private Limited and is protected by applicable
             intellectual property laws. You may not reproduce, distribute, or use any content from
             this website without our prior written consent.
           </p>
@@ -94,13 +94,13 @@ export default function TermsPage() {
           </p>
           <ul>
             <li>The information you provide is accurate and complete</li>
-            <li>You consent to being contacted by Kaushik Solar Power regarding your inquiry</li>
+            <li>You consent to being contacted by Raytrix Energy regarding your inquiry</li>
             <li>Your submission is subject to our Privacy Policy</li>
           </ul>
 
           <h2>8. Limitation of Liability</h2>
           <p>
-            Kaushik Solar Power makes every effort to ensure the accuracy of information on this
+            Raytrix Energy makes every effort to ensure the accuracy of information on this
             website. However, we do not warrant that the content is error-free, complete, or
             up-to-date at all times. We shall not be liable for any loss or damage arising from the
             use of information provided on this website.
@@ -117,8 +117,8 @@ export default function TermsPage() {
           <h2>10. Warranty & After-Sales</h2>
           <p>
             Warranty terms for solar equipment (panels, inverters, batteries) are provided by the
-            respective manufacturers. Maintenance and after-sales service terms from Kaushik Solar
-            Power are outlined in the installation agreement provided at the time of purchase.
+            respective manufacturers. Maintenance and after-sales service terms from Raytrix Energy
+            are outlined in the installation agreement provided at the time of purchase.
           </p>
 
           <h2>11. Governing Law</h2>
@@ -140,7 +140,7 @@ export default function TermsPage() {
             For questions about these Terms and Conditions, please contact us:
           </p>
           <ul>
-            <li>Email: info@kaushiksolarpower.com</li>
+            <li>Email: raytrixenergy@gmail.com</li>
             <li>Phone: Available on our Contact page</li>
           </ul>
         </div>

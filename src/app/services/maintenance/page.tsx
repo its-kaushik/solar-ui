@@ -54,7 +54,7 @@ export default function MaintenancePage() {
             5 Years Free Maintenance
           </h2>
           <p className="mt-3 text-text-light">
-            Every solar system installed by Kaushik Solar Power comes with 5 years of
+            Every solar system installed by Raytrix Energy comes with 5 years of
             complimentary maintenance — <span className="font-semibold text-text">3 scheduled visits per year</span>.
             No additional cost, no hidden charges.
           </p>

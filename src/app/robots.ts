@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: '/api/',
       },
     ],
-    sitemap: 'https://solar-ui-iota.vercel.app/sitemap.xml',
+    sitemap: 'https://www.raytrixenergy.com/sitemap.xml',
   };
 }

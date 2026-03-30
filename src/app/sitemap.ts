@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { getAllPosts } from '@/lib/blog';
 
-const BASE_URL = 'https://solar-ui-iota.vercel.app';
+const BASE_URL = 'https://www.raytrixenergy.com';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = [

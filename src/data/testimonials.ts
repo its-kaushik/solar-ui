@@ -34,7 +34,7 @@ export const testimonials: Testimonial[] = [
     area: 'Chattarpur, South Delhi',
     systemSize: '3 KW',
     review:
-      'I was hesitant about solar but Kaushik Solar made it so easy. From site survey to installation to subsidy — they handled it all. Saving Rs 3,000+ per month now.',
+      'I was hesitant about solar but Raytrix Energy made it so easy. From site survey to installation to subsidy — they handled it all. Saving Rs 3,000+ per month now.',
     rating: 5,
   },
 ];

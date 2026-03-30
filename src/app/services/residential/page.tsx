@@ -68,7 +68,7 @@ const warranties = [
   { component: 'Inverters', duration: '5 to 10-year warranty', provider: 'Manufacturer' },
   { component: 'Batteries', duration: '5 to 10-year warranty', provider: 'Manufacturer' },
   { component: 'Mounting Structure', duration: '10-year warranty', provider: 'Manufacturer' },
-  { component: 'Workmanship', duration: '5-year free maintenance (3 visits/year)', provider: 'Kaushik Solar Power' },
+  { component: 'Workmanship', duration: '5-year free maintenance (3 visits/year)', provider: 'Raytrix Energy' },
 ];
 
 export default function ResidentialSolarPage() {
@@ -81,7 +81,7 @@ export default function ResidentialSolarPage() {
             '@context': 'https://schema.org',
             '@type': 'Service',
             name: 'Residential Solar Installation',
-            provider: { '@type': 'Organization', name: 'Kaushik Solar Power OPC Pvt Ltd' },
+            provider: { '@type': 'Organization', name: 'Raytrix Energy (OPC) Private Limited' },
             areaServed: ['South Delhi', 'Faridabad', 'Gurgaon'],
             serviceType: 'Solar Panel Installation',
           }),
