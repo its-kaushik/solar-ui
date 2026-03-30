@@ -129,12 +129,24 @@ export default function ContactPage() {
           subtitle="We serve Delhi (subsidy-eligible via BSES), Faridabad, and Gurgaon."
         />
         <div className="mx-auto max-w-3xl">
-          <div className="flex h-64 items-center justify-center rounded-2xl bg-bg">
-            <div className="text-center">
-              <MapPin className="mx-auto h-10 w-10 text-primary/30" />
-              <p className="mt-2 text-sm text-text-light">Google Maps embed will be added here</p>
-            </div>
-          </div>
+          <a
+            href="https://maps.app.goo.gl/Uq22636vrX41PDYP9"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block overflow-hidden rounded-2xl"
+          >
+            <iframe
+              src="https://maps.google.com/maps?q=G64R%2B6R+New+Delhi,+Delhi&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              width="100%"
+              height="256"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Raytrix Energy location on Google Maps"
+              className="pointer-events-none"
+            />
+          </a>
           <div className="mt-4 grid gap-3 sm:grid-cols-3">
             <div className="rounded-xl bg-bg p-4 text-center">
               <p className="text-sm font-semibold text-text">Delhi</p>

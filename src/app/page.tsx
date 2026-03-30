@@ -172,6 +172,7 @@ export default function HomePage() {
               { '@type': 'City', name: 'Faridabad' },
               { '@type': 'City', name: 'Gurgaon' },
             ],
+            hasMap: 'https://maps.app.goo.gl/Uq22636vrX41PDYP9',
             serviceType: 'Solar Panel Installation',
             sameAs: [
               'https://www.instagram.com/raytrixenergy',
