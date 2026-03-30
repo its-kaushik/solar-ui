@@ -11,10 +11,12 @@ const BASE_URL = 'https://www.raytrixenergy.com';
 export default function Breadcrumbs({ items }: { items: BreadcrumbItem[] }) {
   const allItems = [{ label: 'Home', href: '/' }, ...items];
 
+  // Only include items with URLs + the last item (current page) in JSON-LD
+  const schemaItems = allItems.filter((item, i) => item.href || i === allItems.length - 1);
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
-    itemListElement: allItems.map((item, i) => ({
+    itemListElement: schemaItems.map((item, i) => ({
       '@type': 'ListItem',
       position: i + 1,
       name: item.label,
