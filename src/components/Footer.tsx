@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
+import SocialLinks from './SocialLinks';
 
 const footerLinks = {
   services: {
@@ -88,6 +89,9 @@ export default function Footer() {
                 <span>Delhi, India</span>
               </div>
             </div>
+
+            {/* Social media */}
+            <SocialLinks className="mt-6" />
           </div>
 
           {/* Link columns */}

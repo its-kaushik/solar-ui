@@ -5,6 +5,7 @@ import SectionHeading from '@/components/SectionHeading';
 import ContactForm from '@/components/ContactForm';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import CallButton from '@/components/CallButton';
+import SocialLinks from '@/components/SocialLinks';
 
 export const metadata: Metadata = {
   title: 'Contact Us — Free Solar Consultation',
@@ -98,6 +99,14 @@ export default function ContactPage() {
                     </div>
                   </div>
                 ))}
+              </div>
+
+              {/* Social media */}
+              <div className="mt-6">
+                <p className="text-xs font-semibold uppercase tracking-wider text-text-light">
+                  Follow Us
+                </p>
+                <SocialLinks className="mt-2" iconClassName="text-text-light hover:text-primary" />
               </div>
 
               {/* Trust note */}

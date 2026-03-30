@@ -23,6 +23,7 @@ import {
   MapPin,
 } from 'lucide-react';
 
+import SocialLinks from '@/components/SocialLinks';
 import HeroSection from '@/components/HeroSection';
 import SubsidyStrip from '@/components/SubsidyStrip';
 import SectionWrapper from '@/components/SectionWrapper';
@@ -333,6 +334,8 @@ export default function HomePage() {
                   <MapPin className="h-5 w-5 flex-shrink-0 text-primary" />
                   <span>Delhi, India</span>
                 </div>
+
+                <SocialLinks iconClassName="text-text-light hover:text-primary" />
               </div>
 
               {/* Service area note */}
