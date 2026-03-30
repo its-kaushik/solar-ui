@@ -25,7 +25,7 @@ export default function MobileCTABar() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"
-        className="flex flex-1 items-center justify-center gap-2 font-semibold text-[#25D366] transition-colors active:bg-gray-50"
+        className="flex flex-1 items-center justify-center gap-2 font-semibold text-[#1A7F37] transition-colors active:bg-gray-50"
       >
         <MessageCircle className="h-5 w-5" />
         <span>WhatsApp</span>

@@ -118,7 +118,7 @@ export default function Footer() {
 
         {/* Credentials & badges */}
         <div className="mt-10 border-t border-gray-700 pt-8">
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-gray-400">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-gray-300">
             <span>MNRE Enrolled</span>
             <span className="hidden sm:inline">|</span>
             <span>BSES Registered</span>
@@ -128,7 +128,7 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="mt-6 border-t border-gray-700 pt-6 text-center text-xs text-gray-500">
+        <div className="mt-6 border-t border-gray-700 pt-6 text-center text-xs text-gray-400">
           <p>&copy; {new Date().getFullYear()} Raytrix Energy (OPC) Private Limited. All rights reserved.</p>
         </div>
       </div>

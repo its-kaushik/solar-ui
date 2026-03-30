@@ -336,7 +336,7 @@ export default function HomePage() {
                   raytrixenergy@gmail.com
                 </a>
 
-                <div className="flex items-start gap-3 rounded-xl bg-primary/10 p-3 text-sm text-text-light">
+                <div className="flex items-start gap-3 rounded-xl bg-primary/10 p-3 text-sm text-text">
                   <MapPin className="h-5 w-5 flex-shrink-0 text-primary" />
                   <span>Delhi, India</span>
                 </div>

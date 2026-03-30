@@ -17,7 +17,7 @@ export default function SubsidyStrip() {
           href="/subsidy-guide"
           className="inline-flex items-center gap-1 whitespace-nowrap rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-text-inverse transition-colors hover:bg-primary-light"
         >
-          Learn More
+          Subsidy Guide
           <ArrowRight className="h-4 w-4" />
         </Link>
       </div>
