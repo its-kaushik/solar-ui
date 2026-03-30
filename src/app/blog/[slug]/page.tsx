@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
-import Link from 'next/link';
-import { ArrowLeft, Clock, Calendar } from 'lucide-react';
+import { Clock, Calendar } from 'lucide-react';
+import Breadcrumbs from '@/components/Breadcrumbs';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import SectionWrapper from '@/components/SectionWrapper';
 import BlogCard from '@/components/BlogCard';
@@ -70,13 +70,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       {/* Header */}
       <section className="bg-primary py-12 sm:py-16">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <Link
-            href="/blog"
-            className="mb-4 inline-flex items-center gap-1 text-sm text-gray-300 transition-colors hover:text-white"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Back to Blog
-          </Link>
+          <Breadcrumbs items={[{ label: 'Blog', href: '/blog' }, { label: post.title }]} />
           <h1 className="font-heading text-2xl font-bold text-text-inverse sm:text-3xl lg:text-4xl">
             {post.title}
           </h1>

@@ -3,6 +3,7 @@ import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import SectionWrapper from '@/components/SectionWrapper';
 import SectionHeading from '@/components/SectionHeading';
 import ContactForm from '@/components/ContactForm';
+import Breadcrumbs from '@/components/Breadcrumbs';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import CallButton from '@/components/CallButton';
 import SocialLinks from '@/components/SocialLinks';
@@ -47,6 +48,7 @@ export default function ContactPage() {
     <>
       <section className="bg-primary py-12 sm:py-16">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+          <Breadcrumbs items={[{ label: 'Contact' }]} />
           <h1 className="font-heading text-3xl font-bold text-text-inverse sm:text-4xl">
             Contact Us
           </h1>

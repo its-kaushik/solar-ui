@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, Gift } from 'lucide-react';
+import Breadcrumbs from '@/components/Breadcrumbs';
 import SectionWrapper from '@/components/SectionWrapper';
 import SectionHeading from '@/components/SectionHeading';
 import CTAButton from '@/components/CTAButton';
@@ -24,6 +25,7 @@ export default function DelhiStateSubsidyPage() {
     <>
       <section className="bg-primary py-12 sm:py-16">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+          <Breadcrumbs items={[{ label: 'Subsidy Guide', href: '/subsidy-guide' }, { label: 'Delhi State Subsidy' }]} />
           <p className="text-sm font-semibold uppercase tracking-wider text-secondary">Delhi Government</p>
           <h1 className="mt-2 font-heading text-3xl font-bold text-text-inverse sm:text-4xl">
             Delhi State Subsidy & GBI

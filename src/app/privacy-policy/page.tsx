@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Breadcrumbs from '@/components/Breadcrumbs';
 import SectionWrapper from '@/components/SectionWrapper';
 
 export const metadata: Metadata = {
@@ -12,6 +13,7 @@ export default function PrivacyPolicyPage() {
     <>
       <section className="bg-primary py-12 sm:py-16">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+          <Breadcrumbs items={[{ label: 'Privacy Policy' }]} />
           <h1 className="font-heading text-3xl font-bold text-text-inverse sm:text-4xl">
             Privacy Policy
           </h1>
