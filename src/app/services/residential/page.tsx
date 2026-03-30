@@ -82,7 +82,7 @@ export default function ResidentialSolarPage() {
             '@type': 'Service',
             name: 'Residential Solar Installation',
             provider: { '@type': 'Organization', name: 'Raytrix Energy (OPC) Private Limited' },
-            areaServed: ['South Delhi', 'Faridabad', 'Gurgaon'],
+            areaServed: ['Delhi', 'Faridabad', 'Gurgaon'],
             serviceType: 'Solar Panel Installation',
           }),
         }}
@@ -216,7 +216,7 @@ export default function ResidentialSolarPage() {
             Eligible for Government Subsidy
           </h2>
           <p className="mt-2 text-sm text-text-light sm:text-base">
-            Residential on-grid systems in South Delhi are eligible for up to{' '}
+            Residential on-grid systems in Delhi are eligible for up to{' '}
             <span className="font-bold text-primary">Rs 1,08,000</span> in combined central and state subsidies.
             We handle the complete application process on your behalf.
           </p>

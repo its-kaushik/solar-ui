@@ -72,7 +72,7 @@ export default function OGImage() {
             marginTop: 24,
           }}
         >
-          Up to Rs 1,08,000 Government Subsidy | BSES Rajdhani Registered | MNRE Enrolled
+          Up to Rs 1,08,000 Government Subsidy | BSES Registered | MNRE Enrolled
         </div>
       </div>
     ),

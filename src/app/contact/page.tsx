@@ -32,7 +32,7 @@ const contactDetails = [
   {
     icon: MapPin,
     label: 'Service Area',
-    value: 'South Delhi, Faridabad, Gurgaon',
+    value: 'Delhi, Faridabad, Gurgaon',
   },
   {
     icon: Clock,
@@ -103,7 +103,7 @@ export default function ContactPage() {
               {/* Trust note */}
               <div className="mt-6 rounded-xl bg-accent/5 border border-accent/20 p-4">
                 <p className="text-xs text-text-light">
-                  <span className="font-semibold text-text">BSES Rajdhani registered vendor.</span>{' '}
+                  <span className="font-semibold text-text">BSES registered vendor.</span>{' '}
                   MNRE enrolled. All installations comply with DISCOM regulations and qualify for
                   PM Surya Ghar subsidy.
                 </p>
@@ -117,7 +117,7 @@ export default function ContactPage() {
       <SectionWrapper className="bg-bg-white">
         <SectionHeading
           title="Service Area"
-          subtitle="We serve South Delhi (subsidy-eligible via BSES Rajdhani), Faridabad, and Gurgaon."
+          subtitle="We serve Delhi (subsidy-eligible via BSES), Faridabad, and Gurgaon."
         />
         <div className="mx-auto max-w-3xl">
           <div className="flex h-64 items-center justify-center rounded-2xl bg-bg">
@@ -128,7 +128,7 @@ export default function ContactPage() {
           </div>
           <div className="mt-4 grid gap-3 sm:grid-cols-3">
             <div className="rounded-xl bg-bg p-4 text-center">
-              <p className="text-sm font-semibold text-text">South Delhi</p>
+              <p className="text-sm font-semibold text-text">Delhi</p>
               <p className="mt-0.5 text-xs text-accent font-medium">Subsidy Eligible</p>
             </div>
             <div className="rounded-xl bg-bg p-4 text-center">

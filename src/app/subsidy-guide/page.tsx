@@ -64,7 +64,7 @@ export default function SubsidyGuidePage() {
                 name: 'Who is eligible for solar subsidy in Delhi?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'Residential consumers with a valid electricity connection from BSES Rajdhani (South Delhi) are eligible for both central and state subsidies. The system must be on-grid with net metering.',
+                  text: 'Residential consumers with a valid electricity connection from BSES (Delhi) are eligible for both central and state subsidies. The system must be on-grid with net metering.',
                 },
               },
             ],

@@ -108,7 +108,7 @@ export default function SolarCalculatorPage() {
             </div>
             <h3 className="mt-3 font-heading text-sm font-bold text-text">Subsidy Calculation</h3>
             <p className="mt-1 text-xs text-text-light">
-              Central subsidy (PM Surya Ghar) for residential + Delhi state subsidy & GBI for BSES Rajdhani area.
+              Central subsidy (PM Surya Ghar) for residential + Delhi state subsidy & GBI for BSES area.
             </p>
           </div>
           <div className="rounded-xl bg-bg p-5 text-center">

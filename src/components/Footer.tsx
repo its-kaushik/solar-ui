@@ -85,7 +85,7 @@ export default function Footer() {
               </a>
               <div className="flex items-start gap-2 text-sm text-gray-300">
                 <MapPin className="h-4 w-4 shrink-0 mt-0.5" />
-                <span>South Delhi, New Delhi, India</span>
+                <span>Delhi, India</span>
               </div>
             </div>
           </div>
@@ -117,7 +117,7 @@ export default function Footer() {
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-gray-400">
             <span>MNRE Enrolled</span>
             <span className="hidden sm:inline">|</span>
-            <span>BSES Rajdhani Registered</span>
+            <span>BSES Registered</span>
             <span className="hidden sm:inline">|</span>
             <span>PM Surya Ghar Empaneled</span>
           </div>

@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: 'Raytrix Energy',
     short_name: 'Raytrix Energy',
     description:
-      'Rooftop solar installation in Delhi with up to Rs 1,08,000 government subsidy. BSES Rajdhani registered.',
+      'Rooftop solar installation in Delhi with up to Rs 1,08,000 government subsidy. BSES registered.',
     start_url: '/',
     display: 'standalone',
     background_color: '#F3F4F6',

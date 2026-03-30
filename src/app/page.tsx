@@ -44,7 +44,7 @@ import { getAllPosts } from '@/lib/blog';
 export const metadata: Metadata = {
   title: 'Raytrix Energy — Rooftop Solar Installation in Delhi',
   description:
-    'Get rooftop solar panels installed in Delhi with up to ₹1,08,000 government subsidy. BSES Rajdhani registered, MNRE enrolled. Free consultation & 5 years maintenance.',
+    'Get rooftop solar panels installed in Delhi with up to ₹1,08,000 government subsidy. BSES registered, MNRE enrolled. Free consultation & 5 years maintenance.',
   openGraph: {
     title: 'Raytrix Energy — Rooftop Solar Installation in Delhi',
     description:
@@ -56,8 +56,8 @@ export const metadata: Metadata = {
 const uspItems = [
   {
     icon: Shield,
-    title: 'BSES Rajdhani Registered',
-    description: 'Officially registered with BSES Rajdhani DISCOM for net metering and subsidy projects in South Delhi.',
+    title: 'BSES Registered',
+    description: 'Officially registered with BSES DISCOM for net metering and subsidy projects in Delhi.',
   },
   {
     icon: Award,
@@ -162,12 +162,12 @@ export default function HomePage() {
             email: 'raytrixenergy@gmail.com',
             address: {
               '@type': 'PostalAddress',
-              addressLocality: 'South Delhi',
+              addressLocality: 'Delhi',
               addressRegion: 'Delhi',
               addressCountry: 'IN',
             },
             areaServed: [
-              { '@type': 'City', name: 'South Delhi' },
+              { '@type': 'City', name: 'Delhi' },
               { '@type': 'City', name: 'Faridabad' },
               { '@type': 'City', name: 'Gurgaon' },
             ],
@@ -331,14 +331,14 @@ export default function HomePage() {
 
                 <div className="flex items-start gap-3 rounded-xl bg-primary/10 p-3 text-sm text-text-light">
                   <MapPin className="h-5 w-5 flex-shrink-0 text-primary" />
-                  <span>South Delhi, New Delhi, India</span>
+                  <span>Delhi, India</span>
                 </div>
               </div>
 
               {/* Service area note */}
               <div className="mt-6 rounded-xl border border-secondary/30 bg-secondary/5 p-3">
                 <p className="text-xs text-text-light">
-                  <span className="font-semibold text-text">Service Areas:</span> South Delhi (subsidy projects), Faridabad & Gurgaon (non-subsidy projects)
+                  <span className="font-semibold text-text">Service Areas:</span> Delhi (subsidy projects), Faridabad & Gurgaon (non-subsidy projects)
                 </p>
               </div>
             </div>

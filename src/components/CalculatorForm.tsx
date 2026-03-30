@@ -100,7 +100,7 @@ export default function CalculatorForm({ onCalculate }: CalculatorFormProps) {
           className="h-12 w-full rounded-xl border border-gray-300 bg-bg-white px-4 text-base text-text transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
         >
           <option value="">Select your area</option>
-          <option value="south-delhi">South Delhi (BSES Rajdhani)</option>
+          <option value="south-delhi">Delhi (BSES)</option>
           <option value="faridabad">Faridabad</option>
           <option value="gurgaon">Gurgaon</option>
         </select>
@@ -108,7 +108,7 @@ export default function CalculatorForm({ onCalculate }: CalculatorFormProps) {
           <p className="mt-1 text-xs text-red-500">{errors.area}</p>
         )}
         <p className="mt-1 text-xs text-text-light">
-          PM Surya Ghar & Delhi state subsidy available only for South Delhi (BSES Rajdhani area).
+          PM Surya Ghar & Delhi state subsidy available only for Delhi (BSES area).
         </p>
       </div>
 

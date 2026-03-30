@@ -3,7 +3,7 @@ import CTAButton from './CTAButton';
 
 const trustBadges = [
   { icon: Shield, label: 'MNRE Enrolled' },
-  { icon: BadgeCheck, label: 'BSES Rajdhani Registered' },
+  { icon: BadgeCheck, label: 'BSES Registered' },
   { icon: Award, label: 'PM Surya Ghar Empaneled' },
 ];
 

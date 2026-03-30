@@ -20,7 +20,7 @@ const subsidySlabs = [
 
 const eligibility = [
   'Residential consumer with a valid electricity connection',
-  'Electricity connection under BSES Rajdhani (for South Delhi)',
+  'Electricity connection under BSES (for Delhi)',
   'System must be on-grid with net metering',
   'Only one subsidy per household',
   'System must be installed by a registered vendor (like Raytrix Energy)',

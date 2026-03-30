@@ -54,7 +54,7 @@ const segments = [
 ];
 
 const serviceAreas = [
-  { area: 'South Delhi', note: 'GBI + Net metering via BSES Rajdhani' },
+  { area: 'Delhi', note: 'GBI + Net metering via BSES' },
   { area: 'Faridabad', note: 'Net metering available' },
   { area: 'Gurgaon', note: 'Net metering available' },
 ];
@@ -70,7 +70,7 @@ export default function CommercialSolarPage() {
             '@type': 'Service',
             name: 'Commercial Solar Installation',
             provider: { '@type': 'Organization', name: 'Raytrix Energy (OPC) Private Limited' },
-            areaServed: ['South Delhi', 'Faridabad', 'Gurgaon'],
+            areaServed: ['Delhi', 'Faridabad', 'Gurgaon'],
             serviceType: 'Commercial Solar Panel Installation',
           }),
         }}

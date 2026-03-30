@@ -63,7 +63,7 @@ export default function DelhiStateSubsidyPage() {
             </table>
           </div>
           <p className="mt-4 text-xs text-text-light">
-            State subsidy is available for residential consumers in the BSES Rajdhani area (South Delhi) and is stackable with the central PM Surya Ghar subsidy.
+            State subsidy is available for residential consumers in the BSES area (Delhi) and is stackable with the central PM Surya Ghar subsidy.
           </p>
         </div>
       </SectionWrapper>

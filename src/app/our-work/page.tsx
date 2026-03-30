@@ -10,7 +10,7 @@ import { testimonials } from '@/data/testimonials';
 export const metadata: Metadata = {
   title: 'Our Work — Projects & Testimonials',
   description:
-    'See our completed solar installations across South Delhi, Faridabad, and Gurgaon. Real projects, real savings, real customer reviews.',
+    'See our completed solar installations across Delhi, Faridabad, and Gurgaon. Real projects, real savings, real customer reviews.',
 };
 
 export default function OurWorkPage() {

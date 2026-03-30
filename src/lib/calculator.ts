@@ -16,7 +16,7 @@ const CONSTANTS = {
     MAX_AMOUNT: 78000,
   },
 
-  // Delhi State Subsidy — South Delhi only (BSES Rajdhani area)
+  // Delhi State Subsidy — Delhi only (BSES area)
   STATE_SUBSIDY: {
     RATE_PER_KW: 2000,
     MAX_BASIC: 10000,

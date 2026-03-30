@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     template: '%s — Raytrix Energy',
   },
   description:
-    'Get rooftop solar panels installed in Delhi with up to ₹1,08,000 government subsidy. BSES Rajdhani registered. Free consultation & 5 years maintenance.',
+    'Get rooftop solar panels installed in Delhi with up to ₹1,08,000 government subsidy. BSES registered. Free consultation & 5 years maintenance.',
   openGraph: {
     title: 'Raytrix Energy — Rooftop Solar Installation in Delhi',
     description:

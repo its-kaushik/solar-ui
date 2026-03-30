@@ -90,7 +90,7 @@ export default function PrivacyPolicyPage() {
           <h2>7. Third-Party Links</h2>
           <p>
             Our website may contain links to external sites such as PM Surya Ghar portal
-            (pmsuryaghar.gov.in), BSES Rajdhani, or government resources. We are not responsible for
+            (pmsuryaghar.gov.in), BSES, or government resources. We are not responsible for
             the privacy practices of these external websites.
           </p>
 

@@ -18,7 +18,7 @@ import CTAButton from '@/components/CTAButton';
 export const metadata: Metadata = {
   title: 'About Us',
   description:
-    'Learn about Raytrix Energy (OPC) Private Limited — a Delhi-based solar installation company registered with BSES Rajdhani and MNRE. Our mission, values, and credentials.',
+    'Learn about Raytrix Energy (OPC) Private Limited — a Delhi-based solar installation company registered with BSES and MNRE. Our mission, values, and credentials.',
 };
 
 const values = [
@@ -45,7 +45,7 @@ const values = [
 ];
 
 const credentials = [
-  { icon: BadgeCheck, label: 'BSES Rajdhani DISCOM — Registered Vendor' },
+  { icon: BadgeCheck, label: 'BSES DISCOM — Registered Vendor' },
   { icon: Award, label: 'MNRE — Enrolled' },
   { icon: Shield, label: 'PM Surya Ghar Yojana — Empaneled' },
   { icon: BadgeCheck, label: 'Company CIN — Registered OPC' },
@@ -54,7 +54,7 @@ const credentials = [
 ];
 
 const serviceAreas = [
-  { area: 'South Delhi', type: 'Subsidy + Non-subsidy projects', highlight: true },
+  { area: 'Delhi', type: 'Subsidy + Non-subsidy projects', highlight: true },
   { area: 'Faridabad', type: 'Non-subsidy projects', highlight: false },
   { area: 'Gurgaon', type: 'Non-subsidy projects', highlight: false },
 ];
@@ -128,14 +128,14 @@ export default function AboutPage() {
               approvals, and installations on their own.
             </p>
             <p>
-              As a BSES Rajdhani registered vendor and MNRE enrolled company, we handle the complete
+              As a BSES registered vendor and MNRE enrolled company, we handle the complete
               solar journey for our customers — from the initial site survey to panel installation,
               net metering, DISCOM approvals, and government subsidy applications. Our customers
               don&apos;t need to worry about paperwork or technical details. We take care of everything.
             </p>
             <p>
-              We serve residential customers in South Delhi with full PM Surya Ghar subsidy assistance,
-              and also install non-subsidy systems across South Delhi, Faridabad, and Gurgaon for both
+              We serve residential customers in Delhi with full PM Surya Ghar subsidy assistance,
+              and also install non-subsidy systems across Delhi, Faridabad, and Gurgaon for both
               homes and commercial establishments.
             </p>
           </div>
@@ -211,7 +211,7 @@ export default function AboutPage() {
             ))}
           </div>
           <p className="mt-4 text-center text-xs text-text-light">
-            PM Surya Ghar subsidy is available only for residential projects in South Delhi (BSES Rajdhani area).
+            PM Surya Ghar subsidy is available only for residential projects in Delhi (BSES area).
           </p>
         </div>
       </SectionWrapper>

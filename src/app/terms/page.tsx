@@ -31,7 +31,7 @@ export default function TermsPage() {
           <h2>2. About the Company</h2>
           <p>
             Raytrix Energy (OPC) Private Limited is a registered One Person Company providing solar power
-            system installation services. The company is registered with BSES Rajdhani Power Ltd
+            system installation services. The company is registered with BSES Power Ltd
             (BRPL) as an authorized solar installation vendor and is enrolled with the Ministry of
             New and Renewable Energy (MNRE).
           </p>
@@ -109,7 +109,7 @@ export default function TermsPage() {
           <h2>9. Third-Party Links</h2>
           <p>
             This website may contain links to external websites such as government portals (PM Surya
-            Ghar, BSES Rajdhani). These links are provided for convenience only. We have no control
+            Ghar, BSES). These links are provided for convenience only. We have no control
             over the content or availability of external sites and are not responsible for their
             content or practices.
           </p>
