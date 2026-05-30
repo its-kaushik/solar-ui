@@ -106,21 +106,21 @@ function SubsidyTable({ type }: { type: 'central' | 'state' | 'gbi' }) {
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b border-gray-200 bg-primary/5">
-              <th className="px-4 py-3 text-left font-semibold text-text">Subsidy Type</th>
-              <th className="px-4 py-3 text-left font-semibold text-text">Amount</th>
+              <th className="px-4 py-3 text-left font-semibold text-text">Consumer Category</th>
+              <th className="px-4 py-3 text-left font-semibold text-text">Additional Haryana Support</th>
               <th className="px-4 py-3 text-left font-semibold text-text">Eligibility</th>
             </tr>
           </thead>
           <tbody>
             <tr className="border-b border-gray-100">
-              <td className="px-4 py-3 text-text-light">Capital Subsidy</td>
-              <td className="px-4 py-3 text-text-light">Rs 2,000/KW (max Rs 10,000)</td>
-              <td className="px-4 py-3 text-text-light">All residential</td>
+              <td className="px-4 py-3 text-text-light">Antyodaya / low-income families</td>
+              <td className="px-4 py-3 font-semibold text-accent">Rs 25,000/KW (up to 2 KW)</td>
+              <td className="px-4 py-3 text-text-light">Annual income up to Rs 1.80 lakh, via HAREDA</td>
             </tr>
             <tr>
-              <td className="px-4 py-3 text-text-light">Additional Subsidy</td>
-              <td className="px-4 py-3 font-semibold text-accent">Rs 30,000</td>
-              <td className="px-4 py-3 text-text-light">3 KW+ systems</td>
+              <td className="px-4 py-3 text-text-light">General residential</td>
+              <td className="px-4 py-3 text-text-light">No extra state subsidy</td>
+              <td className="px-4 py-3 text-text-light">Central PM Surya Ghar subsidy applies</td>
             </tr>
           </tbody>
         </table>
@@ -128,32 +128,8 @@ function SubsidyTable({ type }: { type: 'central' | 'state' | 'gbi' }) {
     );
   }
 
-  // GBI
-  return (
-    <div className="my-6 overflow-x-auto">
-      <table className="w-full text-sm">
-        <thead>
-          <tr className="border-b border-gray-200 bg-primary/5">
-            <th className="px-4 py-3 text-left font-semibold text-text">System Size</th>
-            <th className="px-4 py-3 text-left font-semibold text-text">GBI Rate</th>
-            <th className="px-4 py-3 text-left font-semibold text-text">Duration</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr className="border-b border-gray-100">
-            <td className="px-4 py-3 text-text-light">Up to 3 KW</td>
-            <td className="px-4 py-3 font-semibold text-accent">Rs 3/kWh</td>
-            <td className="px-4 py-3 text-text-light">5 years</td>
-          </tr>
-          <tr>
-            <td className="px-4 py-3 text-text-light">3 KW to 10 KW</td>
-            <td className="px-4 py-3 font-semibold text-accent">Rs 2/kWh</td>
-            <td className="px-4 py-3 text-text-light">5 years</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  );
+  // No generation-linked incentive applies in Haryana — render nothing.
+  return null;
 }
 
 export const mdxComponents: MDXComponents = {

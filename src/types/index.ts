@@ -45,7 +45,8 @@ export interface ContactFormData {
 export interface CalculatorInput {
   monthlyUnits: number;
   propertyType: 'residential' | 'commercial';
-  area: 'south-delhi' | 'faridabad' | 'gurgaon';
+  systemType: 'on-grid' | 'hybrid';
+  area: 'faridabad' | 'palwal' | 'gurugram';
 }
 
 export interface CalculatorResult {
@@ -53,13 +54,10 @@ export interface CalculatorResult {
   estimatedCostMin: number;
   estimatedCostMax: number;
   centralSubsidy: number;
-  stateSubsidy: number;
-  totalSubsidy: number;
   netCostMin: number;
   netCostMax: number;
   monthlyGeneration: number;
   monthlySavings: number;
-  annualGBI: number;
   paybackYearsMin: number;
   paybackYearsMax: number;
   totalSavings25Years: number;

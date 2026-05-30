@@ -3,7 +3,7 @@ import CTAButton from './CTAButton';
 
 const trustBadges = [
   { icon: Shield, label: 'MNRE Enrolled' },
-  { icon: BadgeCheck, label: 'BSES Registered' },
+  { icon: BadgeCheck, label: 'DHBVN Net Metering' },
   { icon: Award, label: 'PM Surya Ghar Empaneled' },
 ];
 
@@ -20,14 +20,14 @@ export default function HeroSection() {
           </p>
 
           <h1 className="mt-4 font-heading text-3xl font-bold leading-tight text-text-inverse sm:text-4xl lg:text-5xl lg:leading-tight">
-            Powering Delhi,
+            Powering Haryana,
             <br />
             One Rooftop at a Time
           </h1>
 
           <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-gray-300 sm:mt-6 sm:text-lg">
             End-to-end rooftop solar installation with full government subsidy assistance.
-            Get up to <span className="font-semibold text-secondary">Rs 1,08,000</span> in subsidies.
+            Get up to <span className="font-semibold text-secondary">Rs 78,000</span> in subsidies.
             5 years free maintenance included.
           </p>
 

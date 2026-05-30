@@ -79,7 +79,7 @@ export default function SolarCalculatorClient() {
       <SectionWrapper className="bg-bg-white">
         <SectionHeading
           title="How the Calculator Works"
-          subtitle="Our estimates are based on Delhi-specific solar data and current subsidy policies."
+          subtitle="Our estimates use South Haryana solar data and the current PM Surya Ghar subsidy structure."
         />
         <div className="mx-auto grid max-w-3xl gap-4 sm:grid-cols-3">
           <div className="rounded-xl bg-bg p-5 text-center">
@@ -88,7 +88,7 @@ export default function SolarCalculatorClient() {
             </div>
             <h3 className="mt-3 font-heading text-sm font-bold text-text">System Sizing</h3>
             <p className="mt-1 text-xs text-text-light">
-              1 KW generates ~120 units/month in Delhi. We divide your consumption by 120 to recommend the right system size.
+              A 1 KW system generates ~1,460 units/year across Faridabad, Palwal, and Gurugram. We annualise your usage (monthly units × 12) and divide by 1,460 to recommend the right system size.
             </p>
           </div>
           <div className="rounded-xl bg-bg p-5 text-center">
@@ -97,7 +97,7 @@ export default function SolarCalculatorClient() {
             </div>
             <h3 className="mt-3 font-heading text-sm font-bold text-text">Subsidy Calculation</h3>
             <p className="mt-1 text-xs text-text-light">
-              Central subsidy (PM Surya Ghar) for residential + Delhi state subsidy & GBI for BSES area.
+              Up to ₹78,000 central subsidy (PM Surya Ghar) for residential rooftop systems, disbursed via HAREDA.
             </p>
           </div>
           <div className="rounded-xl bg-bg p-5 text-center">
@@ -106,7 +106,7 @@ export default function SolarCalculatorClient() {
             </div>
             <h3 className="mt-3 font-heading text-sm font-bold text-text">Savings Estimate</h3>
             <p className="mt-1 text-xs text-text-light">
-              Based on average BSES electricity rate of ₹7/unit and 25-year panel lifespan.
+              Based on an average DHBVN electricity rate of ₹7/unit and a 25-year panel lifespan.
             </p>
           </div>
         </div>

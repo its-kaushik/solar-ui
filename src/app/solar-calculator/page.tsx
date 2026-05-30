@@ -5,7 +5,7 @@ import SolarCalculatorClient from '@/components/SolarCalculatorClient';
 export const metadata: Metadata = {
   title: 'Solar Savings Calculator',
   description:
-    'Calculate your rooftop solar savings in Delhi. Get instant estimates for system size, cost, government subsidies (PM Surya Ghar + Delhi state), and 25-year savings.',
+    'Calculate your rooftop solar savings in Faridabad, Palwal & Gurugram. Instant estimates for system size, cost, PM Surya Ghar subsidy, and 25-year savings on your DHBVN bill.',
 };
 
 export default function SolarCalculatorPage() {

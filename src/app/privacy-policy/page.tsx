@@ -5,7 +5,7 @@ import SectionWrapper from '@/components/SectionWrapper';
 export const metadata: Metadata = {
   title: 'Privacy Policy',
   description:
-    'Privacy policy for Raytrix Energy (OPC) Private Limited. How we collect, use, and protect your personal information.',
+    'Privacy policy for RS Solar Infrastructure Private Limited. How we collect, use, and protect your personal information.',
 };
 
 export default function PrivacyPolicyPage() {
@@ -25,9 +25,9 @@ export default function PrivacyPolicyPage() {
         <div className="prose prose-sm mx-auto max-w-3xl text-text prose-headings:font-heading prose-headings:text-text prose-p:text-text-light prose-li:text-text-light prose-a:text-primary">
           <h2>1. Introduction</h2>
           <p>
-            Raytrix Energy (OPC) Private Limited (&ldquo;we&rdquo;, &ldquo;our&rdquo;, or &ldquo;us&rdquo;) respects your privacy and is
+            RS Solar Infrastructure Private Limited (&ldquo;we&rdquo;, &ldquo;our&rdquo;, or &ldquo;us&rdquo;) respects your privacy and is
             committed to protecting the personal information you share with us through our website
-            raytrixenergy.com (&ldquo;the Website&rdquo;).
+            rssolarinfrastructure.com (&ldquo;the Website&rdquo;).
           </p>
           <p>
             This Privacy Policy explains what information we collect, how we use it, and your rights
@@ -63,7 +63,7 @@ export default function PrivacyPolicyPage() {
           <h2>4. Data Storage & Security</h2>
           <p>
             Your contact form submissions are stored securely and access is restricted to authorized
-            personnel at Raytrix Energy. We use industry-standard security measures to protect
+            personnel at RS Solar Infrastructure. We use industry-standard security measures to protect
             your data from unauthorized access, alteration, or destruction.
           </p>
 
@@ -92,7 +92,7 @@ export default function PrivacyPolicyPage() {
           <h2>7. Third-Party Links</h2>
           <p>
             Our website may contain links to external sites such as PM Surya Ghar portal
-            (pmsuryaghar.gov.in), BSES, or government resources. We are not responsible for
+            (pmsuryaghar.gov.in), DHBVN, or government resources. We are not responsible for
             the privacy practices of these external websites.
           </p>
 
@@ -119,7 +119,7 @@ export default function PrivacyPolicyPage() {
             contact us:
           </p>
           <ul>
-            <li>Email: raytrixenergy@gmail.com</li>
+            <li>Email: rssolarinfra@gmail.com</li>
             <li>Phone: Available on our Contact page</li>
           </ul>
         </div>

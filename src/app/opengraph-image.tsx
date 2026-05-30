@@ -1,6 +1,6 @@
 import { ImageResponse } from 'next/og';
 
-export const alt = 'Raytrix Energy — Rooftop Solar Installation in Delhi';
+export const alt = 'RS Solar Infrastructure — Rooftop Solar Installation in Faridabad, Palwal & Gurugram';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -50,7 +50,7 @@ export default function OGImage() {
             textAlign: 'center',
           }}
         >
-          Raytrix Energy
+          RS Solar Infrastructure
         </div>
 
         <div
@@ -61,7 +61,7 @@ export default function OGImage() {
             marginTop: 12,
           }}
         >
-          Powering Delhi, One Rooftop at a Time
+          Powering Haryana, One Rooftop at a Time
         </div>
 
         <div
@@ -72,7 +72,7 @@ export default function OGImage() {
             marginTop: 24,
           }}
         >
-          Up to Rs 1,08,000 Government Subsidy | BSES Registered | MNRE Enrolled
+          Up to Rs 78,000 PM Surya Ghar Subsidy | DHBVN Net Metering | MNRE Enrolled
         </div>
       </div>
     ),

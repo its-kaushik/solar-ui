@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { getAllPosts } from '@/lib/blog';
 
-const BASE_URL = 'https://www.raytrixenergy.com';
+const BASE_URL = 'https://www.rssolarinfrastructure.com';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date('2026-03-30');
@@ -14,7 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/services/maintenance`, changeFrequency: 'monthly', priority: 0.7, lastModified },
     { url: `${BASE_URL}/subsidy-guide`, changeFrequency: 'monthly', priority: 0.9, lastModified },
     { url: `${BASE_URL}/subsidy-guide/pm-surya-ghar`, changeFrequency: 'monthly', priority: 0.9, lastModified },
-    { url: `${BASE_URL}/subsidy-guide/delhi-state-subsidy`, changeFrequency: 'monthly', priority: 0.8, lastModified },
+    { url: `${BASE_URL}/subsidy-guide/haryana-state-subsidy`, changeFrequency: 'monthly', priority: 0.8, lastModified },
     { url: `${BASE_URL}/subsidy-guide/how-to-apply`, changeFrequency: 'monthly', priority: 0.8, lastModified },
     { url: `${BASE_URL}/solar-calculator`, changeFrequency: 'monthly', priority: 0.8, lastModified },
     { url: `${BASE_URL}/our-work`, changeFrequency: 'weekly', priority: 0.7, lastModified },

@@ -17,52 +17,52 @@ import CTAButton from '@/components/CTAButton';
 export const metadata: Metadata = {
   title: 'Residential Solar Installation',
   description:
-    'Get rooftop solar panels installed at your home in Delhi. On-Grid, Off-Grid & Hybrid systems. Up to Rs 1,08,000 subsidy under PM Surya Ghar Yojana. Free consultation.',
+    'Home rooftop solar across Faridabad, Palwal & Gurugram. On-Grid, Off-Grid and Hybrid systems with DHBVN net metering. Claim up to Rs 78,000 under PM Surya Ghar. Book a free survey.',
 };
 
 const systemTypes = [
   {
     name: 'On-Grid',
-    description: 'Connected to the electricity grid via net metering. Excess power is exported to the grid and adjusted against your bill.',
-    subsidy: 'Yes — eligible for PM Surya Ghar & Delhi state subsidy',
-    bestFor: 'Most homes with reliable grid supply',
+    description: 'Tied directly into the DHBVN grid through net metering. Whatever your panels produce beyond what you use flows back to the grid and is credited against your monthly bill.',
+    subsidy: 'Yes — qualifies for the PM Surya Ghar central subsidy',
+    bestFor: 'Households with a steady DHBVN supply',
     icon: Zap,
   },
   {
     name: 'Off-Grid',
-    description: 'Standalone system with lithium-ion battery storage. No grid connection. Power available even during outages.',
-    subsidy: 'No',
-    bestFor: 'Areas with unreliable power or no grid access',
+    description: 'A self-contained setup paired with lithium-ion storage and no grid link. Your home keeps running on stored power even when the supply drops.',
+    subsidy: 'Not applicable',
+    bestFor: 'Locations with patchy supply or no grid reach',
     icon: BatteryCharging,
   },
   {
     name: 'Hybrid',
-    description: 'Grid-connected with battery backup. Net metering benefits plus uninterrupted power during outages.',
-    subsidy: 'Depends on configuration',
-    bestFor: 'Homes wanting both grid savings and backup',
+    description: 'A grid-tied system that also carries battery backup — you keep the net-metering credits while staying powered through outages.',
+    subsidy: 'Varies with the chosen configuration',
+    bestFor: 'Homes that want bill savings and backup together',
     icon: Cable,
   },
 ];
 
 const equipment = [
   { label: 'Solar Panels', value: 'Adani Solar, Vikram Solar' },
-  { label: 'Inverters', value: 'String, Micro, and Hybrid inverters' },
-  { label: 'Batteries', value: 'Lithium-ion (Off-Grid & Hybrid)' },
-  { label: 'Safety', value: 'DC SPD, AC SPD, Lightning arrestor, Earthing' },
-  { label: 'Structure', value: 'Custom galvanized mounting frame' },
-  { label: 'Metering', value: 'Net meter installation (On-Grid & Hybrid)' },
+  { label: 'Inverters', value: 'String, micro, and hybrid options' },
+  { label: 'Batteries', value: 'Lithium-ion (for Off-Grid & Hybrid)' },
+  { label: 'Safety', value: 'DC & AC surge protection, lightning arrestor, earthing' },
+  { label: 'Structure', value: 'Galvanized mounting frame built to your roof' },
+  { label: 'Metering', value: 'DHBVN net meter (On-Grid & Hybrid)' },
 ];
 
 const installationScope = [
-  'Site survey and roof assessment',
-  'System design and panel layout',
-  'Mounting structure installation',
-  'Solar panel installation',
-  'Inverter installation with DC & AC SPD',
-  'Lightning arrestor and earthing system',
-  'Net meter installation',
-  'Grid synchronization and DISCOM coordination',
-  'Complete subsidy paperwork assistance',
+  'On-site survey and rooftop evaluation',
+  'System sizing and panel layout planning',
+  'Erection of the mounting structure',
+  'Mounting and wiring of the solar modules',
+  'Inverter setup with DC and AC surge protection',
+  'Earthing and lightning protection installation',
+  'DHBVN net meter fitting',
+  'Grid sync and DHBVN liaison',
+  'End-to-end help with subsidy documentation',
 ];
 
 const warranties = [
@@ -70,7 +70,7 @@ const warranties = [
   { component: 'Inverters', duration: '5 to 10-year warranty', provider: 'Manufacturer' },
   { component: 'Batteries', duration: '5 to 10-year warranty', provider: 'Manufacturer' },
   { component: 'Mounting Structure', duration: '10-year warranty', provider: 'Manufacturer' },
-  { component: 'Workmanship', duration: '5-year free maintenance (3 visits/year)', provider: 'Raytrix Energy' },
+  { component: 'Workmanship', duration: '5 years of free maintenance (3 visits a year)', provider: 'RS Solar Infrastructure' },
 ];
 
 export default function ResidentialSolarPage() {
@@ -83,8 +83,8 @@ export default function ResidentialSolarPage() {
             '@context': 'https://schema.org',
             '@type': 'Service',
             name: 'Residential Solar Installation',
-            provider: { '@type': 'Organization', name: 'Raytrix Energy (OPC) Private Limited' },
-            areaServed: ['Delhi', 'Faridabad', 'Gurgaon'],
+            provider: { '@type': 'Organization', name: 'RS Solar Infrastructure Private Limited' },
+            areaServed: ['Faridabad', 'Palwal', 'Gurugram'],
             serviceType: 'Solar Panel Installation',
           }),
         }}
@@ -98,7 +98,7 @@ export default function ResidentialSolarPage() {
             Residential Solar Installation
           </h1>
           <p className="mx-auto mt-3 max-w-2xl text-base text-gray-300 sm:text-lg">
-            Power your home with clean solar energy. Get up to Rs 1,08,000 in government subsidies.
+            Run your home on clean solar across South Haryana and claim up to Rs 78,000 in central subsidy.
           </p>
         </div>
       </section>
@@ -106,8 +106,8 @@ export default function ResidentialSolarPage() {
       {/* System Types */}
       <SectionWrapper>
         <SectionHeading
-          title="Choose Your System Type"
-          subtitle="We install On-Grid, Off-Grid, and Hybrid solar systems for homes."
+          title="Pick the Right System for Your Home"
+          subtitle="On-Grid, Off-Grid, and Hybrid setups, all installed for residential rooftops."
         />
         <div className="grid gap-6 lg:grid-cols-3">
           {systemTypes.map((sys) => (
@@ -135,8 +135,8 @@ export default function ResidentialSolarPage() {
       {/* Equipment */}
       <SectionWrapper className="bg-bg-white">
         <SectionHeading
-          title="Equipment We Use"
-          subtitle="Top-tier components from trusted manufacturers."
+          title="The Components We Install"
+          subtitle="Reliable, well-known brands chosen for long-term performance."
         />
         <div className="mx-auto max-w-2xl">
           <div className="overflow-x-auto">
@@ -163,8 +163,8 @@ export default function ResidentialSolarPage() {
       {/* Installation Scope */}
       <SectionWrapper>
         <SectionHeading
-          title="What&apos;s Included"
-          subtitle="End-to-end EPC — we handle everything."
+          title="Everything We Handle for You"
+          subtitle="A complete turnkey EPC service from survey to switch-on."
         />
         <div className="mx-auto max-w-2xl">
           <div className="space-y-3">
@@ -181,8 +181,8 @@ export default function ResidentialSolarPage() {
       {/* Warranty */}
       <SectionWrapper className="bg-bg-white">
         <SectionHeading
-          title="Warranties & Maintenance"
-          subtitle="Long-term protection for your investment."
+          title="Warranties & Upkeep"
+          subtitle="Years of cover so your investment stays protected."
         />
         <div className="mx-auto max-w-3xl">
           <div className="overflow-x-auto">
@@ -206,7 +206,7 @@ export default function ResidentialSolarPage() {
             </table>
           </div>
           <p className="mt-4 text-xs text-text-light">
-            Exact warranty durations for inverters and batteries depend on the specific make/model selected. Details will be shared during the quotation stage.
+            The precise warranty term for your inverter and battery varies by the make and model you choose. We will spell these out when we send your quote.
           </p>
         </div>
       </SectionWrapper>
@@ -216,12 +216,12 @@ export default function ResidentialSolarPage() {
         <div className="mx-auto max-w-3xl rounded-2xl bg-secondary/10 p-6 text-center sm:p-8">
           <Shield className="mx-auto h-10 w-10 text-secondary" />
           <h2 className="mt-3 font-heading text-xl font-bold text-text sm:text-2xl">
-            Eligible for Government Subsidy
+            You Qualify for Government Support
           </h2>
           <p className="mt-2 text-sm text-text-light sm:text-base">
-            Residential on-grid systems in Delhi are eligible for up to{' '}
-            <span className="font-bold text-primary">Rs 1,08,000</span> in combined central and state subsidies.
-            We handle the complete application process on your behalf.
+            Home on-grid systems across South Haryana can draw up to{' '}
+            <span className="font-bold text-primary">Rs 78,000</span> under the central PM Surya Ghar scheme.
+            Our team files the entire application for you, start to finish.
           </p>
           <div className="mt-4">
             <Link
@@ -238,24 +238,24 @@ export default function ResidentialSolarPage() {
       <FAQSection
         faqs={[
           {
-            q: 'How much does rooftop solar cost for a home in Delhi?',
-            a: 'A 3KW on-grid system typically costs Rs 1.8–2.2 lakh before subsidy. After the combined central and Delhi state subsidy of up to Rs 1,08,000, your effective cost can be as low as Rs 70,000–1,10,000.',
+            q: 'What does a home rooftop system cost in Faridabad, Palwal or Gurugram?',
+            a: 'Expect roughly Rs 1.8–2.2 lakh for a 3KW on-grid system before any subsidy. Once the PM Surya Ghar central subsidy of up to Rs 78,000 is applied, your net outlay usually lands somewhere between Rs 1 lakh and Rs 1.45 lakh.',
           },
           {
-            q: 'How much electricity can a residential solar system generate?',
-            a: 'In Delhi, 1 KW of solar generates approximately 120 units per month (about 4 units/day). A 3KW system produces around 360 units/month, enough for most households.',
+            q: 'How much power will a home solar system actually produce?',
+            a: 'Across South Haryana, each kilowatt yields close to 120 units a month, roughly 4 units a day. So a 3KW array generates around 360 units monthly, which covers the needs of a typical family home.',
           },
           {
-            q: 'What is the difference between On-Grid, Off-Grid, and Hybrid solar?',
-            a: 'On-Grid connects to the DISCOM grid and qualifies for net metering and subsidies. Off-Grid uses batteries and works independently. Hybrid combines both — grid-connected with battery backup for power cuts.',
+            q: 'How do On-Grid, Off-Grid and Hybrid systems differ?',
+            a: 'On-Grid links to the DHBVN network for net metering and the central subsidy. Off-Grid runs on its own battery bank, fully independent of the grid. Hybrid blends the two, staying grid-connected while holding battery reserves for outages.',
           },
           {
-            q: 'Do solar panels work during monsoon or cloudy weather?',
-            a: 'Yes, solar panels generate electricity even on cloudy days, though at reduced capacity (about 30–50% of peak output). Annual averages already account for monsoon months.',
+            q: 'Will the panels still work in the monsoon or under cloud cover?',
+            a: 'They do keep generating on overcast days, just at a lower level — typically 30 to 50 percent of peak. The yearly generation figures we quote already factor in the monsoon season.',
           },
           {
-            q: 'How long do solar panels last?',
-            a: 'Solar panels come with a 25-year performance warranty and can last 30+ years. Inverters typically last 10–15 years. We provide 5 years of free maintenance with every installation.',
+            q: 'What is the working life of a solar system?',
+            a: 'Panels carry a 25-year performance warranty and frequently run well past 30 years, while inverters generally serve 10 to 15 years. Every install from us also includes 5 years of free maintenance.',
           },
         ]}
       />
@@ -264,10 +264,10 @@ export default function ResidentialSolarPage() {
       <SectionWrapper className="bg-bg-white">
         <div className="text-center">
           <h2 className="font-heading text-2xl font-bold text-text sm:text-3xl">
-            Ready to Go Solar?
+            Ready to Make the Switch?
           </h2>
           <p className="mt-2 text-text-light">
-            Get a free site survey and customized quote for your home.
+            Book a no-cost rooftop survey and a quote built around your home.
           </p>
           <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             <CTAButton text="Get a Free Quote" href="/contact" />

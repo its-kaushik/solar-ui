@@ -5,7 +5,7 @@ import SectionWrapper from '@/components/SectionWrapper';
 export const metadata: Metadata = {
   title: 'Terms & Conditions',
   description:
-    'Terms and conditions for using the Raytrix Energy website and services.',
+    'Terms and conditions for using the RS Solar Infrastructure website and services.',
 };
 
 export default function TermsPage() {
@@ -25,16 +25,16 @@ export default function TermsPage() {
         <div className="prose prose-sm mx-auto max-w-3xl text-text prose-headings:font-heading prose-headings:text-text prose-p:text-text-light prose-li:text-text-light prose-a:text-primary">
           <h2>1. Acceptance of Terms</h2>
           <p>
-            By accessing and using the website of Raytrix Energy (OPC) Private Limited
-            (&ldquo;raytrixenergy.com&rdquo;), you agree to be bound by these Terms and Conditions. If you
+            By accessing and using the website of RS Solar Infrastructure Private Limited
+            (&ldquo;rssolarinfrastructure.com&rdquo;), you agree to be bound by these Terms and Conditions. If you
             do not agree with any part of these terms, please do not use the website.
           </p>
 
           <h2>2. About the Company</h2>
           <p>
-            Raytrix Energy (OPC) Private Limited is a registered One Person Company providing solar power
-            system installation services. The company is registered with BSES Power Ltd
-            (BRPL) as an authorized solar installation vendor and is enrolled with the Ministry of
+            RS Solar Infrastructure Private Limited is a registered private limited company providing solar power
+            system installation services. The company is registered with Dakshin Haryana Bijli Vitran
+            Nigam (DHBVN) as an authorized solar installation vendor and is enrolled with the Ministry of
             New and Renewable Energy (MNRE).
           </p>
 
@@ -46,23 +46,22 @@ export default function TermsPage() {
           </p>
           <p>
             Actual service terms, pricing, system specifications, and timelines are agreed upon
-            through separate written agreements between the customer and Raytrix Energy.
+            through separate written agreements between the customer and RS Solar Infrastructure.
           </p>
 
           <h2>4. Subsidy & Financial Information</h2>
           <p>
-            All subsidy amounts, Generation-Based Incentive (GBI) rates, and financial estimates
-            mentioned on this website are based on current government policies and are subject to
-            change without notice. Specifically:
+            All subsidy amounts and financial estimates mentioned on this website are based on
+            current government policies and are subject to change without notice. Specifically:
           </p>
           <ul>
             <li>PM Surya Ghar subsidy amounts are determined by the central government and may be revised</li>
-            <li>Delhi state subsidy and GBI rates are subject to the Delhi government&apos;s solar policy</li>
+            <li>Any additional Haryana state support (such as HAREDA assistance for eligible low-income families) is subject to the Haryana government&apos;s prevailing solar policy</li>
             <li>Savings estimates from the solar calculator are approximate and depend on actual site conditions, electricity consumption patterns, roof orientation, shading, and other factors</li>
             <li>Subsidy disbursement timelines are indicative and depend on government processing</li>
           </ul>
           <p>
-            Raytrix Energy does not guarantee specific subsidy amounts or disbursement
+            RS Solar Infrastructure does not guarantee specific subsidy amounts or disbursement
             timelines, as these are controlled by government authorities.
           </p>
 
@@ -85,7 +84,7 @@ export default function TermsPage() {
           <h2>6. Intellectual Property</h2>
           <p>
             All content on this website — including text, graphics, logos, images, and design — is
-            the property of Raytrix Energy (OPC) Private Limited and is protected by applicable
+            the property of RS Solar Infrastructure Private Limited and is protected by applicable
             intellectual property laws. You may not reproduce, distribute, or use any content from
             this website without our prior written consent.
           </p>
@@ -96,13 +95,13 @@ export default function TermsPage() {
           </p>
           <ul>
             <li>The information you provide is accurate and complete</li>
-            <li>You consent to being contacted by Raytrix Energy regarding your inquiry</li>
+            <li>You consent to being contacted by RS Solar Infrastructure regarding your inquiry</li>
             <li>Your submission is subject to our Privacy Policy</li>
           </ul>
 
           <h2>8. Limitation of Liability</h2>
           <p>
-            Raytrix Energy makes every effort to ensure the accuracy of information on this
+            RS Solar Infrastructure makes every effort to ensure the accuracy of information on this
             website. However, we do not warrant that the content is error-free, complete, or
             up-to-date at all times. We shall not be liable for any loss or damage arising from the
             use of information provided on this website.
@@ -111,7 +110,7 @@ export default function TermsPage() {
           <h2>9. Third-Party Links</h2>
           <p>
             This website may contain links to external websites such as government portals (PM Surya
-            Ghar, BSES). These links are provided for convenience only. We have no control
+            Ghar, DHBVN). These links are provided for convenience only. We have no control
             over the content or availability of external sites and are not responsible for their
             content or practices.
           </p>
@@ -119,7 +118,7 @@ export default function TermsPage() {
           <h2>10. Warranty & After-Sales</h2>
           <p>
             Warranty terms for solar equipment (panels, inverters, batteries) are provided by the
-            respective manufacturers. Maintenance and after-sales service terms from Raytrix Energy
+            respective manufacturers. Maintenance and after-sales service terms from RS Solar Infrastructure
             are outlined in the installation agreement provided at the time of purchase.
           </p>
 
@@ -127,7 +126,7 @@ export default function TermsPage() {
           <p>
             These Terms and Conditions are governed by and construed in accordance with the laws of
             India. Any disputes arising from the use of this website shall be subject to the
-            exclusive jurisdiction of courts in Delhi.
+            exclusive jurisdiction of courts in Faridabad, Haryana.
           </p>
 
           <h2>12. Changes to Terms</h2>
@@ -142,7 +141,7 @@ export default function TermsPage() {
             For questions about these Terms and Conditions, please contact us:
           </p>
           <ul>
-            <li>Email: raytrixenergy@gmail.com</li>
+            <li>Email: rssolarinfra@gmail.com</li>
             <li>Phone: Available on our Contact page</li>
           </ul>
         </div>

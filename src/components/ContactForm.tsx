@@ -171,7 +171,7 @@ export default function ContactForm({ compact = false }: ContactFormProps) {
             minLength={3}
             value={formData.location}
             onChange={handleChange}
-            placeholder="e.g., Saket, South Delhi"
+            placeholder="e.g., Sector 21, Faridabad"
             className="h-12 w-full rounded-xl border border-gray-300 bg-bg-white px-4 text-base text-text transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
           />
         </div>

@@ -10,7 +10,7 @@ export default function SubsidyStrip() {
             <IndianRupee className="h-5 w-5 text-secondary" />
           </div>
           <p className="text-base font-semibold text-text sm:text-lg">
-            Get up to <span className="text-primary">Rs 1,08,000</span> in government subsidies on your rooftop solar system
+            Get up to <span className="text-primary">Rs 78,000</span> in PM Surya Ghar subsidy on your rooftop solar system
           </p>
         </div>
         <Link

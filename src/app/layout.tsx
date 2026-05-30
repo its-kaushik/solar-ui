@@ -22,24 +22,24 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.raytrixenergy.com'),
+  metadataBase: new URL('https://www.rssolarinfrastructure.com'),
   title: {
-    default: 'Raytrix Energy — Rooftop Solar Installation in Delhi',
-    template: '%s — Raytrix Energy',
+    default: 'RS Solar Infrastructure — Rooftop Solar Installation in Faridabad, Palwal & Gurugram',
+    template: '%s — RS Solar Infrastructure',
   },
   description:
-    'Get rooftop solar panels installed in Delhi with up to ₹1,08,000 government subsidy. BSES registered. Free consultation & 5 years maintenance.',
+    'Rooftop solar installation across Faridabad, Palwal, and Gurugram with up to ₹78,000 PM Surya Ghar subsidy. DHBVN net-metering specialists. Free consultation & 5 years maintenance.',
   openGraph: {
-    title: 'Raytrix Energy — Rooftop Solar Installation in Delhi',
+    title: 'RS Solar Infrastructure — Rooftop Solar Installation in South Haryana',
     description:
-      'Get rooftop solar panels installed in Delhi with up to ₹1,08,000 government subsidy.',
+      'Rooftop solar for homes and businesses in Faridabad, Palwal, and Gurugram with up to ₹78,000 PM Surya Ghar subsidy.',
     type: 'website',
     locale: 'en_IN',
-    siteName: 'Raytrix Energy',
+    siteName: 'RS Solar Infrastructure',
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@raytrixenergy',
+    site: '@rssolarinfra',
   },
 };
 

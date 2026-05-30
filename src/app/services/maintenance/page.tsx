@@ -17,16 +17,16 @@ import CTAButton from '@/components/CTAButton';
 export const metadata: Metadata = {
   title: 'Maintenance & AMC',
   description:
-    'Solar panel maintenance services in Delhi. 5 years free maintenance with every installation — 3 visits/year including panel cleaning, system check, and performance monitoring.',
+    'Solar maintenance across Faridabad, Palwal and Gurugram. Every install includes 5 years of free upkeep — 3 visits a year covering panel cleaning, system checks and performance monitoring.',
 };
 
 const maintenanceIncludes = [
-  { icon: SprayCan, title: 'Panel Cleaning', description: 'Thorough cleaning of all solar panels to remove dust, bird droppings, and debris that reduce efficiency.' },
-  { icon: Gauge, title: 'System Health Check', description: 'Complete diagnostic of system performance — voltage, current, and generation output verification.' },
-  { icon: Cable, title: 'Inverter Inspection', description: 'Check inverter operation, error logs, fan/cooling, and firmware. Ensure optimal power conversion.' },
-  { icon: Wrench, title: 'Wiring & Connection Check', description: 'Inspect all wiring, junction boxes, connectors, and earthing for loose connections or damage.' },
-  { icon: ShieldCheck, title: 'Safety Equipment Check', description: 'Verify DC SPD, AC SPD, lightning arrestor, and earthing system are functional.' },
-  { icon: Clock, title: 'Performance Monitoring', description: 'Compare actual generation against expected output. Identify and resolve any underperformance.' },
+  { icon: SprayCan, title: 'Panel Cleaning', description: 'A careful wash of every module to clear away the dust, bird droppings and grime that quietly eat into your output.' },
+  { icon: Gauge, title: 'System Health Check', description: 'A full diagnostic that confirms voltage, current and generation figures are all where they should be.' },
+  { icon: Cable, title: 'Inverter Inspection', description: 'We review the inverter for error logs, cooling, firmware and overall operation so power conversion stays efficient.' },
+  { icon: Wrench, title: 'Wiring & Connection Check', description: 'Every cable, junction box, connector and earthing point is examined for looseness, wear or damage.' },
+  { icon: ShieldCheck, title: 'Safety Equipment Check', description: 'We confirm the DC and AC surge protection, lightning arrestor and earthing are all in working order.' },
+  { icon: Clock, title: 'Performance Monitoring', description: 'Actual generation is measured against the expected yield so any shortfall is caught and fixed early.' },
 ];
 
 export default function MaintenancePage() {
@@ -41,7 +41,7 @@ export default function MaintenancePage() {
             Maintenance & AMC
           </h1>
           <p className="mx-auto mt-3 max-w-2xl text-base text-gray-300 sm:text-lg">
-            Keep your solar system running at peak efficiency with regular maintenance.
+            Regular upkeep that keeps your solar system performing at its best, year after year.
           </p>
         </div>
       </section>
@@ -50,15 +50,15 @@ export default function MaintenancePage() {
       <SectionWrapper>
         <div className="mx-auto max-w-3xl text-center">
           <div className="inline-flex rounded-full bg-accent/10 px-6 py-2 text-sm font-bold text-accent">
-            Included Free with Every Installation
+            Bundled Free with Every Install
           </div>
           <h2 className="mt-4 font-heading text-2xl font-bold text-text sm:text-3xl">
-            5 Years Free Maintenance
+            Five Years of Free Maintenance
           </h2>
           <p className="mt-3 text-text-light">
-            Every solar system installed by Raytrix Energy comes with 5 years of
-            complimentary maintenance — <span className="font-semibold text-text">3 scheduled visits per year</span>.
-            No additional cost, no hidden charges.
+            Each system we put up at RS Solar Infrastructure carries five years of upkeep at no charge —{' '}
+            <span className="font-semibold text-text">three planned visits every year</span>.
+            Nothing extra to pay, and no fine print.
           </p>
         </div>
       </SectionWrapper>
@@ -66,8 +66,8 @@ export default function MaintenancePage() {
       {/* What's Covered */}
       <SectionWrapper className="bg-bg-white">
         <SectionHeading
-          title="What Each Visit Covers"
-          subtitle="Our maintenance visits are thorough and systematic."
+          title="What Happens on Every Visit"
+          subtitle="Each call-out follows the same careful, end-to-end checklist."
         />
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {maintenanceIncludes.map((item) => (
@@ -96,24 +96,24 @@ export default function MaintenancePage() {
               </thead>
               <tbody>
                 <tr className="border-b border-gray-100">
-                  <td className="py-3 pr-4 font-medium text-text">Free maintenance period</td>
-                  <td className="py-3 text-text-light">5 years from installation date</td>
+                  <td className="py-3 pr-4 font-medium text-text">Free upkeep window</td>
+                  <td className="py-3 text-text-light">Five years starting from your commissioning date</td>
                 </tr>
                 <tr className="border-b border-gray-100">
-                  <td className="py-3 pr-4 font-medium text-text">Visit frequency</td>
-                  <td className="py-3 text-text-light">3 visits per year (every 4 months)</td>
+                  <td className="py-3 pr-4 font-medium text-text">How often we visit</td>
+                  <td className="py-3 text-text-light">Three times a year, roughly every four months</td>
                 </tr>
                 <tr className="border-b border-gray-100">
-                  <td className="py-3 pr-4 font-medium text-text">Total free visits</td>
-                  <td className="py-3 text-text-light">15 visits over 5 years</td>
+                  <td className="py-3 pr-4 font-medium text-text">Visits included</td>
+                  <td className="py-3 text-text-light">Fifteen in all across the five years</td>
                 </tr>
                 <tr className="border-b border-gray-100">
-                  <td className="py-3 pr-4 font-medium text-text">Scheduling</td>
-                  <td className="py-3 text-text-light">We contact you proactively to schedule visits</td>
+                  <td className="py-3 pr-4 font-medium text-text">Booking visits</td>
+                  <td className="py-3 text-text-light">We reach out to you to line each one up</td>
                 </tr>
                 <tr>
-                  <td className="py-3 pr-4 font-medium text-text">Emergency support</td>
-                  <td className="py-3 text-text-light">Available via phone/WhatsApp</td>
+                  <td className="py-3 pr-4 font-medium text-text">Urgent help</td>
+                  <td className="py-3 text-text-light">Reachable on phone or WhatsApp</td>
                 </tr>
               </tbody>
             </table>
@@ -124,8 +124,8 @@ export default function MaintenancePage() {
       {/* After 5 Years */}
       <SectionWrapper className="bg-bg-white">
         <SectionHeading
-          title="After 5 Years?"
-          subtitle="Continued maintenance options to keep your system at its best."
+          title="And Once the Five Years Are Up?"
+          subtitle="Ongoing care options so your system keeps delivering."
         />
         <div className="mx-auto max-w-2xl">
           <div className="rounded-2xl bg-bg p-6 sm:p-8">
@@ -133,19 +133,19 @@ export default function MaintenancePage() {
               <div className="flex items-start gap-3">
                 <CheckCircle className="mt-0.5 h-5 w-5 flex-shrink-0 text-accent" />
                 <p className="text-sm text-text">
-                  <span className="font-semibold">Paid AMC plans</span> — Annual Maintenance Contracts available at competitive rates.
+                  <span className="font-semibold">Paid AMC plans</span> — sign up for an Annual Maintenance Contract at a fair, competitive rate.
                 </p>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle className="mt-0.5 h-5 w-5 flex-shrink-0 text-accent" />
                 <p className="text-sm text-text">
-                  <span className="font-semibold">On-demand service</span> — Call us anytime for one-off maintenance visits.
+                  <span className="font-semibold">Pay-as-you-go service</span> — ring us whenever you need a single, one-time visit.
                 </p>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle className="mt-0.5 h-5 w-5 flex-shrink-0 text-accent" />
                 <p className="text-sm text-text">
-                  <span className="font-semibold">Manufacturer warranty continues</span> — Panel performance warranty (25 years) and inverter warranty (5-10 years) are independent of our AMC.
+                  <span className="font-semibold">Factory warranty stays intact</span> — the 25-year panel performance cover and the 5 to 10-year inverter cover run separately from our AMC.
                 </p>
               </div>
             </div>
@@ -158,11 +158,11 @@ export default function MaintenancePage() {
         <div className="mx-auto max-w-3xl rounded-2xl bg-primary/5 p-6 text-center sm:p-8">
           <Phone className="mx-auto h-10 w-10 text-primary" />
           <h2 className="mt-3 font-heading text-xl font-bold text-text sm:text-2xl">
-            Emergency Support
+            Urgent Support
           </h2>
           <p className="mt-2 text-sm text-text-light sm:text-base">
-            System not working? Inverter showing an error? Contact us immediately —
-            we&apos;re here to help.
+            Output dropped to zero? Inverter flashing a fault? Get in touch right away —
+            we&apos;re ready to sort it out.
           </p>
           {phone && (
             <a
@@ -180,10 +180,10 @@ export default function MaintenancePage() {
       <SectionWrapper className="bg-bg-white">
         <div className="text-center">
           <h2 className="font-heading text-2xl font-bold text-text sm:text-3xl">
-            Need a New Solar System?
+            Looking to Install a New System?
           </h2>
           <p className="mt-2 text-text-light">
-            Every installation comes with 5 years free maintenance included.
+            Five years of free maintenance is built into every installation we do.
           </p>
           <div className="mt-6">
             <CTAButton text="Get Free Consultation" href="/contact" />

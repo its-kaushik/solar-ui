@@ -11,7 +11,7 @@ import { testimonials } from '@/data/testimonials';
 export const metadata: Metadata = {
   title: 'Our Work — Projects & Testimonials',
   description:
-    'See our completed solar installations across Delhi, Faridabad, and Gurgaon. Real projects, real savings, real customer reviews.',
+    'Browse rooftop solar installations we have completed across Faridabad, Palwal, and Gurugram. Genuine projects, measurable savings, and honest customer feedback.',
 };
 
 export default function OurWorkPage() {
@@ -24,7 +24,7 @@ export default function OurWorkPage() {
             Our Work
           </h1>
           <p className="mx-auto mt-3 max-w-2xl text-base text-gray-300 sm:text-lg">
-            Real installations. Real savings. See what we&apos;ve built for customers across Delhi-NCR.
+            Working systems. Lower bills. Take a look at what we&apos;ve delivered for families and businesses across South Haryana.
           </p>
         </div>
       </section>
@@ -33,7 +33,7 @@ export default function OurWorkPage() {
       <SectionWrapper>
         <SectionHeading
           title="Recent Projects"
-          subtitle="Each project includes complete EPC — from site survey to net metering to subsidy disbursement."
+          subtitle="We handle the full EPC scope on every job — site survey, installation, DHBVN net metering, and seeing the subsidy through to disbursement."
         />
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (
@@ -41,7 +41,7 @@ export default function OurWorkPage() {
           ))}
         </div>
         <p className="mt-6 text-center text-sm text-text-light">
-          More projects will be added as we complete installations.
+          We&apos;ll keep adding to this list as new installations go live across the region.
         </p>
       </SectionWrapper>
 
@@ -49,7 +49,7 @@ export default function OurWorkPage() {
       <SectionWrapper className="bg-bg-white">
         <SectionHeading
           title="What Our Customers Say"
-          subtitle="Hear from homeowners and businesses who went solar with us."
+          subtitle="In the words of the South Haryana homeowners and businesses who made the switch to solar with us."
         />
         <div className="mx-auto max-w-3xl space-y-6">
           {testimonials.map((testimonial) => (
@@ -93,10 +93,10 @@ export default function OurWorkPage() {
       <SectionWrapper>
         <div className="text-center">
           <h2 className="font-heading text-2xl font-bold text-text sm:text-3xl">
-            Ready to Join Our Growing Family?
+            Ready to Become Our Next Happy Customer?
           </h2>
           <p className="mt-2 text-text-light">
-            Get a free consultation and find out how much you can save with rooftop solar.
+            Book a no-cost consultation and see exactly what rooftop solar could save your household or business.
           </p>
           <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             <CTAButton text="Get Free Consultation" href="/contact" />

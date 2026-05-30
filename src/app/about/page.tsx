@@ -19,45 +19,45 @@ import CTAButton from '@/components/CTAButton';
 export const metadata: Metadata = {
   title: 'About Us',
   description:
-    'Learn about Raytrix Energy (OPC) Private Limited — a Delhi-based solar installation company registered with BSES and MNRE. Our mission, values, and credentials.',
+    'Get to know RS Solar Infrastructure Private Limited — a South Haryana solar installer registered with DHBVN and enrolled with MNRE. Our mission, values, and credentials.',
 };
 
 const values = [
   {
     icon: Sparkles,
     title: 'Quality First',
-    description: 'We use only top-tier equipment from trusted manufacturers like Adani and Vikram Solar.',
+    description: 'Every project uses premium-grade panels and inverters from established names such as Adani and Vikram Solar.',
   },
   {
     icon: Eye,
     title: 'Transparency',
-    description: 'No hidden costs, no surprises. We clearly explain every step, cost, and timeline upfront.',
+    description: 'What we quote is what you pay. Each cost, step, and timeline is spelled out clearly before work begins.',
   },
   {
     icon: Heart,
     title: 'Customer First',
-    description: 'From site survey to subsidy disbursement, we are with you at every step. 5 years free maintenance included.',
+    description: 'We stay by your side from the first survey through to subsidy credit — backed by five years of free maintenance.',
   },
   {
     icon: Leaf,
     title: 'Sustainability',
-    description: 'Every rooftop solar system reduces carbon emissions and contributes to a cleaner Delhi.',
+    description: 'Each rooftop we power up trims carbon emissions and moves South Haryana toward cleaner air.',
   },
 ];
 
 const credentials = [
-  { icon: BadgeCheck, label: 'BSES DISCOM — Registered Vendor' },
+  { icon: BadgeCheck, label: 'DHBVN DISCOM — Registered Vendor' },
   { icon: Award, label: 'MNRE — Enrolled' },
   { icon: Shield, label: 'PM Surya Ghar Yojana — Empaneled' },
-  { icon: BadgeCheck, label: 'Company CIN — Registered OPC' },
+  { icon: BadgeCheck, label: 'Company CIN — Registered Pvt Ltd' },
   { icon: BadgeCheck, label: 'GST Registered' },
   { icon: BadgeCheck, label: 'MSME Registered' },
 ];
 
 const serviceAreas = [
-  { area: 'Delhi', type: 'Subsidy + Non-subsidy projects', highlight: true },
-  { area: 'Faridabad', type: 'Non-subsidy projects', highlight: false },
-  { area: 'Gurgaon', type: 'Non-subsidy projects', highlight: false },
+  { area: 'Faridabad', type: 'Subsidy + non-subsidy projects', highlight: true },
+  { area: 'Palwal', type: 'Subsidy + non-subsidy projects', highlight: true },
+  { area: 'Gurugram', type: 'Subsidy + non-subsidy projects', highlight: true },
 ];
 
 export default function AboutPage() {
@@ -69,25 +69,25 @@ export default function AboutPage() {
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'Organization',
-            name: 'Raytrix Energy (OPC) Private Limited',
-            description: 'Delhi-based solar power installation company.',
-            url: 'https://www.raytrixenergy.com',
-            email: 'raytrixenergy@gmail.com',
+            name: 'RS Solar Infrastructure Private Limited',
+            description: 'South Haryana-based solar power installation company.',
+            url: 'https://www.rssolarinfrastructure.com',
+            email: 'rssolarinfra@gmail.com',
             address: {
               '@type': 'PostalAddress',
-              addressLocality: 'Delhi',
-              addressRegion: 'Delhi',
+              addressLocality: 'Faridabad',
+              addressRegion: 'Haryana',
               addressCountry: 'IN',
             },
             areaServed: [
-              { '@type': 'City', name: 'Delhi' },
               { '@type': 'City', name: 'Faridabad' },
-              { '@type': 'City', name: 'Gurgaon' },
+              { '@type': 'City', name: 'Palwal' },
+              { '@type': 'City', name: 'Gurugram' },
             ],
             sameAs: [
-              'https://www.instagram.com/raytrixenergy',
-              'https://www.facebook.com/raytrixenergy/',
-              'https://x.com/raytrixenergy',
+              'https://www.instagram.com/rssolarinfra',
+              'https://www.facebook.com/rssolarinfra/',
+              'https://x.com/rssolarinfra',
             ],
           }),
         }}
@@ -98,10 +98,10 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'About Us' }]} />
           <h1 className="font-heading text-3xl font-bold text-text-inverse sm:text-4xl">
-            About Raytrix Energy
+            About RS Solar Infrastructure
           </h1>
           <p className="mx-auto mt-3 max-w-2xl text-base text-gray-300 sm:text-lg">
-            Powering Delhi&apos;s homes and businesses with clean, affordable solar energy.
+            Bringing clean, affordable solar power to homes and businesses across South Haryana.
           </p>
         </div>
       </section>
@@ -116,9 +116,9 @@ export default function AboutPage() {
               </div>
               <h2 className="font-heading text-xl font-bold text-text">Our Mission</h2>
               <p className="mt-2 text-sm leading-relaxed text-text-light">
-                To make rooftop solar accessible to every home and business in Delhi-NCR by providing
-                end-to-end installation services with complete government subsidy assistance, ensuring
-                quality, transparency, and long-term value.
+                To put rooftop solar within reach of every household and enterprise in South Haryana —
+                Faridabad, Palwal, and Gurugram — through turnkey installation and full subsidy support,
+                delivered with quality, honesty, and lasting value.
               </p>
             </div>
             <div className="rounded-2xl bg-bg-white p-6 shadow-md">
@@ -127,8 +127,8 @@ export default function AboutPage() {
               </div>
               <h2 className="font-heading text-xl font-bold text-text">Our Vision</h2>
               <p className="mt-2 text-sm leading-relaxed text-text-light">
-                A Delhi where every rooftop generates clean solar power — reducing electricity bills,
-                earning through government incentives, and contributing to a sustainable future.
+                A South Haryana where every rooftop produces its own clean power — shrinking electricity
+                bills, unlocking government incentives, and building a greener tomorrow.
                 Har Chhat Pe Solar.
               </p>
             </div>
@@ -142,45 +142,36 @@ export default function AboutPage() {
           <SectionHeading title="Our Story" />
           <div className="prose prose-gray mx-auto max-w-none text-text-light">
             <p>
-              Raytrix Energy (OPC) Private Limited was founded with a simple belief — solar energy should
-              be accessible to everyone, not just those who can navigate the complex world of subsidies,
-              approvals, and installations on their own.
+              RS Solar Infrastructure Private Limited started from one clear conviction — that solar energy
+              belongs to everyone, not only to those who can decode the maze of subsidies, approvals, and
+              installation work on their own.
             </p>
             <p>
-              As a BSES registered vendor and MNRE enrolled company, we handle the complete
-              solar journey for our customers — from the initial site survey to panel installation,
-              net metering, DISCOM approvals, and government subsidy applications. Our customers
-              don&apos;t need to worry about paperwork or technical details. We take care of everything.
+              Registered with DHBVN and enrolled with the MNRE, we shoulder the entire solar journey for
+              our clients — the opening site survey, panel installation, net metering, DISCOM approvals,
+              and the PM Surya Ghar subsidy filing. There&apos;s no paperwork or technical jargon for you
+              to untangle; our team manages all of it.
             </p>
             <p>
-              We serve residential customers in Delhi with full PM Surya Ghar subsidy assistance,
-              and also install non-subsidy systems across Delhi, Faridabad, and Gurgaon for both
-              homes and commercial establishments.
+              We look after homeowners across Faridabad, Palwal, and Gurugram with complete PM Surya Ghar
+              subsidy assistance, and we also build commercial and non-subsidy systems for offices,
+              factories, and societies throughout South Haryana.
             </p>
           </div>
         </div>
       </SectionWrapper>
 
-      {/* Founder */}
+      {/* Leadership */}
       <SectionWrapper>
         <div className="mx-auto max-w-3xl">
-          <SectionHeading title="Founder" />
+          <SectionHeading title="Our Leadership" />
           <div className="rounded-2xl bg-bg-white p-6 shadow-md sm:p-8">
-            <div className="flex flex-col items-center gap-6 sm:flex-row">
-              <div className="flex h-24 w-24 flex-shrink-0 items-center justify-center rounded-full bg-primary/10">
-                <span className="font-heading text-2xl font-bold text-primary">MK</span>
-              </div>
-              <div>
-                <h3 className="font-heading text-xl font-bold text-text">Mayank Kaushik</h3>
-                <p className="text-sm font-medium text-primary">Founder & Director</p>
-                <p className="mt-2 text-sm leading-relaxed text-text-light">
-                  With a passion for renewable energy and a commitment to quality service,
-                  Mayank founded Raytrix Energy to make solar energy accessible to every
-                  household in Delhi. He personally oversees every installation to ensure the
-                  highest standards of quality and customer satisfaction.
-                </p>
-              </div>
-            </div>
+            <p className="text-sm leading-relaxed text-text-light">
+              RS Solar Infrastructure Private Limited grew out of a genuine enthusiasm for renewable
+              energy and a promise to deliver dependable service. We want solar within reach of every
+              family in South Haryana, and our leadership keeps a hands-on eye on each installation so
+              that quality and customer satisfaction never slip.
+            </p>
           </div>
         </div>
       </SectionWrapper>
@@ -189,7 +180,7 @@ export default function AboutPage() {
       <SectionWrapper className="bg-bg-white">
         <SectionHeading
           title="Our Credentials"
-          subtitle="Registered, enrolled, and empaneled — the trust signals that matter."
+          subtitle="Registered, enrolled, and empaneled — the proof points that earn your trust."
         />
         <div className="mx-auto max-w-3xl">
           <div className="grid gap-3 sm:grid-cols-2">
@@ -210,7 +201,7 @@ export default function AboutPage() {
       <SectionWrapper>
         <SectionHeading
           title="Service Areas"
-          subtitle="Where we install solar systems."
+          subtitle="The South Haryana cities where we put solar on rooftops."
         />
         <div className="mx-auto max-w-2xl">
           <div className="space-y-3">
@@ -230,7 +221,7 @@ export default function AboutPage() {
             ))}
           </div>
           <p className="mt-4 text-center text-xs text-text-light">
-            PM Surya Ghar subsidy is available only for residential projects in Delhi (BSES area).
+            The PM Surya Ghar subsidy applies to residential rooftops only, processed through DHBVN and HAREDA.
           </p>
         </div>
       </SectionWrapper>
@@ -239,7 +230,7 @@ export default function AboutPage() {
       <SectionWrapper className="bg-bg-white">
         <SectionHeading
           title="Our Values"
-          subtitle="What drives every installation we do."
+          subtitle="The principles behind every system we install."
         />
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {values.map((v) => (
@@ -261,7 +252,7 @@ export default function AboutPage() {
             Ready to Go Solar?
           </h2>
           <p className="mt-2 text-text-light">
-            Get a free consultation and find out how much you can save.
+            Book a free consultation and see exactly how much you stand to save.
           </p>
           <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             <CTAButton text="Get Free Consultation" href="/contact" />

@@ -4,37 +4,37 @@ export const testimonials: Testimonial[] = [
   {
     id: '1',
     name: 'Rajesh Kumar',
-    area: 'Saket, South Delhi',
+    area: 'Old Faridabad',
     systemSize: '3 KW',
     review:
-      'Excellent service from start to finish. The team handled everything including the subsidy paperwork. Highly professional and transparent.',
+      'They looked after every step, right down to filing the DHBVN and subsidy paperwork on my behalf. Straightforward people who kept me in the loop the whole way.',
     rating: 5,
   },
   {
     id: '2',
     name: 'Priya Sharma',
-    area: 'Greater Kailash, South Delhi',
+    area: 'Manesar, Gurugram',
     systemSize: '5 KW',
     review:
-      'Got my system installed within a week. The subsidy process was handled completely by the team. My electricity bills have dropped to almost zero.',
+      'The panels were up and running in just over a week, and the team sorted out the entire subsidy claim themselves. My monthly bills have come down dramatically since.',
     rating: 5,
   },
   {
     id: '3',
     name: 'Amit Verma',
-    area: 'Malviya Nagar, South Delhi',
+    area: 'Palwal',
     systemSize: '2 KW',
     review:
-      'Very knowledgeable team. They explained everything clearly — system types, subsidy eligibility, maintenance. Great after-sales support too.',
+      'I had plenty of questions and they patiently walked me through system options, who qualifies for the subsidy, and upkeep. The support after the install has been just as good.',
     rating: 4,
   },
   {
     id: '4',
     name: 'Sunita Gupta',
-    area: 'Chattarpur, South Delhi',
+    area: 'Sector 15, Faridabad',
     systemSize: '3 KW',
     review:
-      'I was hesitant about solar but Raytrix Energy made it so easy. From site survey to installation to subsidy — they handled it all. Saving Rs 3,000+ per month now.',
+      'Going solar felt daunting at first, but RS Solar Infrastructure made the whole thing painless, from the first site visit through to the DHBVN connection. I am now putting away well over Rs 2,000 every month.',
     rating: 5,
   },
 ];

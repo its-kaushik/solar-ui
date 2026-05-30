@@ -11,7 +11,8 @@ interface CalculatorFormProps {
 export default function CalculatorForm({ onCalculate }: CalculatorFormProps) {
   const [monthlyUnits, setMonthlyUnits] = useState('');
   const [propertyType, setPropertyType] = useState<'residential' | 'commercial' | ''>('');
-  const [area, setArea] = useState<'south-delhi' | 'faridabad' | 'gurgaon' | ''>('');
+  const [systemType, setSystemType] = useState<'on-grid' | 'hybrid' | ''>('');
+  const [area, setArea] = useState<'faridabad' | 'palwal' | 'gurugram' | ''>('');
   const [errors, setErrors] = useState<Record<string, string>>({});
 
   const validate = (): boolean => {
@@ -23,6 +24,9 @@ export default function CalculatorForm({ onCalculate }: CalculatorFormProps) {
     }
     if (!propertyType) {
       newErrors.propertyType = 'Please select a property type';
+    }
+    if (!systemType) {
+      newErrors.systemType = 'Please select a system type';
     }
     if (!area) {
       newErrors.area = 'Please select your area';
@@ -39,7 +43,8 @@ export default function CalculatorForm({ onCalculate }: CalculatorFormProps) {
     onCalculate({
       monthlyUnits: Number(monthlyUnits),
       propertyType: propertyType as 'residential' | 'commercial',
-      area: area as 'south-delhi' | 'faridabad' | 'gurgaon',
+      systemType: systemType as 'on-grid' | 'hybrid',
+      area: area as 'faridabad' | 'palwal' | 'gurugram',
     });
   };
 
@@ -64,29 +69,83 @@ export default function CalculatorForm({ onCalculate }: CalculatorFormProps) {
           <p className="mt-1 text-xs text-red-500">{errors.monthlyUnits}</p>
         )}
         <p className="mt-1 text-xs text-text-light">
-          Check your BSES bill for &ldquo;Units Consumed&rdquo; in the current billing period.
+          Check your DHBVN bill for &ldquo;Units Consumed&rdquo; in the current billing period.
         </p>
       </div>
 
       {/* Property type */}
-      <div>
-        <label htmlFor="propertyType" className="mb-1 block text-sm font-medium text-text">
+      <fieldset>
+        <legend className="mb-1.5 block text-sm font-medium text-text">
           Property Type <span className="text-red-500">*</span>
-        </label>
-        <select
-          id="propertyType"
-          value={propertyType}
-          onChange={(e) => setPropertyType(e.target.value as 'residential' | 'commercial' | '')}
-          className="h-12 w-full rounded-xl border border-gray-300 bg-bg-white px-4 text-base text-text transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
-        >
-          <option value="">Select property type</option>
-          <option value="residential">Residential</option>
-          <option value="commercial">Commercial</option>
-        </select>
+        </legend>
+        <div className="grid grid-cols-2 gap-3">
+          {[
+            { value: 'residential', label: 'Residential' },
+            { value: 'commercial', label: 'Commercial' },
+          ].map((opt) => (
+            <label
+              key={opt.value}
+              className={`flex cursor-pointer items-center justify-center rounded-xl border px-4 py-3 text-sm font-medium transition-colors ${
+                propertyType === opt.value
+                  ? 'border-primary bg-primary/5 text-primary'
+                  : 'border-gray-300 bg-bg-white text-text hover:border-primary/50'
+              }`}
+            >
+              <input
+                type="radio"
+                name="propertyType"
+                value={opt.value}
+                checked={propertyType === opt.value}
+                onChange={(e) => setPropertyType(e.target.value as 'residential' | 'commercial')}
+                className="sr-only"
+              />
+              {opt.label}
+            </label>
+          ))}
+        </div>
         {errors.propertyType && (
           <p className="mt-1 text-xs text-red-500">{errors.propertyType}</p>
         )}
-      </div>
+      </fieldset>
+
+      {/* System type */}
+      <fieldset>
+        <legend className="mb-1.5 block text-sm font-medium text-text">
+          System Type <span className="text-red-500">*</span>
+        </legend>
+        <div className="grid grid-cols-2 gap-3">
+          {[
+            { value: 'on-grid', label: 'On-Grid', hint: 'Grid-tied, no battery' },
+            { value: 'hybrid', label: 'Hybrid', hint: 'With battery backup' },
+          ].map((opt) => (
+            <label
+              key={opt.value}
+              className={`flex cursor-pointer flex-col items-center justify-center rounded-xl border px-4 py-3 text-center transition-colors ${
+                systemType === opt.value
+                  ? 'border-primary bg-primary/5 text-primary'
+                  : 'border-gray-300 bg-bg-white text-text hover:border-primary/50'
+              }`}
+            >
+              <input
+                type="radio"
+                name="systemType"
+                value={opt.value}
+                checked={systemType === opt.value}
+                onChange={(e) => setSystemType(e.target.value as 'on-grid' | 'hybrid')}
+                className="sr-only"
+              />
+              <span className="text-sm font-medium">{opt.label}</span>
+              <span className="mt-0.5 text-xs text-text-light">{opt.hint}</span>
+            </label>
+          ))}
+        </div>
+        {errors.systemType && (
+          <p className="mt-1 text-xs text-red-500">{errors.systemType}</p>
+        )}
+        <p className="mt-1 text-xs text-text-light">
+          Hybrid systems add battery storage for power backup, at a higher per-kW cost.
+        </p>
+      </fieldset>
 
       {/* Area */}
       <div>
@@ -96,19 +155,19 @@ export default function CalculatorForm({ onCalculate }: CalculatorFormProps) {
         <select
           id="area"
           value={area}
-          onChange={(e) => setArea(e.target.value as 'south-delhi' | 'faridabad' | 'gurgaon' | '')}
+          onChange={(e) => setArea(e.target.value as 'faridabad' | 'palwal' | 'gurugram' | '')}
           className="h-12 w-full rounded-xl border border-gray-300 bg-bg-white px-4 text-base text-text transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
         >
           <option value="">Select your area</option>
-          <option value="south-delhi">Delhi (BSES)</option>
           <option value="faridabad">Faridabad</option>
-          <option value="gurgaon">Gurgaon</option>
+          <option value="palwal">Palwal</option>
+          <option value="gurugram">Gurugram</option>
         </select>
         {errors.area && (
           <p className="mt-1 text-xs text-red-500">{errors.area}</p>
         )}
         <p className="mt-1 text-xs text-text-light">
-          PM Surya Ghar & Delhi state subsidy available only for Delhi (BSES area).
+          PM Surya Ghar central subsidy applies to residential consumers across DHBVN areas.
         </p>
       </div>
 

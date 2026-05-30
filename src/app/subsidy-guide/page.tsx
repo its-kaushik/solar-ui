@@ -8,9 +8,9 @@ import SectionHeading from '@/components/SectionHeading';
 import CTAButton from '@/components/CTAButton';
 
 export const metadata: Metadata = {
-  title: 'Solar Subsidy Guide — Delhi',
+  title: 'Solar Subsidy Guide — South Haryana',
   description:
-    'Complete guide to solar panel subsidies in Delhi. PM Surya Ghar Yojana (up to Rs 78,000), Delhi state subsidy (up to Rs 30,000), and Generation-Based Incentive (Rs 3/kWh).',
+    'Your complete handbook to rooftop solar subsidies across Faridabad, Palwal and Gurugram. Learn about PM Surya Ghar (up to Rs 78,000), HAREDA support for Antyodaya families, and DHBVN net metering.',
 };
 
 const subsidyCards = [
@@ -19,26 +19,26 @@ const subsidyCards = [
     title: 'PM Surya Ghar Muft Bijli Yojana',
     subtitle: 'Central Government',
     amount: 'Up to Rs 78,000',
-    description: 'Subsidy for residential rooftop solar. 1KW = Rs 30K, 2KW = Rs 60K, 3KW+ = Rs 78K.',
+    description: 'The nationwide rooftop solar grant for homes. 1KW earns Rs 30K, 2KW earns Rs 60K, and 3KW or larger earns the full Rs 78K.',
     href: '/subsidy-guide/pm-surya-ghar',
     color: 'bg-primary/10 text-primary',
   },
   {
     icon: Building,
-    title: 'Delhi State Subsidy',
-    subtitle: 'Delhi Government',
-    amount: 'Up to Rs 30,000',
-    description: 'Additional state subsidy of Rs 2,000/KW + Rs 30,000 extra for 3KW systems.',
-    href: '/subsidy-guide/delhi-state-subsidy',
+    title: 'Haryana State Support (HAREDA)',
+    subtitle: 'Haryana Government',
+    amount: 'For Antyodaya families',
+    description: 'Extra HAREDA assistance of about Rs 25,000/KW (up to 2KW) reserved for low-income households earning under Rs 1.80 lakh a year.',
+    href: '/subsidy-guide/haryana-state-subsidy',
     color: 'bg-secondary/10 text-secondary',
   },
   {
     icon: Zap,
-    title: 'Generation-Based Incentive (GBI)',
-    subtitle: 'Delhi Government',
-    amount: 'Rs 2-3 per kWh for 5 years',
-    description: 'Earn money for every unit of solar power you generate. Credited to your bank account.',
-    href: '/subsidy-guide/delhi-state-subsidy',
+    title: 'DHBVN Net Metering',
+    subtitle: 'DHBVN / HERC',
+    amount: 'Bill credits for exports',
+    description: 'Send surplus units back to the DHBVN grid and offset them against future bills under HERC net-metering rules.',
+    href: '/subsidy-guide/haryana-state-subsidy',
     color: 'bg-accent/10 text-accent',
   },
 ];
@@ -50,10 +50,10 @@ export default function SubsidyGuidePage() {
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Subsidy Guide' }]} />
           <h1 className="font-heading text-3xl font-bold text-text-inverse sm:text-4xl">
-            Solar Subsidy Guide — Delhi
+            Solar Subsidy Guide — South Haryana
           </h1>
           <p className="mx-auto mt-3 max-w-2xl text-base text-gray-300 sm:text-lg">
-            Everything you need to know about government subsidies and incentives for rooftop solar in Delhi.
+            A clear, plain-language walkthrough of every government grant and incentive available for rooftop solar in Faridabad, Palwal and Gurugram.
           </p>
         </div>
       </section>
@@ -62,20 +62,20 @@ export default function SubsidyGuidePage() {
       <SectionWrapper>
         <div className="mx-auto max-w-3xl rounded-2xl bg-bg-white p-6 text-center shadow-lg sm:p-8">
           <p className="text-sm font-semibold uppercase tracking-wider text-text-light">
-            Total Available Subsidy for 3KW Residential System
+            Central Subsidy for a 3KW Residential System
           </p>
           <p className="mt-2 font-heading text-4xl font-bold text-primary sm:text-5xl">
-            Up to Rs 1,08,000
+            Up to Rs 78,000
           </p>
           <p className="mt-2 text-sm text-text-light">
-            Central (Rs 78,000) + Delhi State (up to Rs 30,000) — disbursed directly to your bank account
+            Paid under PM Surya Ghar straight into your bank account — with extra HAREDA support available for eligible Antyodaya households
           </p>
         </div>
       </SectionWrapper>
 
       {/* Subsidy cards */}
       <SectionWrapper className="bg-bg-white">
-        <SectionHeading title="Available Subsidies & Incentives" />
+        <SectionHeading title="Grants & Incentives You Can Tap Into" />
         <div className="grid gap-6 lg:grid-cols-3">
           {subsidyCards.map((card) => (
             <Link
@@ -102,11 +102,11 @@ export default function SubsidyGuidePage() {
       <SectionWrapper>
         <div className="mx-auto max-w-3xl rounded-2xl bg-accent/5 border border-accent/20 p-6 text-center sm:p-8">
           <h2 className="font-heading text-xl font-bold text-text sm:text-2xl">
-            We Handle the Entire Subsidy Process
+            We Run the Whole Subsidy Journey for You
           </h2>
           <p className="mt-2 text-sm text-text-light sm:text-base">
-            Don&apos;t worry about paperwork. From BSES registration to PM Surya Ghar application
-            to subsidy disbursement — we take care of everything on your behalf.
+            Forget the red tape. From your DHBVN net-metering request to the PM Surya Ghar filing
+            right through to the money landing in your account — every step is handled by our team.
           </p>
           <div className="mt-4">
             <Link
@@ -123,20 +123,20 @@ export default function SubsidyGuidePage() {
       <FAQSection
         faqs={[
           {
-            q: 'How much subsidy can I get for solar panels in Delhi?',
-            a: 'You can get up to Rs 1,08,000 in combined subsidies — Rs 78,000 from the central government (PM Surya Ghar) and up to Rs 30,000 from the Delhi state government for a 3KW residential system.',
+            q: 'How much solar subsidy is available in South Haryana?',
+            a: 'For a 3KW home system the central PM Surya Ghar scheme pays up to Rs 78,000. There is no general state top-up in Haryana, but Antyodaya families with yearly income up to Rs 1.80 lakh can claim additional HAREDA support of roughly Rs 25,000/KW for up to 2KW.',
           },
           {
-            q: 'Who is eligible for solar subsidy in Delhi?',
-            a: 'Residential consumers with a valid electricity connection from BSES (Delhi) are eligible for both central and state subsidies. The system must be on-grid with net metering.',
+            q: 'Who qualifies for solar subsidy in Faridabad, Palwal or Gurugram?',
+            a: 'Any homeowner with a live DHBVN electricity connection can claim the central PM Surya Ghar grant, provided the plant is grid-tied with net metering. The added HAREDA amount is limited to low-income Antyodaya households.',
           },
           {
-            q: 'Do I need to apply for subsidy myself?',
-            a: 'No. We handle the entire subsidy application process on your behalf — from BSES registration and PM Surya Ghar portal submission to net metering and subsidy disbursement.',
+            q: 'Do I have to file the subsidy paperwork myself?',
+            a: 'Not at all. RS Solar Infrastructure manages the complete application for you — DHBVN net-metering, the PM Surya Ghar National Portal submission, and follow-up until the grant is released through HAREDA.',
           },
           {
-            q: 'How long does it take to get the subsidy money?',
-            a: 'After installation and commissioning, the central subsidy (PM Surya Ghar) typically takes 2–3 months for DBT. Delhi state subsidy takes a similar timeframe. We follow up with all agencies.',
+            q: 'When does the subsidy money actually arrive?',
+            a: 'Once your system is inspected and commissioned by DHBVN, the PM Surya Ghar grant is usually credited to your bank account within about 30 to 60 days. We keep chasing the agencies until it lands.',
           },
         ]}
       />
@@ -148,7 +148,7 @@ export default function SubsidyGuidePage() {
             Ready to Claim Your Subsidy?
           </h2>
           <p className="mt-2 text-text-light">
-            Contact us for a free consultation. We&apos;ll tell you exactly how much subsidy you can get.
+            Book a free consultation and we&apos;ll give you an exact figure for the subsidy you qualify for.
           </p>
           <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             <CTAButton text="Get Free Consultation" href="/contact" />

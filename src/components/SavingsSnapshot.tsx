@@ -2,9 +2,9 @@ import { TrendingUp, Zap, IndianRupee, Sun } from 'lucide-react';
 import CTAButton from './CTAButton';
 
 const stats = [
-  { icon: IndianRupee, label: 'Subsidy (Central + State)', value: 'Up to Rs 1,08,000' },
-  { icon: Zap, label: 'Annual Bill Savings', value: '~Rs 50,000/yr' },
-  { icon: TrendingUp, label: 'GBI Income (5 years)', value: 'Rs 3/unit' },
+  { icon: IndianRupee, label: 'PM Surya Ghar Subsidy', value: 'Up to Rs 78,000' },
+  { icon: Zap, label: 'Annual Bill Savings', value: '~Rs 28,000/yr' },
+  { icon: TrendingUp, label: 'Free Maintenance', value: '5 Years' },
   { icon: Sun, label: 'Payback Period', value: '~3-4 Years' },
 ];
 
@@ -18,7 +18,7 @@ export default function SavingsSnapshot() {
             A typical 3KW system saves you
           </h3>
           <p className="mt-1 text-3xl font-bold text-secondary sm:text-4xl">
-            ~Rs 50,000/year
+            ~Rs 28,000/year
           </p>
           <p className="mt-1 text-sm text-gray-300">on electricity bills</p>
         </div>

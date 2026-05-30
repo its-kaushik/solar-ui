@@ -6,7 +6,7 @@ type BreadcrumbItem = {
   href?: string;
 };
 
-const BASE_URL = 'https://www.raytrixenergy.com';
+const BASE_URL = 'https://www.rssolarinfrastructure.com';
 
 export default function Breadcrumbs({ items }: { items: BreadcrumbItem[] }) {
   const allItems = [{ label: 'Home', href: '/' }, ...items];

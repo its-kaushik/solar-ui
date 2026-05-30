@@ -2,10 +2,10 @@ import type { MetadataRoute } from 'next';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Raytrix Energy',
-    short_name: 'Raytrix Energy',
+    name: 'RS Solar Infrastructure',
+    short_name: 'RS Solar',
     description:
-      'Rooftop solar installation in Delhi with up to Rs 1,08,000 government subsidy. BSES registered.',
+      'Rooftop solar installation in Faridabad, Palwal & Gurugram with up to Rs 78,000 PM Surya Ghar subsidy. DHBVN net-metering specialists.',
     start_url: '/',
     display: 'standalone',
     background_color: '#F3F4F6',

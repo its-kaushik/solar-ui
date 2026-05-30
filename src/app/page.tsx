@@ -26,6 +26,7 @@ import {
 import SocialLinks from '@/components/SocialLinks';
 import HeroSection from '@/components/HeroSection';
 import SubsidyStrip from '@/components/SubsidyStrip';
+import BrandsSection from '@/components/BrandsSection';
 import SectionWrapper from '@/components/SectionWrapper';
 import SectionHeading from '@/components/SectionHeading';
 import USPCard from '@/components/USPCard';
@@ -43,13 +44,13 @@ import { projects } from '@/data/projects';
 import { getAllPosts } from '@/lib/blog';
 
 export const metadata: Metadata = {
-  title: 'Raytrix Energy — Rooftop Solar Installation in Delhi',
+  title: 'RS Solar Infrastructure — Rooftop Solar in Faridabad, Palwal & Gurugram',
   description:
-    'Get rooftop solar panels installed in Delhi with up to ₹1,08,000 government subsidy. BSES registered, MNRE enrolled. Free consultation & 5 years maintenance.',
+    'Switch to rooftop solar across South Haryana and claim up to ₹78,000 under PM Surya Ghar. DHBVN registered and MNRE enrolled, with a free site visit and 5 years of maintenance.',
   openGraph: {
-    title: 'Raytrix Energy — Rooftop Solar Installation in Delhi',
+    title: 'RS Solar Infrastructure — Rooftop Solar in Faridabad, Palwal & Gurugram',
     description:
-      'Get rooftop solar panels installed in Delhi with up to ₹1,08,000 government subsidy.',
+      'Rooftop solar installation across South Haryana with up to ₹78,000 PM Surya Ghar subsidy.',
     type: 'website',
   },
 };
@@ -57,33 +58,45 @@ export const metadata: Metadata = {
 const uspItems = [
   {
     icon: Shield,
-    title: 'BSES Registered',
-    description: 'Officially registered with BSES DISCOM for net metering and subsidy projects in Delhi.',
+    title: 'DHBVN Registered',
+    description: 'An approved vendor with DHBVN, so your net meter and subsidy paperwork move smoothly across Faridabad, Palwal, and Gurugram.',
+    iconColor: 'text-blue-500',
+    iconBg: 'bg-blue-500/10',
   },
   {
     icon: Award,
     title: 'MNRE Enrolled',
-    description: 'Enrolled with the Ministry of New and Renewable Energy, ensuring quality standards and compliance.',
+    description: 'Our enrolment with the Ministry of New and Renewable Energy means every system is built to certified quality and compliance norms.',
+    iconColor: 'text-amber-500',
+    iconBg: 'bg-amber-500/10',
   },
   {
     icon: Wrench,
-    title: 'End-to-End Installation',
-    description: 'From structure and panels to inverter, earthing, lightning arrestor, and net meter — we handle everything.',
+    title: 'Turnkey Installation',
+    description: 'Mounting structure, panels, inverter, earthing, lightning arrestor, and the net meter — the entire setup is delivered by one team.',
+    iconColor: 'text-emerald-500',
+    iconBg: 'bg-emerald-500/10',
   },
   {
     icon: FileCheck,
-    title: 'Full Subsidy Assistance',
-    description: 'We manage the complete subsidy application process — PM Surya Ghar, Delhi state subsidy, and DISCOM paperwork.',
+    title: 'Subsidy Handled For You',
+    description: 'We file your PM Surya Ghar claim, coordinate with HAREDA, and complete the DHBVN net-metering formalities end to end.',
+    iconColor: 'text-violet-500',
+    iconBg: 'bg-violet-500/10',
   },
   {
     icon: HeartHandshake,
     title: '5 Years Free Maintenance',
-    description: '3 visits per year for panel cleaning, system health check, inverter inspection, and performance monitoring.',
+    description: 'Three service visits each year cover panel cleaning, inverter checks, an overall health review, and performance tracking.',
+    iconColor: 'text-rose-500',
+    iconBg: 'bg-rose-500/10',
   },
   {
     icon: Banknote,
-    title: 'Loan & Financing Help',
-    description: 'We help you apply for solar loans so you can go solar with minimal upfront investment.',
+    title: 'Easy Financing',
+    description: 'Need funding? We guide you through solar loan applications so you can get started with very little money down.',
+    iconColor: 'text-cyan-500',
+    iconBg: 'bg-cyan-500/10',
   },
 ];
 
@@ -91,19 +104,19 @@ const serviceItems = [
   {
     icon: Home,
     title: 'Residential Solar',
-    description: 'On-Grid, Off-Grid, and Hybrid systems for homes. Subsidy eligible under PM Surya Ghar Yojana.',
+    description: 'On-grid, off-grid, and hybrid setups for homes, with PM Surya Ghar subsidy eligibility built in.',
     href: '/services/residential',
   },
   {
     icon: Building2,
     title: 'Commercial Solar',
-    description: 'Scalable rooftop solar for offices, factories, and housing societies. Reduce electricity costs significantly.',
+    description: 'Rooftop systems that scale for shops, factories, and group housing — cut your monthly power bills sharply.',
     href: '/services/commercial',
   },
   {
     icon: Settings,
     title: 'Maintenance & AMC',
-    description: '5 years free maintenance included. Paid AMC options after that. Keep your system running at peak efficiency.',
+    description: 'Five years of upkeep at no cost, with affordable AMC plans afterward to keep output at its peak.',
     href: '/services/maintenance',
   },
 ];
@@ -112,32 +125,32 @@ const stepItems = [
   {
     icon: PhoneIcon,
     title: 'Free Consultation',
-    description: 'Contact us via call, WhatsApp, or form. We understand your requirements and answer all your questions.',
+    description: 'Reach out by phone, WhatsApp, or the form. We listen to what you need and clear up every question you have.',
   },
   {
     icon: ClipboardCheck,
     title: 'Site Survey & Design',
-    description: 'Our team visits your site, inspects the roof, analyzes shading, and designs the optimal system layout.',
+    description: 'We come to your rooftop, check the structure, study the shadow pattern, and draw up the best-fit layout.',
   },
   {
     icon: HardHat,
     title: 'Installation',
-    description: 'Professional installation of structure, panels, inverter, safety equipment, and wiring. Typically 1-2 days.',
+    description: 'Skilled technicians fit the structure, panels, inverter, safety gear, and wiring — usually wrapped up in a day or two.',
   },
   {
     icon: Gauge,
     title: 'Net Metering & Approval',
-    description: 'We install the net meter and coordinate with BSES for grid synchronization and DISCOM inspection.',
+    description: 'The net meter goes in and we liaise with DHBVN for grid sync and the official inspection.',
   },
   {
     icon: FileText,
     title: 'Subsidy Application',
-    description: 'We handle the complete PM Surya Ghar and Delhi state subsidy paperwork on your behalf.',
+    description: 'Your PM Surya Ghar claim and HAREDA documentation are prepared and submitted entirely by us.',
   },
   {
     icon: Sun,
-    title: 'Enjoy Free Solar Power',
-    description: 'Start saving on electricity bills from day one. 5 years free maintenance included with every installation.',
+    title: 'Enjoy Clean Solar Power',
+    description: 'Your bills start dropping right away, and every install comes with five years of free maintenance.',
   },
 ];
 
@@ -156,28 +169,28 @@ export default function HomePage() {
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'LocalBusiness',
-            name: 'Raytrix Energy (OPC) Private Limited',
-            description: 'Rooftop solar panel installation in Delhi with government subsidy assistance.',
-            url: 'https://www.raytrixenergy.com',
+            name: 'RS Solar Infrastructure Private Limited',
+            description: 'Rooftop solar panel installation across South Haryana with government subsidy assistance.',
+            url: 'https://www.rssolarinfrastructure.com',
             telephone: phone ? `+91${phone}` : undefined,
-            email: 'raytrixenergy@gmail.com',
+            email: 'rssolarinfra@gmail.com',
             address: {
               '@type': 'PostalAddress',
-              addressLocality: 'Delhi',
-              addressRegion: 'Delhi',
+              addressLocality: 'Faridabad',
+              addressRegion: 'Haryana',
               addressCountry: 'IN',
             },
             areaServed: [
-              { '@type': 'City', name: 'Delhi' },
               { '@type': 'City', name: 'Faridabad' },
-              { '@type': 'City', name: 'Gurgaon' },
+              { '@type': 'City', name: 'Palwal' },
+              { '@type': 'City', name: 'Gurugram' },
             ],
             hasMap: 'https://maps.app.goo.gl/Uq22636vrX41PDYP9',
             serviceType: 'Solar Panel Installation',
             sameAs: [
-              'https://www.instagram.com/raytrixenergy',
-              'https://www.facebook.com/raytrixenergy/',
-              'https://x.com/raytrixenergy',
+              'https://www.instagram.com/rssolarinfra',
+              'https://www.facebook.com/rssolarinfra/',
+              'https://x.com/rssolarinfra',
             ],
           }),
         }}
@@ -192,8 +205,8 @@ export default function HomePage() {
       {/* 3. Why Choose Us */}
       <SectionWrapper>
         <SectionHeading
-          title="Why Choose Raytrix Energy?"
-          subtitle="Trusted credentials, end-to-end service, and a commitment to quality."
+          title="Why Choose RS Solar Infrastructure?"
+          subtitle="Verified credentials, a single team for the whole job, and quality we stand behind."
         />
         <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
           {uspItems.map((item) => (
@@ -202,11 +215,22 @@ export default function HomePage() {
         </div>
       </SectionWrapper>
 
+      {/* 3b. Brands / Equipment We Install */}
+      <SectionWrapper>
+        <SectionHeading
+          title="Equipment & Brands We Install"
+          subtitle="We fit tier-1 solar panels and inverters from trusted manufacturers — so you get reliable, warranty-backed hardware."
+        />
+        <div className="mt-8">
+          <BrandsSection />
+        </div>
+      </SectionWrapper>
+
       {/* 4. Our Services */}
       <SectionWrapper className="bg-bg-white">
         <SectionHeading
           title="Our Services"
-          subtitle="Complete solar solutions for homes and businesses."
+          subtitle="Full-stack solar solutions for households and businesses alike."
         />
         <div className="grid gap-4 sm:gap-6 md:grid-cols-3">
           {serviceItems.map((item) => (
@@ -219,7 +243,7 @@ export default function HomePage() {
       <SectionWrapper>
         <SectionHeading
           title="How It Works"
-          subtitle="From consultation to free solar power in 6 simple steps."
+          subtitle="Six straightforward steps take you from first call to clean rooftop power."
         />
         <div className="grid gap-8 md:gap-6 lg:grid-cols-6">
           {stepItems.map((item, i) => (
@@ -232,7 +256,7 @@ export default function HomePage() {
       <SectionWrapper className="bg-bg-white">
         <SectionHeading
           title="Your Savings at a Glance"
-          subtitle="See how a typical 3KW residential system pays for itself."
+          subtitle="See how quickly a standard 3KW home system earns back its cost."
         />
         <SavingsSnapshot />
       </SectionWrapper>
@@ -241,7 +265,7 @@ export default function HomePage() {
       <SectionWrapper>
         <SectionHeading
           title="What Our Customers Say"
-          subtitle="Real experiences from homeowners who switched to solar."
+          subtitle="Honest feedback from families who made the move to solar."
         />
         <div className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide sm:gap-6">
           {testimonials.map((t) => (
@@ -254,7 +278,7 @@ export default function HomePage() {
       <SectionWrapper className="bg-bg-white">
         <SectionHeading
           title="Our Work"
-          subtitle="Recent solar installations across Delhi-NCR."
+          subtitle="A look at recent rooftop installations across South Haryana."
         />
         <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-4">
           {projects.map((p) => (
@@ -270,7 +294,7 @@ export default function HomePage() {
       <SectionWrapper>
         <SectionHeading
           title="Solar Knowledge Hub"
-          subtitle="Learn about solar energy, subsidies, and savings."
+          subtitle="Guides on solar technology, subsidy schemes, and how the savings add up."
         />
         <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
           {blogPosts.map((post) => (
@@ -292,7 +316,7 @@ export default function HomePage() {
       <SectionWrapper id="contact" className="bg-bg-white">
         <SectionHeading
           title="Get a Free Consultation"
-          subtitle="Fill the form below or reach out via WhatsApp or call."
+          subtitle="Drop your details in the form, or just call or WhatsApp us directly."
         />
         <div className="grid gap-8 md:grid-cols-5">
           {/* Form — 60% */}
@@ -329,16 +353,16 @@ export default function HomePage() {
                 )}
 
                 <a
-                  href="mailto:raytrixenergy@gmail.com"
+                  href="mailto:rssolarinfra@gmail.com"
                   className="flex items-center gap-3 rounded-xl bg-primary/10 p-3 text-sm font-medium text-primary transition-colors hover:bg-primary/20"
                 >
                   <Mail className="h-5 w-5" />
-                  raytrixenergy@gmail.com
+                  rssolarinfra@gmail.com
                 </a>
 
                 <div className="flex items-start gap-3 rounded-xl bg-primary/10 p-3 text-sm text-text">
                   <MapPin className="h-5 w-5 flex-shrink-0 text-primary" />
-                  <span>Delhi, India</span>
+                  <span>Faridabad, Haryana</span>
                 </div>
 
                 <SocialLinks iconClassName="text-text-light hover:text-primary" />
@@ -347,7 +371,7 @@ export default function HomePage() {
               {/* Service area note */}
               <div className="mt-6 rounded-xl border border-secondary/30 bg-secondary/5 p-3">
                 <p className="text-xs text-text-light">
-                  <span className="font-semibold text-text">Service Areas:</span> Delhi (subsidy projects), Faridabad & Gurgaon (non-subsidy projects)
+                  <span className="font-semibold text-text">Service Areas:</span> Faridabad, Palwal &amp; Gurugram across South Haryana, including Ballabgarh, Sohna &amp; Manesar
                 </p>
               </div>
             </div>

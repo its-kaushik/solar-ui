@@ -18,6 +18,14 @@ function formatCurrency(amount: number): string {
   }).format(amount);
 }
 
+// Show a single figure when min and max coincide (e.g. hybrid flat pricing),
+// otherwise render the range.
+function formatRange(min: number, max: number): string {
+  return min === max
+    ? formatCurrency(min)
+    : `${formatCurrency(min)} – ${formatCurrency(max)}`;
+}
+
 export default function CalculatorResults({ result, onGetQuote }: CalculatorResultsProps) {
   // Commercial > 15KW — show "contact us" instead of estimates
   if (result.showContactForQuote) {
@@ -78,40 +86,22 @@ export default function CalculatorResults({ result, onGetQuote }: CalculatorResu
           <div className="flex items-center justify-between text-sm">
             <span className="text-text-light">Estimated System Cost</span>
             <span className="font-semibold text-text">
-              {formatCurrency(result.estimatedCostMin)} – {formatCurrency(result.estimatedCostMax)}
+              {formatRange(result.estimatedCostMin, result.estimatedCostMax)}
             </span>
           </div>
           {result.centralSubsidy > 0 && (
             <div className="flex items-center justify-between text-sm">
               <span className="text-text-light">PM Surya Ghar Subsidy</span>
-              <span className="font-semibold text-accent">
+              <span className="font-bold text-accent">
                 -{formatCurrency(result.centralSubsidy)}
               </span>
-            </div>
-          )}
-          {result.stateSubsidy > 0 && (
-            <div className="flex items-center justify-between text-sm">
-              <span className="text-text-light">Delhi State Subsidy</span>
-              <span className="font-semibold text-accent">
-                -{formatCurrency(result.stateSubsidy)}
-              </span>
-            </div>
-          )}
-          {result.totalSubsidy > 0 && (
-            <div className="border-t border-gray-100 pt-2.5">
-              <div className="flex items-center justify-between text-sm">
-                <span className="font-semibold text-text">Total Subsidy</span>
-                <span className="font-bold text-accent">
-                  -{formatCurrency(result.totalSubsidy)}
-                </span>
-              </div>
             </div>
           )}
           <div className="border-t border-gray-200 pt-2.5">
             <div className="flex items-center justify-between">
               <span className="font-heading text-base font-bold text-text">Your Net Cost</span>
               <span className="font-heading text-xl font-bold text-primary">
-                {formatCurrency(result.netCostMin)} – {formatCurrency(result.netCostMax)}
+                {formatRange(result.netCostMin, result.netCostMax)}
               </span>
             </div>
           </div>
@@ -131,23 +121,14 @@ export default function CalculatorResults({ result, onGetQuote }: CalculatorResu
               {formatCurrency(result.monthlySavings)}
             </p>
           </div>
-          {result.annualGBI > 0 && (
-            <div className="rounded-xl bg-secondary/5 p-4">
-              <p className="text-xs font-semibold uppercase tracking-wider text-secondary-light">
-                GBI Income/Year
-              </p>
-              <p className="mt-1 font-heading text-2xl font-bold text-text">
-                {formatCurrency(result.annualGBI)}
-              </p>
-              <p className="mt-0.5 text-xs text-text-light">For 5 years</p>
-            </div>
-          )}
           <div className="rounded-xl bg-primary/5 p-4">
             <p className="text-xs font-semibold uppercase tracking-wider text-primary">
               Payback Period
             </p>
             <p className="mt-1 font-heading text-2xl font-bold text-text">
-              {result.paybackYearsMin} – {result.paybackYearsMax} years
+              {result.paybackYearsMin === result.paybackYearsMax
+                ? `${result.paybackYearsMin} years`
+                : `${result.paybackYearsMin} – ${result.paybackYearsMax} years`}
             </p>
           </div>
           <div className="rounded-xl bg-accent/5 p-4">
@@ -183,8 +164,8 @@ export default function CalculatorResults({ result, onGetQuote }: CalculatorResu
       {/* Disclaimer */}
       <p className="text-xs leading-relaxed text-text-light">
         <span className="font-semibold">Disclaimer:</span> These are approximate estimates based
-        on average Delhi conditions. Actual system cost, generation, and savings may vary based on
-        roof area, orientation, shading, equipment chosen, and current electricity tariff rates.
+        on average South Haryana conditions. Actual system cost, generation, and savings may vary
+        based on roof area, orientation, shading, equipment chosen, and current DHBVN tariff rates.
         Contact us for an accurate assessment.
       </p>
     </motion.div>

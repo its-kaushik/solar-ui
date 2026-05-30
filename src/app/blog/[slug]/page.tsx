@@ -52,11 +52,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     datePublished: post.date,
     author: {
       '@type': 'Organization',
-      name: 'Raytrix Energy (OPC) Private Limited',
+      name: 'RS Solar Infrastructure Private Limited',
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Raytrix Energy (OPC) Private Limited',
+      name: 'RS Solar Infrastructure Private Limited',
     },
   };
 
@@ -117,7 +117,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             Ready to Go Solar?
           </h2>
           <p className="mt-2 text-text-light">
-            Get a free consultation and find out how much you can save with rooftop solar in Delhi.
+            Get a free consultation and find out how much you can save with rooftop solar in Haryana.
           </p>
           <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             <CTAButton text="Get Free Consultation" href="/contact" />

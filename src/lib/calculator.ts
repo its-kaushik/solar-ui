@@ -1,37 +1,40 @@
 import type { CalculatorInput, CalculatorResult } from '@/types';
 
 const CONSTANTS = {
-  // Generation
-  UNITS_PER_KW_PER_MONTH: 120, // 4 units/day × 30 days (Delhi average)
+  // Generation — South Haryana: a 1 kW rooftop system yields ~1,460 units/year (~4 units/day)
+  ANNUAL_UNITS_PER_KW: 1460,
 
-  // Cost per KW (indicative, before subsidy)
-  COST_PER_KW_MIN: 55000,
-  COST_PER_KW_MAX: 65000,
+  // Indicative installed cost per kW (before subsidy), tiered by system size.
+  // The first tier whose `maxKW` is >= the system size applies
+  // (systems below 2 kW fall into the first tier).
+  COST_TIERS: [
+    { maxKW: 2, min: 70000, max: 75000 },        // up to 2 kW
+    { maxKW: 3, min: 61000, max: 70000 },        // > 2 to 3 kW
+    { maxKW: 4, min: 56000, max: 66000 },        // > 3 to 4 kW
+    { maxKW: 5, min: 53000, max: 58000 },        // > 4 to 5 kW
+    { maxKW: 6, min: 53000, max: 57000 },        // > 5 to 6 kW
+    { maxKW: 7, min: 50000, max: 52000 },        // > 6 to 7 kW
+    { maxKW: 8, min: 48000, max: 50000 },        // > 7 to 8 kW
+    { maxKW: 9, min: 46000, max: 48000 },        // > 8 to 9 kW
+    { maxKW: 10, min: 46000, max: 50000 },       // > 9 to 10 kW
+    { maxKW: 20, min: 43000, max: 45000 },       // > 10 to 20 kW
+    { maxKW: 30, min: 38000, max: 41000 },       // > 20 to 30 kW
+    { maxKW: Infinity, min: 35000, max: 35000 }, // above 30 kW
+  ],
 
-  // Central Subsidy (PM Surya Ghar) — Residential only
+  // Hybrid systems (on-grid + battery storage) — installed cost per kW range.
+  // Independent of the tiered on-grid schedule above.
+  HYBRID_COST_PER_KW: { min: 78000, max: 87000 },
+
+  // Central Subsidy (PM Surya Ghar) — Residential only, nationwide
   CENTRAL_SUBSIDY: {
     RATE_FIRST_2KW: 30000, // Rs per KW for first 2 KW
-    RATE_2_TO_3KW: 18000,  // Rs per KW for 2-3 KW
+    RATE_2_TO_3KW: 18000,  // Rs per KW for the 3rd KW
     MAX_CAPACITY_KW: 3,
     MAX_AMOUNT: 78000,
   },
 
-  // Delhi State Subsidy — Delhi only (BSES area)
-  STATE_SUBSIDY: {
-    RATE_PER_KW: 2000,
-    MAX_BASIC: 10000,
-    ADDITIONAL_3KW: 30000,
-    MIN_CAPACITY_FOR_ADDITIONAL: 3,
-  },
-
-  // Generation-Based Incentive (GBI) — Delhi
-  GBI: {
-    RATE_UPTO_3KW: 3,    // Rs per kWh
-    RATE_3_TO_10KW: 2,    // Rs per kWh
-    DURATION_YEARS: 5,
-  },
-
-  // BSES electricity rate (weighted average)
+  // DHBVN domestic tariff — weighted average across HERC FY2025-26 slabs
   AVG_ELECTRICITY_RATE: 7,
 
   // System lifespan
@@ -42,9 +45,18 @@ const CONSTANTS = {
 };
 
 export function calculateSystemSize(monthlyUnits: number): number {
-  const rawSize = monthlyUnits / CONSTANTS.UNITS_PER_KW_PER_MONTH;
+  // Size from annual consumption: 1 kW generates ~1,460 units/year
+  const annualUnits = monthlyUnits * 12;
+  const rawSize = annualUnits / CONSTANTS.ANNUAL_UNITS_PER_KW;
   // Round up to nearest 0.5 KW
   return Math.ceil(rawSize * 2) / 2;
+}
+
+export function getCostPerKW(systemSizeKW: number): { min: number; max: number } {
+  const tier =
+    CONSTANTS.COST_TIERS.find((t) => systemSizeKW <= t.maxKW) ??
+    CONSTANTS.COST_TIERS[CONSTANTS.COST_TIERS.length - 1];
+  return { min: tier.min, max: tier.max };
 }
 
 export function calculateCentralSubsidy(
@@ -65,35 +77,6 @@ export function calculateCentralSubsidy(
   return first2KW + remaining;
 }
 
-export function calculateStateSubsidy(
-  systemSizeKW: number,
-  area: 'south-delhi' | 'faridabad' | 'gurgaon'
-): number {
-  if (area !== 'south-delhi') return 0;
-
-  let subsidy = Math.min(
-    systemSizeKW * CONSTANTS.STATE_SUBSIDY.RATE_PER_KW,
-    CONSTANTS.STATE_SUBSIDY.MAX_BASIC
-  );
-
-  if (systemSizeKW >= CONSTANTS.STATE_SUBSIDY.MIN_CAPACITY_FOR_ADDITIONAL) {
-    subsidy += CONSTANTS.STATE_SUBSIDY.ADDITIONAL_3KW;
-  }
-
-  return subsidy;
-}
-
-export function calculateGBI(systemSizeKW: number): number {
-  const annualGeneration = systemSizeKW * CONSTANTS.UNITS_PER_KW_PER_MONTH * 12;
-
-  const ratePerKWh =
-    systemSizeKW <= 3
-      ? CONSTANTS.GBI.RATE_UPTO_3KW
-      : CONSTANTS.GBI.RATE_3_TO_10KW;
-
-  return annualGeneration * ratePerKWh;
-}
-
 export function calculate(input: CalculatorInput): CalculatorResult {
   const systemSizeKW = calculateSystemSize(input.monthlyUnits);
 
@@ -101,43 +84,44 @@ export function calculate(input: CalculatorInput): CalculatorResult {
     input.propertyType === 'commercial' &&
     systemSizeKW > CONSTANTS.COMMERCIAL_QUOTE_THRESHOLD_KW;
 
-  const estimatedCostMin = systemSizeKW * CONSTANTS.COST_PER_KW_MIN;
-  const estimatedCostMax = systemSizeKW * CONSTANTS.COST_PER_KW_MAX;
+  const isHybrid = input.systemType === 'hybrid';
+
+  let estimatedCostMin: number;
+  let estimatedCostMax: number;
+  if (isHybrid) {
+    // Hybrid: per-kW cost range
+    estimatedCostMin = systemSizeKW * CONSTANTS.HYBRID_COST_PER_KW.min;
+    estimatedCostMax = systemSizeKW * CONSTANTS.HYBRID_COST_PER_KW.max;
+  } else {
+    const { min: costPerKWMin, max: costPerKWMax } = getCostPerKW(systemSizeKW);
+    estimatedCostMin = systemSizeKW * costPerKWMin;
+    estimatedCostMax = systemSizeKW * costPerKWMax;
+  }
 
   const centralSubsidy = calculateCentralSubsidy(systemSizeKW, input.propertyType);
-  const stateSubsidy = calculateStateSubsidy(systemSizeKW, input.area);
-  const totalSubsidy = centralSubsidy + stateSubsidy;
 
-  const netCostMin = Math.max(0, estimatedCostMin - totalSubsidy);
-  const netCostMax = Math.max(0, estimatedCostMax - totalSubsidy);
+  const netCostMin = Math.max(0, estimatedCostMin - centralSubsidy);
+  const netCostMax = Math.max(0, estimatedCostMax - centralSubsidy);
 
-  const monthlyGeneration = systemSizeKW * CONSTANTS.UNITS_PER_KW_PER_MONTH;
+  const monthlyGeneration = Math.round((systemSizeKW * CONSTANTS.ANNUAL_UNITS_PER_KW) / 12);
   const monthlySavings = monthlyGeneration * CONSTANTS.AVG_ELECTRICITY_RATE;
   const annualSavings = monthlySavings * 12;
 
-  const annualGBI = calculateGBI(systemSizeKW);
-
-  const totalAnnualBenefit = annualSavings + annualGBI;
-  const paybackYearsMin = totalAnnualBenefit > 0 ? netCostMin / totalAnnualBenefit : 0;
-  const paybackYearsMax = totalAnnualBenefit > 0 ? netCostMax / totalAnnualBenefit : 0;
+  const paybackYearsMin = annualSavings > 0 ? netCostMin / annualSavings : 0;
+  const paybackYearsMax = annualSavings > 0 ? netCostMax / annualSavings : 0;
 
   const totalSavings25Years =
-    annualSavings * CONSTANTS.PANEL_LIFESPAN_YEARS +
-    annualGBI * CONSTANTS.GBI.DURATION_YEARS -
-    netCostMin;
+    annualSavings * CONSTANTS.PANEL_LIFESPAN_YEARS - netCostMin;
 
   return {
     systemSizeKW,
     estimatedCostMin,
     estimatedCostMax,
     centralSubsidy,
-    stateSubsidy,
-    totalSubsidy,
     netCostMin,
     netCostMax,
     monthlyGeneration,
     monthlySavings,
-    annualGBI,
     paybackYearsMin: Math.round(paybackYearsMin * 10) / 10,
     paybackYearsMax: Math.round(paybackYearsMax * 10) / 10,
     totalSavings25Years,

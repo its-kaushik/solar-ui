@@ -18,51 +18,51 @@ import CTAButton from '@/components/CTAButton';
 export const metadata: Metadata = {
   title: 'How to Apply for Solar Subsidy',
   description:
-    'Step-by-step guide to applying for rooftop solar subsidy in Delhi. We handle the entire process — PM Surya Ghar, BSES registration, net metering, and subsidy disbursement.',
+    'A plain-English, step-by-step path to claiming rooftop solar subsidy across Faridabad, Palwal and Gurugram. We run it all — PM Surya Ghar, DHBVN net metering, and grant disbursement.',
 };
 
 const steps = [
   {
     icon: PhoneCall,
-    title: 'Contact Us',
-    description: 'Reach out via call, WhatsApp, or the contact form. We discuss your requirements, answer questions, and schedule a site visit.',
-    youDo: 'Call or fill the form',
-    weDo: 'Understand your needs, answer questions',
+    title: 'Get in Touch',
+    description: 'Drop us a call, a WhatsApp message, or fill the contact form. We talk through what you need, clear up any doubts, and book a site visit.',
+    youDo: 'Ring us or submit the form',
+    weDo: 'Map out your needs and answer every question',
   },
   {
     icon: ClipboardCheck,
-    title: 'Site Survey & System Design',
-    description: 'Our team visits your property, inspects the roof, checks shading and orientation, and designs the optimal solar system for your home.',
-    youDo: 'Allow access to your roof',
-    weDo: 'Complete site survey, share system design and quote',
+    title: 'Roof Survey & Design',
+    description: 'We come to your property, study the roof, factor in shading and direction, and engineer the best-fit solar setup for your home.',
+    youDo: 'Give us access to the rooftop',
+    weDo: 'Run the survey and hand over the design and quote',
   },
   {
     icon: FileText,
-    title: 'PM Surya Ghar Registration',
-    description: 'We register your application on the PM Surya Ghar portal (pmsuryaghar.gov.in) and submit all required documents.',
-    youDo: 'Provide Aadhaar, electricity bill, bank details',
-    weDo: 'Portal registration, document upload, application submission',
+    title: 'PM Surya Ghar Filing',
+    description: 'We lodge your application on the PM Surya Ghar National Portal (pmsuryaghar.gov.in) and submit every required document.',
+    youDo: 'Share Aadhaar, electricity bill, bank details',
+    weDo: 'Portal sign-up, document uploads, application filing',
   },
   {
     icon: HardHat,
     title: 'Installation',
-    description: 'Professional installation of structure, panels, inverter, safety equipment, wiring, and all electrical connections. Typically completed in 1-2 days.',
-    youDo: 'Be available on installation day',
-    weDo: 'Full end-to-end installation',
+    description: 'Expert fitting of the mounting structure, panels, inverter, safety gear, cabling and all electrical work — typically wrapped up in one to two days.',
+    youDo: 'Be around on the install day',
+    weDo: 'Complete end-to-end installation',
   },
   {
     icon: Gauge,
     title: 'Net Metering & Inspection',
-    description: 'We coordinate with BSES for net meter installation, grid synchronization, and DISCOM inspection. BSES provides a free bi-directional meter.',
-    youDo: 'Nothing — we handle it',
-    weDo: 'BSES coordination, meter installation, inspection',
+    description: 'We liaise with DHBVN for the net meter, grid synchronisation and the DISCOM inspection so your plant is officially cleared.',
+    youDo: 'Nothing — we take care of it',
+    weDo: 'DHBVN coordination, meter fitting, inspection',
   },
   {
     icon: IndianRupee,
-    title: 'Subsidy Disbursement',
-    description: 'We upload the commissioning report on the PM Surya Ghar portal. Subsidy is transferred directly to your bank account via DBT within 30-45 days.',
-    youDo: 'Receive subsidy in your bank account',
-    weDo: 'Commissioning report upload, follow-up until disbursement',
+    title: 'Grant Disbursement',
+    description: 'We file the commissioning report on the National Portal. The subsidy is then transferred straight to your bank account, usually within 30 to 60 days.',
+    youDo: 'Receive the grant in your account',
+    weDo: 'File the commissioning report and follow up to payout',
   },
 ];
 
@@ -76,7 +76,7 @@ export default function HowToApplyPage() {
             How to Apply for Solar Subsidy
           </h1>
           <p className="mx-auto mt-3 max-w-2xl text-base text-gray-300 sm:text-lg">
-            We handle the entire process — from application to subsidy disbursement. Here&apos;s how it works.
+            From the first application to the money in your account, our team runs the lot. Here&apos;s exactly how it unfolds.
           </p>
         </div>
       </section>
@@ -86,11 +86,11 @@ export default function HowToApplyPage() {
         <div className="mx-auto max-w-3xl rounded-2xl bg-accent/5 border border-accent/20 p-6 text-center sm:p-8">
           <CheckCircle className="mx-auto h-10 w-10 text-accent" />
           <h2 className="mt-3 font-heading text-xl font-bold text-text sm:text-2xl">
-            You Don&apos;t Need to Worry About Paperwork
+            Leave the Paperwork Entirely to Us
           </h2>
           <p className="mt-2 text-sm text-text-light sm:text-base">
-            From portal registration to document upload to DISCOM coordination to subsidy follow-up —
-            we manage everything on your behalf. Your only job is to provide basic documents and enjoy free solar power.
+            Portal sign-up, document uploads, DHBVN coordination, grant follow-up — the whole lot is handled on your behalf.
+            All you do is hand over a few basic documents and start enjoying near-free solar power.
           </p>
         </div>
       </SectionWrapper>
@@ -98,8 +98,8 @@ export default function HowToApplyPage() {
       {/* Steps */}
       <SectionWrapper className="bg-bg-white">
         <SectionHeading
-          title="Step-by-Step Process"
-          subtitle="Here's exactly what happens from first contact to subsidy in your account."
+          title="The Process, Step by Step"
+          subtitle="A clear look at everything that happens between your first call and the grant reaching your account."
         />
         <div className="mx-auto max-w-3xl space-y-6">
           {steps.map((step, i) => (
@@ -147,11 +147,11 @@ export default function HowToApplyPage() {
               </thead>
               <tbody>
                 <tr className="border-b border-gray-100">
-                  <td className="py-3 pr-4 text-text">Consultation + Site Survey</td>
+                  <td className="py-3 pr-4 text-text">Consultation and roof survey</td>
                   <td className="py-3 text-text-light">1-3 days</td>
                 </tr>
                 <tr className="border-b border-gray-100">
-                  <td className="py-3 pr-4 text-text">Portal Registration + Approvals</td>
+                  <td className="py-3 pr-4 text-text">Portal filing and approvals</td>
                   <td className="py-3 text-text-light">3-7 days</td>
                 </tr>
                 <tr className="border-b border-gray-100">
@@ -159,18 +159,18 @@ export default function HowToApplyPage() {
                   <td className="py-3 text-text-light">1-2 days</td>
                 </tr>
                 <tr className="border-b border-gray-100">
-                  <td className="py-3 pr-4 text-text">Net Metering + DISCOM Inspection</td>
+                  <td className="py-3 pr-4 text-text">Net metering and DHBVN inspection</td>
                   <td className="py-3 text-text-light">7-15 days</td>
                 </tr>
                 <tr>
-                  <td className="py-3 pr-4 text-text">Subsidy Disbursement</td>
-                  <td className="py-3 text-text-light">30-45 days</td>
+                  <td className="py-3 pr-4 text-text">Grant disbursement</td>
+                  <td className="py-3 text-text-light">30-60 days</td>
                 </tr>
               </tbody>
             </table>
           </div>
           <p className="mt-3 text-xs text-text-light">
-            Timelines are approximate and may vary based on DISCOM scheduling and portal processing times.
+            These durations are indicative and can shift depending on DHBVN scheduling and how quickly the portal processes each stage.
           </p>
         </div>
       </SectionWrapper>
@@ -183,8 +183,8 @@ export default function HowToApplyPage() {
             <Link href="/subsidy-guide/pm-surya-ghar" className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:text-primary-light">
               PM Surya Ghar Yojana <ArrowRight className="h-4 w-4" />
             </Link>
-            <Link href="/subsidy-guide/delhi-state-subsidy" className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:text-primary-light">
-              Delhi State Subsidy & GBI <ArrowRight className="h-4 w-4" />
+            <Link href="/subsidy-guide/haryana-state-subsidy" className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:text-primary-light">
+              Haryana State Subsidy <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </div>
@@ -194,10 +194,10 @@ export default function HowToApplyPage() {
       <SectionWrapper>
         <div className="text-center">
           <h2 className="font-heading text-2xl font-bold text-text sm:text-3xl">
-            Let&apos;s Get Started
+            Let&apos;s Begin
           </h2>
           <p className="mt-2 text-text-light">
-            Contact us today and we&apos;ll guide you through the entire process.
+            Reach out today and we&apos;ll steer you through every stage from here.
           </p>
           <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             <CTAButton text="Get Free Consultation" href="/contact" />

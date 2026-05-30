@@ -11,7 +11,7 @@ import SocialLinks from '@/components/SocialLinks';
 export const metadata: Metadata = {
   title: 'Contact Us — Free Solar Consultation',
   description:
-    'Get a free consultation for rooftop solar installation in Delhi. Call, WhatsApp, or fill the form — we respond within 24 hours.',
+    'Book a free rooftop solar consultation across Faridabad, Palwal, and Gurugram. Call, WhatsApp, or send the form — we reply within 24 hours.',
 };
 
 const contactDetails = [
@@ -28,13 +28,13 @@ const contactDetails = [
   {
     icon: Mail,
     label: 'Email',
-    value: 'raytrixenergy@gmail.com',
-    href: 'mailto:raytrixenergy@gmail.com',
+    value: 'rssolarinfra@gmail.com',
+    href: 'mailto:rssolarinfra@gmail.com',
   },
   {
     icon: MapPin,
     label: 'Service Area',
-    value: 'Delhi, Faridabad, Gurgaon',
+    value: 'Faridabad, Palwal, Gurugram',
   },
   {
     icon: Clock,
@@ -53,7 +53,7 @@ export default function ContactPage() {
             Contact Us
           </h1>
           <p className="mx-auto mt-3 max-w-2xl text-base text-gray-300 sm:text-lg">
-            Get a free consultation — we&apos;ll tell you exactly how much you can save with rooftop solar.
+            Request a free consultation and we&apos;ll show you precisely what rooftop solar can save you.
           </p>
         </div>
       </section>
@@ -114,8 +114,8 @@ export default function ContactPage() {
               {/* Trust note */}
               <div className="mt-6 rounded-xl bg-accent/5 border border-accent/20 p-4">
                 <p className="text-xs text-text-light">
-                  <span className="font-semibold text-text">BSES registered vendor.</span>{' '}
-                  MNRE enrolled. All installations comply with DISCOM regulations and qualify for
+                  <span className="font-semibold text-text">DHBVN registered vendor.</span>{' '}
+                  Enrolled with the MNRE. Every install meets DISCOM norms and is eligible for the
                   PM Surya Ghar subsidy.
                 </p>
               </div>
@@ -128,7 +128,7 @@ export default function ContactPage() {
       <SectionWrapper className="bg-bg-white">
         <SectionHeading
           title="Service Area"
-          subtitle="We serve Delhi (subsidy-eligible via BSES), Faridabad, and Gurgaon."
+          subtitle="We cover Faridabad, Palwal, and Gurugram across South Haryana, all subsidy-eligible through DHBVN."
         />
         <div className="mx-auto max-w-3xl">
           <a
@@ -138,29 +138,29 @@ export default function ContactPage() {
             className="block overflow-hidden rounded-2xl"
           >
             <iframe
-              src="https://maps.google.com/maps?q=G64R%2B6R+New+Delhi,+Delhi&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              src="https://maps.google.com/maps?q=Faridabad,+Haryana&t=&z=11&ie=UTF8&iwloc=&output=embed"
               width="100%"
               height="256"
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Raytrix Energy location on Google Maps"
+              title="RS Solar Infrastructure location on Google Maps"
               className="pointer-events-none"
             />
           </a>
           <div className="mt-4 grid gap-3 sm:grid-cols-3">
             <div className="rounded-xl bg-bg p-4 text-center">
-              <p className="text-sm font-semibold text-text">Delhi</p>
+              <p className="text-sm font-semibold text-text">Faridabad</p>
               <p className="mt-0.5 text-xs text-accent font-medium">Subsidy Eligible</p>
             </div>
             <div className="rounded-xl bg-bg p-4 text-center">
-              <p className="text-sm font-semibold text-text">Faridabad</p>
-              <p className="mt-0.5 text-xs text-text-light">Non-subsidy</p>
+              <p className="text-sm font-semibold text-text">Palwal</p>
+              <p className="mt-0.5 text-xs text-accent font-medium">Subsidy Eligible</p>
             </div>
             <div className="rounded-xl bg-bg p-4 text-center">
-              <p className="text-sm font-semibold text-text">Gurgaon</p>
-              <p className="mt-0.5 text-xs text-text-light">Non-subsidy</p>
+              <p className="text-sm font-semibold text-text">Gurugram</p>
+              <p className="mt-0.5 text-xs text-accent font-medium">Subsidy Eligible</p>
             </div>
           </div>
         </div>

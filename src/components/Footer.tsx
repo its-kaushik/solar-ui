@@ -15,7 +15,7 @@ const footerLinks = {
     title: 'Subsidy Guide',
     links: [
       { label: 'PM Surya Ghar Yojana', href: '/subsidy-guide/pm-surya-ghar' },
-      { label: 'Delhi State Subsidy', href: '/subsidy-guide/delhi-state-subsidy' },
+      { label: 'Haryana State Subsidy', href: '/subsidy-guide/haryana-state-subsidy' },
       { label: 'How to Apply', href: '/subsidy-guide/how-to-apply' },
     ],
   },
@@ -49,10 +49,10 @@ export default function Footer() {
           {/* Brand column */}
           <div className="lg:col-span-1">
             <Link href="/" className="font-heading text-xl font-bold text-white">
-              Raytrix Energy
+              RS Solar Infrastructure
             </Link>
             <p className="mt-2 text-sm text-gray-300">
-              Powering Delhi, One Rooftop at a Time
+              Powering Haryana, One Rooftop at a Time
             </p>
 
             {/* Contact info */}
@@ -78,15 +78,15 @@ export default function Footer() {
                 </a>
               )}
               <a
-                href="mailto:raytrixenergy@gmail.com"
+                href="mailto:rssolarinfra@gmail.com"
                 className="flex items-center gap-2 text-sm text-gray-300 transition-colors hover:text-white"
               >
                 <Mail className="h-4 w-4 shrink-0" />
-                raytrixenergy@gmail.com
+                rssolarinfra@gmail.com
               </a>
               <div className="flex items-start gap-2 text-sm text-gray-300">
                 <MapPin className="h-4 w-4 shrink-0 mt-0.5" />
-                <span>Delhi, India</span>
+                <span>Faridabad, Haryana, India</span>
               </div>
             </div>
 
@@ -121,7 +121,7 @@ export default function Footer() {
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-gray-300">
             <span>MNRE Enrolled</span>
             <span className="hidden sm:inline">|</span>
-            <span>BSES Registered</span>
+            <span>DHBVN Registered</span>
             <span className="hidden sm:inline">|</span>
             <span>PM Surya Ghar Empaneled</span>
           </div>
@@ -129,7 +129,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="mt-6 border-t border-gray-700 pt-6 text-center text-xs text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Raytrix Energy (OPC) Private Limited. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} RS Solar Infrastructure Private Limited. All rights reserved.</p>
         </div>
       </div>
     </footer>

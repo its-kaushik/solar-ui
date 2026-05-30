@@ -8,7 +8,7 @@ import { getAllPosts } from '@/lib/blog';
 export const metadata: Metadata = {
   title: 'Blog — Solar Knowledge Hub',
   description:
-    'Learn about rooftop solar, government subsidies, savings calculations, and more. Expert guides from Raytrix Energy.',
+    'Learn about rooftop solar, government subsidies, savings calculations, and more. Expert guides from RS Solar Infrastructure.',
 };
 
 export default function BlogPage() {
@@ -23,7 +23,7 @@ export default function BlogPage() {
             Solar Knowledge Hub
           </h1>
           <p className="mx-auto mt-3 max-w-2xl text-base text-gray-300 sm:text-lg">
-            Guides, tips, and everything you need to know about going solar in Delhi.
+            Guides, tips, and everything you need to know about going solar in Faridabad, Palwal & Gurugram.
           </p>
         </div>
       </section>

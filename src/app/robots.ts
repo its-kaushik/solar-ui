@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: '/api/',
       },
     ],
-    sitemap: 'https://www.raytrixenergy.com/sitemap.xml',
+    sitemap: 'https://www.rssolarinfrastructure.com/sitemap.xml',
   };
 }
