@@ -37,8 +37,11 @@ import ProjectCard from '@/components/ProjectCard';
 import BlogCard from '@/components/BlogCard';
 import ContactForm from '@/components/ContactForm';
 import CTAButton from '@/components/CTAButton';
+import FAQSection from '@/components/FAQSection';
+import GoogleRating from '@/components/GoogleRating';
 
 import { testimonials } from '@/data/testimonials';
+import { googleReviews } from '@/data/reviews';
 import { projects } from '@/data/projects';
 import { getAllPosts } from '@/lib/blog';
 
@@ -51,6 +54,8 @@ export const metadata: Metadata = {
     description:
       'Get rooftop solar panels installed in Delhi with up to ₹1,08,000 government subsidy.',
     type: 'website',
+    siteName: 'Raytrix Energy',
+    locale: 'en_IN',
   },
 };
 
@@ -113,35 +118,68 @@ const stepItems = [
     icon: PhoneIcon,
     title: 'Free Consultation',
     description: 'Contact us via call, WhatsApp, or form. We understand your requirements and answer all your questions.',
+    duration: 'Same day',
   },
   {
     icon: ClipboardCheck,
     title: 'Site Survey & Design',
     description: 'Our team visits your site, inspects the roof, analyzes shading, and designs the optimal system layout.',
+    duration: 'Within 48 hrs',
   },
   {
     icon: HardHat,
     title: 'Installation',
     description: 'Professional installation of structure, panels, inverter, safety equipment, and wiring. Typically 1-2 days.',
+    duration: '1–2 days',
   },
   {
     icon: Gauge,
     title: 'Net Metering & Approval',
     description: 'We install the net meter and coordinate with BSES for grid synchronization and DISCOM inspection.',
+    duration: '1–3 weeks',
   },
   {
     icon: FileText,
     title: 'Subsidy Application',
     description: 'We handle the complete PM Surya Ghar and Delhi state subsidy paperwork on your behalf.',
+    duration: 'Credited in 60–90 days',
   },
   {
     icon: Sun,
-    title: 'Enjoy Free Solar Power',
+    title: 'Start Generating Your Own Power',
     description: 'Start saving on electricity bills from day one. 5 years free maintenance included with every installation.',
+    duration: 'From day one',
   },
 ];
 
 const blogPosts = getAllPosts().slice(0, 3);
+
+const homeFaqs = [
+  {
+    q: 'How much roof area do I need for a solar system?',
+    a: 'Roughly 80–100 sq ft of shade-free roof per 1 KW. A typical 3 KW home system needs about 250–300 sq ft. We confirm the exact area during a free site survey.',
+  },
+  {
+    q: 'What do I pay upfront before the subsidy arrives?',
+    a: 'You pay the full system cost at installation. The PM Surya Ghar subsidy (up to Rs 1,08,000 in Delhi) is credited directly to your bank account, typically 60–90 days after commissioning and net-meter installation. We also help you apply for a solar loan to bridge this if needed.',
+  },
+  {
+    q: 'Will solar panels damage or leak my roof?',
+    a: 'No. Panels sit on a raised, galvanised mounting structure anchored with proper waterproofing at every fixing point. Your roof stays usable and leak-free, and the panels actually shade the slab underneath.',
+  },
+  {
+    q: 'Can I run my air conditioners on solar?',
+    a: 'Yes. A 3 KW system generates about 12 units per day — enough to run 1–2 ACs alongside regular household load during daylight hours. At night an on-grid system draws from the grid, and net metering credits the units you export during the day.',
+  },
+  {
+    q: 'Can I monitor how much power my system generates?',
+    a: 'Yes. Modern inverters include a mobile app with Wi-Fi monitoring, so you can track daily generation, savings, and system health right from your phone.',
+  },
+  {
+    q: 'How long until I recover my investment?',
+    a: 'After subsidy, most Delhi homeowners recover their net cost in about 3–4 years. Panels are warranted for 25 years, so you get roughly two decades of nearly free power after payback.',
+  },
+];
 
 export default function HomePage() {
   const phone = process.env.NEXT_PUBLIC_PHONE_NUMBER || '';
@@ -163,9 +201,17 @@ export default function HomePage() {
             email: 'raytrixenergy@gmail.com',
             address: {
               '@type': 'PostalAddress',
-              addressLocality: 'Delhi',
+              streetAddress: 'A-85/A, Sangam Vihar, Deoli',
+              addressLocality: 'New Delhi',
               addressRegion: 'Delhi',
+              postalCode: '110062',
               addressCountry: 'IN',
+            },
+            taxID: '07AAPCR7379M1ZB',
+            identifier: {
+              '@type': 'PropertyValue',
+              propertyID: 'CIN',
+              value: 'U35105DL2026OPC465236',
             },
             areaServed: [
               { '@type': 'City', name: 'Delhi' },
@@ -179,6 +225,18 @@ export default function HomePage() {
               'https://www.facebook.com/raytrixenergy/',
               'https://x.com/raytrixenergy',
             ],
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebSite',
+            name: 'Raytrix Energy',
+            alternateName: 'Raytrix Energy (OPC) Private Limited',
+            url: 'https://www.raytrixenergy.com',
           }),
         }}
       />
@@ -241,12 +299,26 @@ export default function HomePage() {
       <SectionWrapper>
         <SectionHeading
           title="What Our Customers Say"
-          subtitle="Real experiences from homeowners who switched to solar."
+          subtitle="Real, verified reviews from homeowners who switched to solar with us."
         />
+        <div className="mb-8 flex justify-center">
+          <GoogleRating />
+        </div>
         <div className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide sm:gap-6">
           {testimonials.map((t) => (
             <TestimonialCard key={t.id} testimonial={t} />
           ))}
+        </div>
+        <div className="mt-8 text-center">
+          <a
+            href={googleReviews.profileUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:text-primary-light"
+          >
+            Read all {googleReviews.count} reviews on Google
+            <ArrowRight className="h-4 w-4" />
+          </a>
         </div>
       </SectionWrapper>
 
@@ -288,7 +360,10 @@ export default function HomePage() {
         </div>
       </SectionWrapper>
 
-      {/* 10. Contact / Lead Capture Section */}
+      {/* 10. Frequently Asked Questions */}
+      <FAQSection faqs={homeFaqs} />
+
+      {/* 11. Contact / Lead Capture Section */}
       <SectionWrapper id="contact" className="bg-bg-white">
         <SectionHeading
           title="Get a Free Consultation"
@@ -338,7 +413,7 @@ export default function HomePage() {
 
                 <div className="flex items-start gap-3 rounded-xl bg-primary/10 p-3 text-sm text-text">
                   <MapPin className="h-5 w-5 flex-shrink-0 text-primary" />
-                  <span>Delhi, India</span>
+                  <span>A-85/A, Sangam Vihar, Deoli, South Delhi, New Delhi &ndash; 110062</span>
                 </div>
 
                 <SocialLinks iconClassName="text-text-light hover:text-primary" />
@@ -347,7 +422,7 @@ export default function HomePage() {
               {/* Service area note */}
               <div className="mt-6 rounded-xl border border-secondary/30 bg-secondary/5 p-3">
                 <p className="text-xs text-text-light">
-                  <span className="font-semibold text-text">Service Areas:</span> Delhi (subsidy projects), Faridabad & Gurgaon (non-subsidy projects)
+                  <span className="font-semibold text-text">Service Areas:</span> Delhi (up to ₹1,08,000 subsidy), Faridabad &amp; Gurgaon (up to ₹78,000 central subsidy)
                 </p>
               </div>
             </div>

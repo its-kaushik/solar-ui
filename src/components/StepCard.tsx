@@ -5,9 +5,10 @@ interface StepCardProps {
   title: string;
   description: string;
   icon: LucideIcon;
+  duration?: string;
 }
 
-export default function StepCard({ step, title, description, icon: Icon }: StepCardProps) {
+export default function StepCard({ step, title, description, icon: Icon, duration }: StepCardProps) {
   return (
     <div className="relative flex gap-4 lg:flex-col lg:items-center lg:text-center">
       {/* Step number + icon */}
@@ -23,6 +24,11 @@ export default function StepCard({ step, title, description, icon: Icon }: StepC
       {/* Content */}
       <div>
         <h3 className="font-heading text-base font-bold text-text">{title}</h3>
+        {duration && (
+          <span className="mt-1 inline-block rounded-full bg-secondary/15 px-2 py-0.5 text-xs font-semibold text-primary">
+            {duration}
+          </span>
+        )}
         <p className="mt-1 text-sm leading-relaxed text-text-light">{description}</p>
       </div>
     </div>

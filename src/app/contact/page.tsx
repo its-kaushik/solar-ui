@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import SectionWrapper from '@/components/SectionWrapper';
 import SectionHeading from '@/components/SectionHeading';
@@ -30,6 +31,12 @@ const contactDetails = [
     label: 'Email',
     value: 'raytrixenergy@gmail.com',
     href: 'mailto:raytrixenergy@gmail.com',
+  },
+  {
+    icon: MapPin,
+    label: 'Registered Office',
+    value: 'A-85/A, Sangam Vihar, Deoli, South Delhi, New Delhi – 110062',
+    href: 'https://www.google.com/maps/search/?api=1&query=A-85%2FA%2C+Sangam+Vihar%2C+Deoli%2C+New+Delhi%2C+110062',
   },
   {
     icon: MapPin,
@@ -128,7 +135,7 @@ export default function ContactPage() {
       <SectionWrapper className="bg-bg-white">
         <SectionHeading
           title="Service Area"
-          subtitle="We serve Delhi (subsidy-eligible via BSES), Faridabad, and Gurgaon."
+          subtitle="We serve Delhi, Faridabad, and Gurgaon — all eligible for the central PM Surya Ghar subsidy, with Delhi also getting the state top-up."
         />
         <div className="mx-auto max-w-3xl">
           <a
@@ -138,7 +145,7 @@ export default function ContactPage() {
             className="block overflow-hidden rounded-2xl"
           >
             <iframe
-              src="https://maps.google.com/maps?q=G64R%2B6R+New+Delhi,+Delhi&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              src="https://maps.google.com/maps?q=A-85%2FA,+Sangam+Vihar,+Deoli,+New+Delhi,+110062&t=&z=15&ie=UTF8&iwloc=&output=embed"
               width="100%"
               height="256"
               style={{ border: 0 }}
@@ -150,19 +157,23 @@ export default function ContactPage() {
             />
           </a>
           <div className="mt-4 grid gap-3 sm:grid-cols-3">
-            <div className="rounded-xl bg-bg p-4 text-center">
+            <Link href="/services/residential" className="rounded-xl bg-bg p-4 text-center transition-colors hover:bg-primary/5">
               <p className="text-sm font-semibold text-text">Delhi</p>
-              <p className="mt-0.5 text-xs text-accent font-medium">Subsidy Eligible</p>
-            </div>
-            <div className="rounded-xl bg-bg p-4 text-center">
+              <p className="mt-0.5 text-xs text-accent font-medium">Up to ₹1,08,000 subsidy</p>
+            </Link>
+            <Link href="/service-areas/faridabad" className="rounded-xl bg-bg p-4 text-center transition-colors hover:bg-primary/5">
               <p className="text-sm font-semibold text-text">Faridabad</p>
-              <p className="mt-0.5 text-xs text-text-light">Non-subsidy</p>
-            </div>
-            <div className="rounded-xl bg-bg p-4 text-center">
+              <p className="mt-0.5 text-xs text-accent font-medium">Up to ₹78,000 subsidy</p>
+            </Link>
+            <Link href="/service-areas/gurgaon" className="rounded-xl bg-bg p-4 text-center transition-colors hover:bg-primary/5">
               <p className="text-sm font-semibold text-text">Gurgaon</p>
-              <p className="mt-0.5 text-xs text-text-light">Non-subsidy</p>
-            </div>
+              <p className="mt-0.5 text-xs text-accent font-medium">Up to ₹78,000 subsidy</p>
+            </Link>
           </div>
+          <p className="mt-3 text-center text-xs text-text-light">
+            Faridabad &amp; Gurgaon (Haryana) receive the central PM Surya Ghar subsidy of up to ₹78,000. The
+            additional Delhi state subsidy and GBI apply to Delhi (BSES) connections only.
+          </p>
         </div>
       </SectionWrapper>
     </>

@@ -19,6 +19,14 @@ const footerLinks = {
       { label: 'How to Apply', href: '/subsidy-guide/how-to-apply' },
     ],
   },
+  areas: {
+    title: 'Service Areas',
+    links: [
+      { label: 'Solar in Delhi', href: '/services/residential' },
+      { label: 'Solar in Faridabad', href: '/service-areas/faridabad' },
+      { label: 'Solar in Gurgaon', href: '/service-areas/gurgaon' },
+    ],
+  },
   company: {
     title: 'Company',
     links: [
@@ -45,7 +53,7 @@ export default function Footer() {
     <footer className="bg-primary-dark pb-16 text-text-inverse lg:pb-0">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
         {/* Top section: brand + link columns */}
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-5">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-6">
           {/* Brand column */}
           <div className="lg:col-span-1">
             <Link href="/" className="font-heading text-xl font-bold text-white">
@@ -86,7 +94,7 @@ export default function Footer() {
               </a>
               <div className="flex items-start gap-2 text-sm text-gray-300">
                 <MapPin className="h-4 w-4 shrink-0 mt-0.5" />
-                <span>Delhi, India</span>
+                <span>A-85/A, Sangam Vihar, Deoli, South Delhi, New Delhi &ndash; 110062</span>
               </div>
             </div>
 
@@ -129,7 +137,8 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="mt-6 border-t border-gray-700 pt-6 text-center text-xs text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Raytrix Energy (OPC) Private Limited. All rights reserved.</p>
+          <p>CIN: U35105DL2026OPC465236 &nbsp;·&nbsp; GSTIN: 07AAPCR7379M1ZB</p>
+          <p className="mt-1">&copy; {new Date().getFullYear()} Raytrix Energy (OPC) Private Limited. All rights reserved.</p>
         </div>
       </div>
     </footer>

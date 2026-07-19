@@ -20,6 +20,14 @@ export const metadata: Metadata = {
   title: 'About Us',
   description:
     'Learn about Raytrix Energy (OPC) Private Limited — a Delhi-based solar installation company registered with BSES and MNRE. Our mission, values, and credentials.',
+  openGraph: {
+    title: 'About Us — Raytrix Energy',
+    description:
+      'Learn about Raytrix Energy (OPC) Private Limited — a Delhi-based solar installation company registered with BSES and MNRE. Our mission, values, and credentials.',
+    type: 'website',
+    siteName: 'Raytrix Energy',
+    locale: 'en_IN',
+  },
 };
 
 const values = [
@@ -49,15 +57,15 @@ const credentials = [
   { icon: BadgeCheck, label: 'BSES DISCOM — Registered Vendor' },
   { icon: Award, label: 'MNRE — Enrolled' },
   { icon: Shield, label: 'PM Surya Ghar Yojana — Empaneled' },
-  { icon: BadgeCheck, label: 'Company CIN — Registered OPC' },
-  { icon: BadgeCheck, label: 'GST Registered' },
+  { icon: BadgeCheck, label: 'CIN — U35105DL2026OPC465236' },
+  { icon: BadgeCheck, label: 'GSTIN — 07AAPCR7379M1ZB' },
   { icon: BadgeCheck, label: 'MSME Registered' },
 ];
 
 const serviceAreas = [
-  { area: 'Delhi', type: 'Subsidy + Non-subsidy projects', highlight: true },
-  { area: 'Faridabad', type: 'Non-subsidy projects', highlight: false },
-  { area: 'Gurgaon', type: 'Non-subsidy projects', highlight: false },
+  { area: 'Delhi', type: 'Up to ₹1,08,000 subsidy (central + Delhi state + GBI)', highlight: true },
+  { area: 'Faridabad', type: 'Up to ₹78,000 central PM Surya Ghar subsidy', highlight: false },
+  { area: 'Gurgaon', type: 'Up to ₹78,000 central PM Surya Ghar subsidy', highlight: false },
 ];
 
 export default function AboutPage() {
@@ -75,9 +83,17 @@ export default function AboutPage() {
             email: 'raytrixenergy@gmail.com',
             address: {
               '@type': 'PostalAddress',
-              addressLocality: 'Delhi',
+              streetAddress: 'A-85/A, Sangam Vihar, Deoli',
+              addressLocality: 'New Delhi',
               addressRegion: 'Delhi',
+              postalCode: '110062',
               addressCountry: 'IN',
+            },
+            taxID: '07AAPCR7379M1ZB',
+            identifier: {
+              '@type': 'PropertyValue',
+              propertyID: 'CIN',
+              value: 'U35105DL2026OPC465236',
             },
             areaServed: [
               { '@type': 'City', name: 'Delhi' },
@@ -153,9 +169,10 @@ export default function AboutPage() {
               don&apos;t need to worry about paperwork or technical details. We take care of everything.
             </p>
             <p>
-              We serve residential customers in Delhi with full PM Surya Ghar subsidy assistance,
-              and also install non-subsidy systems across Delhi, Faridabad, and Gurgaon for both
-              homes and commercial establishments.
+              We serve homes and businesses across Delhi, Faridabad, and Gurgaon — and we handle the
+              subsidy paperwork everywhere we work. Delhi customers get the maximum benefit (central
+              PM Surya Ghar plus the Delhi state subsidy and GBI, up to ₹1,08,000), while Faridabad
+              and Gurgaon customers get the central PM Surya Ghar subsidy of up to ₹78,000.
             </p>
           </div>
         </div>
@@ -264,8 +281,8 @@ export default function AboutPage() {
             Get a free consultation and find out how much you can save.
           </p>
           <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-            <CTAButton text="Get Free Consultation" href="/contact" />
-            <CTAButton text="Calculate Your Savings" href="/solar-calculator" variant="outline" />
+            <CTAButton text="Book a Free Site Survey" href="/contact" />
+            <CTAButton text="See My Savings in 30 Seconds" href="/solar-calculator" variant="outline" />
           </div>
         </div>
       </SectionWrapper>
