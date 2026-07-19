@@ -17,6 +17,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/subsidy-guide/delhi-state-subsidy`, changeFrequency: 'monthly', priority: 0.8, lastModified },
     { url: `${BASE_URL}/subsidy-guide/how-to-apply`, changeFrequency: 'monthly', priority: 0.8, lastModified },
     { url: `${BASE_URL}/solar-calculator`, changeFrequency: 'monthly', priority: 0.8, lastModified },
+    { url: `${BASE_URL}/service-areas/faridabad`, changeFrequency: 'monthly', priority: 0.8, lastModified },
+    { url: `${BASE_URL}/service-areas/gurgaon`, changeFrequency: 'monthly', priority: 0.8, lastModified },
     { url: `${BASE_URL}/our-work`, changeFrequency: 'weekly', priority: 0.7, lastModified },
     { url: `${BASE_URL}/blog`, changeFrequency: 'weekly', priority: 0.7, lastModified },
     { url: `${BASE_URL}/contact`, changeFrequency: 'yearly', priority: 0.6, lastModified },
