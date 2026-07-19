@@ -6,6 +6,14 @@ export const metadata: Metadata = {
   title: 'Privacy Policy',
   description:
     'Privacy policy for Raytrix Energy (OPC) Private Limited. How we collect, use, and protect your personal information.',
+  openGraph: {
+    title: 'Privacy Policy — Raytrix Energy',
+    description:
+      'Privacy policy for Raytrix Energy (OPC) Private Limited. How we collect, use, and protect your personal information.',
+    type: 'website',
+    siteName: 'Raytrix Energy',
+    locale: 'en_IN',
+  },
 };
 
 export default function PrivacyPolicyPage() {

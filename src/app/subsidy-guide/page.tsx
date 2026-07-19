@@ -11,6 +11,14 @@ export const metadata: Metadata = {
   title: 'Solar Subsidy Guide — Delhi',
   description:
     'Complete guide to solar panel subsidies in Delhi. PM Surya Ghar Yojana (up to Rs 78,000), Delhi state subsidy (up to Rs 30,000), and Generation-Based Incentive (Rs 3/kWh).',
+  openGraph: {
+    title: 'Solar Subsidy Guide — Delhi — Raytrix Energy',
+    description:
+      'Complete guide to solar panel subsidies in Delhi. PM Surya Ghar Yojana (up to Rs 78,000), Delhi state subsidy (up to Rs 30,000), and Generation-Based Incentive (Rs 3/kWh).',
+    type: 'website',
+    siteName: 'Raytrix Energy',
+    locale: 'en_IN',
+  },
 };
 
 const subsidyCards = [

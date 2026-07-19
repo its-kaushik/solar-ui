@@ -18,6 +18,14 @@ export const metadata: Metadata = {
   title: 'Residential Solar Installation',
   description:
     'Get rooftop solar panels installed at your home in Delhi. On-Grid, Off-Grid & Hybrid systems. Up to Rs 1,08,000 subsidy under PM Surya Ghar Yojana. Free consultation.',
+  openGraph: {
+    title: 'Residential Solar Installation — Raytrix Energy',
+    description:
+      'Get rooftop solar panels installed at your home in Delhi. On-Grid, Off-Grid & Hybrid systems. Up to Rs 1,08,000 subsidy under PM Surya Ghar Yojana. Free consultation.',
+    type: 'website',
+    siteName: 'Raytrix Energy',
+    locale: 'en_IN',
+  },
 };
 
 const systemTypes = [

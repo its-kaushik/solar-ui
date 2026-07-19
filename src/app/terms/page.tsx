@@ -6,6 +6,14 @@ export const metadata: Metadata = {
   title: 'Terms & Conditions',
   description:
     'Terms and conditions for using the Raytrix Energy website and services.',
+  openGraph: {
+    title: 'Terms & Conditions — Raytrix Energy',
+    description:
+      'Terms and conditions for using the Raytrix Energy website and services.',
+    type: 'website',
+    siteName: 'Raytrix Energy',
+    locale: 'en_IN',
+  },
 };
 
 export default function TermsPage() {

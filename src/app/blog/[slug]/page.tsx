@@ -120,9 +120,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             Get a free consultation and find out how much you can save with rooftop solar in Delhi.
           </p>
           <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-            <CTAButton text="Get Free Consultation" href="/contact" />
+            <CTAButton text="Book a Free Site Survey" href="/contact" />
             <CTAButton
-              text="Calculate Your Savings"
+              text="See My Savings in 30 Seconds"
               href="/solar-calculator"
               variant="outline"
             />

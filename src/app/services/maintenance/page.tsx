@@ -18,6 +18,14 @@ export const metadata: Metadata = {
   title: 'Maintenance & AMC',
   description:
     'Solar panel maintenance services in Delhi. 5 years free maintenance with every installation — 3 visits/year including panel cleaning, system check, and performance monitoring.',
+  openGraph: {
+    title: 'Maintenance & AMC — Raytrix Energy',
+    description:
+      'Solar panel maintenance services in Delhi. 5 years free maintenance with every installation — 3 visits/year including panel cleaning, system check, and performance monitoring.',
+    type: 'website',
+    siteName: 'Raytrix Energy',
+    locale: 'en_IN',
+  },
 };
 
 const maintenanceIncludes = [

@@ -19,6 +19,14 @@ export const metadata: Metadata = {
   title: 'How to Apply for Solar Subsidy',
   description:
     'Step-by-step guide to applying for rooftop solar subsidy in Delhi. We handle the entire process — PM Surya Ghar, BSES registration, net metering, and subsidy disbursement.',
+  openGraph: {
+    title: 'How to Apply for Solar Subsidy — Raytrix Energy',
+    description:
+      'Step-by-step guide to applying for rooftop solar subsidy in Delhi. We handle the entire process — PM Surya Ghar, BSES registration, net metering, and subsidy disbursement.',
+    type: 'website',
+    siteName: 'Raytrix Energy',
+    locale: 'en_IN',
+  },
 };
 
 const steps = [

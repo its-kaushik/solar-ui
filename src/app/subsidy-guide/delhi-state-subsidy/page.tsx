@@ -11,6 +11,14 @@ export const metadata: Metadata = {
   title: 'Delhi State Solar Subsidy & GBI',
   description:
     'Delhi state solar subsidy: Rs 2,000/KW + Rs 30,000 for 3KW systems. Plus Generation-Based Incentive (GBI) of Rs 2-3 per kWh for 5 years. Complete guide.',
+  openGraph: {
+    title: 'Delhi State Solar Subsidy & GBI — Raytrix Energy',
+    description:
+      'Delhi state solar subsidy: Rs 2,000/KW + Rs 30,000 for 3KW systems. Plus Generation-Based Incentive (GBI) of Rs 2-3 per kWh for 5 years. Complete guide.',
+    type: 'website',
+    siteName: 'Raytrix Energy',
+    locale: 'en_IN',
+  },
 };
 
 const otherBenefits = [

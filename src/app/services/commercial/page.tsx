@@ -19,6 +19,14 @@ export const metadata: Metadata = {
   title: 'Commercial Solar Installation',
   description:
     'Scalable rooftop solar solutions for offices, factories, and housing societies in Delhi-NCR. Reduce electricity costs, earn GBI, and get accelerated depreciation benefits.',
+  openGraph: {
+    title: 'Commercial Solar Installation — Raytrix Energy',
+    description:
+      'Scalable rooftop solar solutions for offices, factories, and housing societies in Delhi-NCR. Reduce electricity costs, earn GBI, and get accelerated depreciation benefits.',
+    type: 'website',
+    siteName: 'Raytrix Energy',
+    locale: 'en_IN',
+  },
 };
 
 const benefits = [

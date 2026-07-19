@@ -9,6 +9,14 @@ export const metadata: Metadata = {
   title: 'Blog — Solar Knowledge Hub',
   description:
     'Learn about rooftop solar, government subsidies, savings calculations, and more. Expert guides from Raytrix Energy.',
+  openGraph: {
+    title: 'Blog — Solar Knowledge Hub — Raytrix Energy',
+    description:
+      'Learn about rooftop solar, government subsidies, savings calculations, and more. Expert guides from Raytrix Energy.',
+    type: 'website',
+    siteName: 'Raytrix Energy',
+    locale: 'en_IN',
+  },
 };
 
 export default function BlogPage() {

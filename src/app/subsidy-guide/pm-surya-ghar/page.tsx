@@ -10,6 +10,14 @@ export const metadata: Metadata = {
   title: 'PM Surya Ghar Yojana — Subsidy Guide',
   description:
     'Complete guide to PM Surya Ghar Muft Bijli Yojana. Get up to Rs 78,000 subsidy for rooftop solar. Eligibility, amounts, application process, and required documents.',
+  openGraph: {
+    title: 'PM Surya Ghar Yojana — Subsidy Guide — Raytrix Energy',
+    description:
+      'Complete guide to PM Surya Ghar Muft Bijli Yojana. Get up to Rs 78,000 subsidy for rooftop solar. Eligibility, amounts, application process, and required documents.',
+    type: 'website',
+    siteName: 'Raytrix Energy',
+    locale: 'en_IN',
+  },
 };
 
 const subsidySlabs = [
