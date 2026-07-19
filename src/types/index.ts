@@ -1,11 +1,12 @@
 export interface Testimonial {
   id: string;
   name: string;
-  area: string;
-  systemSize: string;
+  area?: string;
+  systemSize?: string;
   review: string;
   rating: number;
   image?: string;
+  verified?: boolean;
 }
 
 export interface Project {

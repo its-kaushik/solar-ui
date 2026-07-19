@@ -1,17 +1,27 @@
 import type { Metadata } from 'next';
-import { Star } from 'lucide-react';
+import { Star, BadgeCheck, ArrowRight } from 'lucide-react';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import SectionWrapper from '@/components/SectionWrapper';
 import SectionHeading from '@/components/SectionHeading';
 import ProjectCard from '@/components/ProjectCard';
 import CTAButton from '@/components/CTAButton';
+import GoogleRating from '@/components/GoogleRating';
 import { projects } from '@/data/projects';
 import { testimonials } from '@/data/testimonials';
+import { googleReviews } from '@/data/reviews';
 
 export const metadata: Metadata = {
   title: 'Our Work — Projects & Testimonials',
   description:
     'See our completed solar installations across Delhi, Faridabad, and Gurgaon. Real projects, real savings, real customer reviews.',
+  openGraph: {
+    title: 'Our Work — Projects & Testimonials — Raytrix Energy',
+    description:
+      'See our completed solar installations across Delhi, Faridabad, and Gurgaon. Real projects, real savings, real customer reviews.',
+    type: 'website',
+    siteName: 'Raytrix Energy',
+    locale: 'en_IN',
+  },
 };
 
 export default function OurWorkPage() {
@@ -49,43 +59,71 @@ export default function OurWorkPage() {
       <SectionWrapper className="bg-bg-white">
         <SectionHeading
           title="What Our Customers Say"
-          subtitle="Hear from homeowners and businesses who went solar with us."
+          subtitle="Real, verified reviews from homeowners and businesses who went solar with us."
         />
+        <div className="mb-8 flex justify-center">
+          <GoogleRating />
+        </div>
         <div className="mx-auto max-w-3xl space-y-6">
-          {testimonials.map((testimonial) => (
-            <div
-              key={testimonial.id}
-              className="rounded-2xl bg-bg p-6"
-            >
-              {/* Stars */}
-              <div className="flex gap-0.5">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star
-                    key={i}
-                    className={`h-4 w-4 ${
-                      i < testimonial.rating
-                        ? 'fill-secondary text-secondary'
-                        : 'text-gray-300'
-                    }`}
-                  />
-                ))}
-              </div>
-              <p className="mt-3 text-sm leading-relaxed text-text">
-                &ldquo;{testimonial.review}&rdquo;
-              </p>
-              <div className="mt-4 flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-sm font-bold text-text-inverse">
-                  {testimonial.name.charAt(0)}
+          {testimonials.map((testimonial) => {
+            const meta = [testimonial.systemSize && `${testimonial.systemSize} System`, testimonial.area]
+              .filter(Boolean)
+              .join(' — ');
+            return (
+              <div
+                key={testimonial.id}
+                className="rounded-2xl bg-bg p-6"
+              >
+                {/* Stars */}
+                <div className="flex gap-0.5">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star
+                      key={i}
+                      className={`h-4 w-4 ${
+                        i < testimonial.rating
+                          ? 'fill-secondary text-secondary'
+                          : 'text-gray-300'
+                      }`}
+                    />
+                  ))}
                 </div>
-                <div>
-                  <p className="text-sm font-semibold text-text">{testimonial.name}</p>
-                  <p className="text-xs text-text-light">
-                    {testimonial.systemSize} System — {testimonial.area}
-                  </p>
+                <p className="mt-3 text-sm leading-relaxed text-text">
+                  &ldquo;{testimonial.review}&rdquo;
+                </p>
+                <div className="mt-4 flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-sm font-bold text-text-inverse">
+                    {testimonial.name.charAt(0)}
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-text">{testimonial.name}</p>
+                    {meta && <p className="text-xs text-text-light">{meta}</p>}
+                    {testimonial.verified && (
+                      <a
+                        href={googleReviews.profileUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-0.5 inline-flex items-center gap-1 text-xs font-medium text-accent hover:underline"
+                      >
+                        <BadgeCheck className="h-3.5 w-3.5" />
+                        Verified Google review
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
+        </div>
+        <div className="mt-8 text-center">
+          <a
+            href={googleReviews.profileUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:text-primary-light"
+          >
+            Read all {googleReviews.count} reviews on Google
+            <ArrowRight className="h-4 w-4" />
+          </a>
         </div>
       </SectionWrapper>
 
@@ -99,8 +137,8 @@ export default function OurWorkPage() {
             Get a free consultation and find out how much you can save with rooftop solar.
           </p>
           <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-            <CTAButton text="Get Free Consultation" href="/contact" />
-            <CTAButton text="Calculate Your Savings" href="/solar-calculator" variant="outline" />
+            <CTAButton text="Book a Free Site Survey" href="/contact" />
+            <CTAButton text="See My Savings in 30 Seconds" href="/solar-calculator" variant="outline" />
           </div>
         </div>
       </SectionWrapper>

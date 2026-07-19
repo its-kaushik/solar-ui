@@ -1,5 +1,6 @@
 import { Shield, Award, BadgeCheck } from 'lucide-react';
 import CTAButton from './CTAButton';
+import GoogleRating from './GoogleRating';
 
 const trustBadges = [
   { icon: Shield, label: 'MNRE Enrolled' },
@@ -34,17 +35,22 @@ export default function HeroSection() {
           {/* CTA buttons */}
           <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:gap-4">
             <CTAButton
-              text="Get Free Consultation"
+              text="Book a Free Site Survey"
               href="#contact"
               variant="secondary"
               className="w-full sm:w-auto"
             />
             <CTAButton
-              text="Calculate Your Savings"
+              text="See My Savings in 30 Seconds"
               href="/solar-calculator"
               variant="outline"
               className="w-full border-white text-white hover:bg-white hover:text-primary sm:w-auto"
             />
+          </div>
+
+          {/* Google rating strip */}
+          <div className="mt-6 flex justify-center">
+            <GoogleRating dark />
           </div>
 
           {/* Trust badges */}

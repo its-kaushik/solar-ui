@@ -1,5 +1,6 @@
-import { Star, MapPin, Zap } from 'lucide-react';
+import { Star, MapPin, Zap, BadgeCheck } from 'lucide-react';
 import type { Testimonial } from '@/types';
+import { googleReviews } from '@/data/reviews';
 
 interface TestimonialCardProps {
   testimonial: Testimonial;
@@ -26,16 +27,33 @@ export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
       {/* Customer info */}
       <div className="mt-4 border-t border-gray-100 pt-4">
         <p className="font-heading text-sm font-bold text-text">{testimonial.name}</p>
-        <div className="mt-1 flex flex-wrap items-center gap-3 text-xs text-text-light">
-          <span className="inline-flex items-center gap-1">
-            <MapPin className="h-3 w-3" />
-            {testimonial.area}
-          </span>
-          <span className="inline-flex items-center gap-1">
-            <Zap className="h-3 w-3" />
-            {testimonial.systemSize}
-          </span>
-        </div>
+        {(testimonial.area || testimonial.systemSize) && (
+          <div className="mt-1 flex flex-wrap items-center gap-3 text-xs text-text-light">
+            {testimonial.area && (
+              <span className="inline-flex items-center gap-1">
+                <MapPin className="h-3 w-3" />
+                {testimonial.area}
+              </span>
+            )}
+            {testimonial.systemSize && (
+              <span className="inline-flex items-center gap-1">
+                <Zap className="h-3 w-3" />
+                {testimonial.systemSize}
+              </span>
+            )}
+          </div>
+        )}
+        {testimonial.verified && (
+          <a
+            href={googleReviews.profileUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-2 inline-flex items-center gap-1 text-xs font-medium text-accent hover:underline"
+          >
+            <BadgeCheck className="h-3.5 w-3.5" />
+            Verified Google review
+          </a>
+        )}
       </div>
     </div>
   );

@@ -1,40 +1,63 @@
 import { Testimonial } from '@/types';
 
+// Real reviews from the Google Business Profile (5.0 average, 25 reviews).
+// Details (system size / area) are only shown where the reviewer actually stated them.
 export const testimonials: Testimonial[] = [
   {
     id: '1',
-    name: 'Rajesh Kumar',
-    area: 'Saket, South Delhi',
+    name: 'Krishan K.',
+    area: 'Sangam Vihar, New Delhi',
     systemSize: '3 KW',
     review:
-      'Excellent service from start to finish. The team handled everything including the subsidy paperwork. Highly professional and transparent.',
+      'We got a 3 KW system installed at our home in Sangam Vihar, New Delhi. Great service, professional team — and we got our subsidy within a month.',
     rating: 5,
+    verified: true,
   },
   {
     id: '2',
-    name: 'Priya Sharma',
-    area: 'Greater Kailash, South Delhi',
-    systemSize: '5 KW',
+    name: 'Rakshit G.',
+    area: 'South Extension, Delhi',
+    systemSize: '4 KW',
     review:
-      'Got my system installed within a week. The subsidy process was handled completely by the team. My electricity bills have dropped to almost zero.',
+      'Installed a 4 kW solar system at my home in South Extension. Got the subsidy on time — professional service and behaviour.',
     rating: 5,
+    verified: true,
   },
   {
     id: '3',
-    name: 'Amit Verma',
-    area: 'Malviya Nagar, South Delhi',
-    systemSize: '2 KW',
+    name: 'Dherya B.',
+    area: 'Nirvana Country, Gurgaon',
+    systemSize: '5 KW',
     review:
-      'Very knowledgeable team. They explained everything clearly — system types, subsidy eligibility, maintenance. Great after-sales support too.',
-    rating: 4,
+      'Got a 5 kW solar system installed at my house in Nirvana Country, Gurgaon. Extremely professional service, and I got my subsidy within a month.',
+    rating: 5,
+    verified: true,
   },
   {
     id: '4',
-    name: 'Sunita Gupta',
-    area: 'Chattarpur, South Delhi',
-    systemSize: '3 KW',
+    name: 'Moksh T.',
+    area: 'Dera Mandi, Delhi',
+    systemSize: '6 KW',
     review:
-      'I was hesitant about solar but Raytrix Energy made it so easy. From site survey to installation to subsidy — they handled it all. Saving Rs 3,000+ per month now.',
+      'I had a 6 kW installation at my farmhouse in Dera Mandi. The process was smooth and the staff was well-experienced.',
     rating: 5,
+    verified: true,
+  },
+  {
+    id: '5',
+    name: 'Rishabh M.',
+    area: 'Saket, South Delhi',
+    review:
+      'We got Adani solar panels installed in Saket, and got our subsidy in under a month. Very best! 👍',
+    rating: 5,
+    verified: true,
+  },
+  {
+    id: '6',
+    name: 'Golu P.',
+    review:
+      'Best service out there. The staff was professional — they took only 3–4 hours to install the solar.',
+    rating: 5,
+    verified: true,
   },
 ];
