@@ -15,6 +15,7 @@ export default function ContactForm({ compact = false }: ContactFormProps) {
     email: '',
     propertyType: '',
     location: '',
+    monthlyBill: '',
     message: '',
     website: '', // honeypot
   });
@@ -44,6 +45,7 @@ export default function ContactForm({ compact = false }: ContactFormProps) {
           email: formData.email || undefined,
           propertyType: formData.propertyType,
           location: formData.location,
+          monthlyBill: formData.monthlyBill || undefined,
           message: formData.message || undefined,
         }),
       });
@@ -51,7 +53,7 @@ export default function ContactForm({ compact = false }: ContactFormProps) {
       if (res.ok) {
         setStatus('success');
         trackFormSubmit(formData.propertyType, formData.location);
-        setFormData({ name: '', phone: '', email: '', propertyType: '', location: '', message: '', website: '' });
+        setFormData({ name: '', phone: '', email: '', propertyType: '', location: '', monthlyBill: '', message: '', website: '' });
       } else {
         setStatus('error');
       }
@@ -177,6 +179,26 @@ export default function ContactForm({ compact = false }: ContactFormProps) {
         </div>
       </div>
 
+      <div>
+        <label htmlFor="monthlyBill" className="mb-1 block text-sm font-medium text-text">
+          Monthly Electricity Bill <span className="text-text-light">(optional)</span>
+        </label>
+        <select
+          id="monthlyBill"
+          name="monthlyBill"
+          value={formData.monthlyBill}
+          onChange={handleChange}
+          className="h-12 w-full rounded-xl border border-gray-300 bg-bg-white px-4 text-base text-text transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+        >
+          <option value="">Select a range</option>
+          <option value="Under Rs 2,000">Under ₹2,000</option>
+          <option value="Rs 2,000 - Rs 5,000">₹2,000 – ₹5,000</option>
+          <option value="Rs 5,000 - Rs 10,000">₹5,000 – ₹10,000</option>
+          <option value="Over Rs 10,000">Over ₹10,000</option>
+        </select>
+        <p className="mt-1 text-xs text-text-light">Helps us size your system and estimate your savings before we call.</p>
+      </div>
+
       {!compact && (
         <div>
           <label htmlFor="message" className="mb-1 block text-sm font-medium text-text">
@@ -208,7 +230,7 @@ export default function ContactForm({ compact = false }: ContactFormProps) {
         ) : (
           <>
             <Send className="h-5 w-5" />
-            Get Free Consultation
+            Book a Free Site Survey
           </>
         )}
       </button>

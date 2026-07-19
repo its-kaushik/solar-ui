@@ -13,6 +13,7 @@ interface ContactBody {
   email?: string;
   propertyType: string;
   location: string;
+  monthlyBill?: string;
   message?: string;
   website?: string; // honeypot
 }
@@ -58,6 +59,11 @@ function buildEmailHTML(body: ContactBody): string {
             <td style="padding: 8px 0; color: #6B7280; font-size: 14px;">Location</td>
             <td style="padding: 8px 0; font-size: 14px;">${body.location}</td>
           </tr>
+          ${body.monthlyBill ? `
+          <tr>
+            <td style="padding: 8px 0; color: #6B7280; font-size: 14px;">Monthly Bill</td>
+            <td style="padding: 8px 0; font-weight: 600; font-size: 14px;">${body.monthlyBill}</td>
+          </tr>` : ''}
           ${body.message ? `
           <tr>
             <td style="padding: 8px 0; color: #6B7280; font-size: 14px; vertical-align: top;">Message</td>
@@ -143,6 +149,7 @@ export async function POST(request: NextRequest) {
           email: body.email || '',
           propertyType: body.propertyType,
           location: body.location,
+          monthlyBill: body.monthlyBill || '',
           message: body.message || '',
           status: 'New',
         }),
