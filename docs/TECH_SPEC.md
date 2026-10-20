@@ -431,15 +431,14 @@ const CONSTANTS = {
     MAX_AMOUNT: 78000,               // Rs
   },
 
-  // Delhi State Subsidy — South Delhi only (BSES Rajdhani area)
+  // Delhi State Capital Subsidy — Delhi residential only (Delhi Solar Energy
+  // Policy, amended Sept 2026). Rs 52,000 for 2 KW, Rs 78,000 for 3 KW+.
   STATE_SUBSIDY: {
-    RATE_PER_KW: 2000,               // Rs per KW
-    MAX_BASIC: 10000,                // Rs cap on basic state subsidy
-    ADDITIONAL_3KW: 30000,           // Rs additional for 3KW+ systems
-    MIN_CAPACITY_FOR_ADDITIONAL: 3,  // KW
+    RATE_PER_KW: 26000,              // Rs per KW
+    MAX_CAPACITY_KW: 3,              // Subsidy capped at 3 KW
   },
 
-  // Generation-Based Incentive (GBI) — Delhi, all consumer types
+  // Generation-Based Incentive (GBI) — Delhi only, all consumer types
   GBI: {
     RATE_UPTO_3KW: 3,               // Rs per kWh
     RATE_3_TO_10KW: 2,              // Rs per kWh
@@ -487,25 +486,23 @@ export function calculateCentralSubsidy(
 
 export function calculateStateSubsidy(
   systemSizeKW: number,
-  area: 'south-delhi' | 'faridabad' | 'gurgaon'
+  area: 'south-delhi' | 'faridabad' | 'gurgaon',
+  propertyType: 'residential' | 'commercial'
 ): number {
-  // State subsidy only for South Delhi (BSES Rajdhani area)
-  if (area !== 'south-delhi') return 0;
+  // State subsidy only for Delhi residential consumers
+  if (area !== 'south-delhi' || propertyType === 'commercial') return 0;
 
-  let subsidy = Math.min(
-    systemSizeKW * CONSTANTS.STATE_SUBSIDY.RATE_PER_KW,
-    CONSTANTS.STATE_SUBSIDY.MAX_BASIC
-  );
-
-  // Additional 30,000 for 3KW+ systems
-  if (systemSizeKW >= CONSTANTS.STATE_SUBSIDY.MIN_CAPACITY_FOR_ADDITIONAL) {
-    subsidy += CONSTANTS.STATE_SUBSIDY.ADDITIONAL_3KW;
-  }
-
-  return subsidy;
+  const cappedSize = Math.min(systemSizeKW, CONSTANTS.STATE_SUBSIDY.MAX_CAPACITY_KW);
+  return cappedSize * CONSTANTS.STATE_SUBSIDY.RATE_PER_KW;
 }
 
-export function calculateGBI(systemSizeKW: number): number {
+export function calculateGBI(
+  systemSizeKW: number,
+  area: 'south-delhi' | 'faridabad' | 'gurgaon'
+): number {
+  // GBI is a Delhi scheme
+  if (area !== 'south-delhi') return 0;
+
   const monthlyGeneration = systemSizeKW * CONSTANTS.UNITS_PER_KW_PER_MONTH;
   const annualGeneration = monthlyGeneration * 12;
 
@@ -531,17 +528,17 @@ export function calculate(input: CalculatorInput): CalculatorResult {
   const estimatedCostMax = systemSizeKW * CONSTANTS.COST_PER_KW_MAX;
 
   const centralSubsidy = calculateCentralSubsidy(systemSizeKW, input.propertyType);
-  const stateSubsidy = calculateStateSubsidy(systemSizeKW, input.area);
+  const stateSubsidy = calculateStateSubsidy(systemSizeKW, input.area, input.propertyType);
   const totalSubsidy = centralSubsidy + stateSubsidy;
 
-  const netCostMin = estimatedCostMin - totalSubsidy;
-  const netCostMax = estimatedCostMax - totalSubsidy;
+  const netCostMin = Math.max(0, estimatedCostMin - totalSubsidy);
+  const netCostMax = Math.max(0, estimatedCostMax - totalSubsidy);
 
   const monthlyGeneration = systemSizeKW * CONSTANTS.UNITS_PER_KW_PER_MONTH;
   const monthlySavings = monthlyGeneration * CONSTANTS.AVG_ELECTRICITY_RATE;
   const annualSavings = monthlySavings * 12;
 
-  const annualGBI = calculateGBI(systemSizeKW);
+  const annualGBI = calculateGBI(systemSizeKW, input.area);
 
   const totalAnnualBenefit = annualSavings + annualGBI;
   const paybackYearsMin = netCostMin / totalAnnualBenefit;
@@ -583,19 +580,27 @@ export function calculate(input: CalculatorInput): CalculatorResult {
   [Results panel appears with animation]
   ┌─────────────────────────────────────────┐
   │ Recommended System: 3 KW               │
-  │ Estimated Cost: ₹1,65,000 - ₹1,95,000  │
-  │ Central Subsidy: -₹78,000              │
-  │ State Subsidy: -₹30,000                │
+  │                                         │
+  │ Your Government Subsidy                 │
+  │ PM Surya Ghar (Central): ₹78,000       │
+  │ Delhi Government Subsidy: ₹78,000      │
   │ ─────────────────────────              │
-  │ Your Net Cost: ₹57,000 - ₹87,000       │
+  │ Total Subsidy: ₹1,56,000               │
   │                                         │
   │ Monthly Savings: ~₹2,520               │
-  │ Annual GBI Income: ~₹4,320             │
-  │ Payback Period: ~1.7 - 2.5 years       │
+  │ Annual GBI Income: ~₹12,960 (Delhi)    │
+  │ Payback Period: Within 1 year          │
   │ 25-Year Total Savings: ₹X,XX,XXX       │
   └─────────────────────────────────────────┘
         ↓
-  [CTA: "Get an Exact Quote" → WhatsApp/Contact form]
+  [Get your exact price]
+    • "Get it on WhatsApp" → wa.me pre-filled with usage, area,
+      property type, system size and subsidy
+    • "Get it by Email" → inline form (name, email, phone) →
+      POST /api/contact with source: 'calculator'
+
+  System cost is never shown (pricing depends on roof, panels and
+  inverter); it is still used internally to compute payback.
 ```
 
 If `showContactForQuote` is true (commercial > 15KW):
@@ -823,10 +828,10 @@ Additionally, provide custom components usable in MDX:
 // Example: app/page.tsx (Home)
 export const metadata: Metadata = {
   title: 'Kaushik Solar Power — Rooftop Solar Installation in Delhi',
-  description: 'Get rooftop solar panels installed in Delhi with up to ₹1,08,000 government subsidy. BSES Rajdhani registered. Free consultation & 5 years maintenance.',
+  description: 'Get rooftop solar panels installed in Delhi with up to ₹1,56,000 government subsidy. BSES Rajdhani registered. Free consultation & 5 years maintenance.',
   openGraph: {
     title: 'Kaushik Solar Power — Rooftop Solar Installation in Delhi',
-    description: 'Get rooftop solar panels installed in Delhi with up to ₹1,08,000 government subsidy.',
+    description: 'Get rooftop solar panels installed in Delhi with up to ₹1,56,000 government subsidy.',
     images: ['/images/og-home.jpg'],
     type: 'website',
   },
@@ -961,7 +966,7 @@ Load via `next/script` with `strategy="afterInteractive"`:
 | `whatsapp_click` | WhatsApp button clicked | `page`, `context` |
 | `call_click` | Call button clicked | `page` |
 | `calculator_used` | Calculator results generated | `system_size`, `property_type`, `area` |
-| `calculator_cta_click` | "Get Exact Quote" clicked after calculation | `system_size` |
+| `calculator_cta_click` | "Get it on WhatsApp" clicked, or the "Get it by Email" form submitted, after calculation | `system_size`, `channel` (`whatsapp` \| `email`) |
 | `blog_read` | Blog post viewed | `slug`, `read_time` |
 
 ---

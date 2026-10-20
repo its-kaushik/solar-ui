@@ -58,10 +58,11 @@ export function trackCalculatorUsed(
   });
 }
 
-export function trackCalculatorCTA(systemSize: number) {
+export function trackCalculatorCTA(systemSize: number, channel: 'whatsapp' | 'email') {
   trackEvent({
     action: 'calculator_cta_click',
     category: 'engagement',
     system_size: systemSize,
+    channel,
   });
 }

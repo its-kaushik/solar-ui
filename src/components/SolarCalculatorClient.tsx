@@ -7,30 +7,19 @@ import SectionHeading from '@/components/SectionHeading';
 import CalculatorForm from '@/components/CalculatorForm';
 import CalculatorResults from '@/components/CalculatorResults';
 import { calculate } from '@/lib/calculator';
-import { trackCalculatorUsed, trackCalculatorCTA } from '@/lib/analytics';
+import { trackCalculatorUsed } from '@/lib/analytics';
 import type { CalculatorInput, CalculatorResult } from '@/types';
 
 export default function SolarCalculatorClient() {
-  const [result, setResult] = useState<CalculatorResult | null>(null);
+  const [calculation, setCalculation] = useState<{
+    input: CalculatorInput;
+    result: CalculatorResult;
+  } | null>(null);
 
   const handleCalculate = (input: CalculatorInput) => {
-    const calculatedResult = calculate(input);
-    setResult(calculatedResult);
-    trackCalculatorUsed(calculatedResult.systemSizeKW, input.propertyType, input.area);
-  };
-
-  const handleGetQuote = () => {
-    if (result) {
-      trackCalculatorCTA(result.systemSizeKW);
-    }
-    const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '';
-    const message = result
-      ? `Hi, I calculated my solar needs: ${result.systemSizeKW} KW system. Monthly consumption: ${result.monthlyGeneration} units. Please share a quote.`
-      : 'Hi, I\'m interested in rooftop solar installation. Please share more details.';
-    window.open(
-      `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`,
-      '_blank'
-    );
+    const result = calculate(input);
+    setCalculation({ input, result });
+    trackCalculatorUsed(result.systemSizeKW, input.propertyType, input.area);
   };
 
   return (
@@ -42,7 +31,7 @@ export default function SolarCalculatorClient() {
             <Info className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" />
             <p className="text-sm text-text-light">
               Enter your monthly electricity consumption to get an instant estimate of system size,
-              cost, subsidies, and savings. No sign-up required.
+              subsidies, and savings. No sign-up required.
             </p>
           </div>
 
@@ -55,8 +44,12 @@ export default function SolarCalculatorClient() {
 
             {/* Results */}
             <div>
-              {result ? (
-                <CalculatorResults result={result} onGetQuote={handleGetQuote} />
+              {calculation ? (
+                <CalculatorResults
+                  key={`${calculation.input.monthlyUnits}-${calculation.input.propertyType}-${calculation.input.area}`}
+                  input={calculation.input}
+                  result={calculation.result}
+                />
               ) : (
                 <div className="flex h-full items-center justify-center rounded-2xl border-2 border-dashed border-gray-200 p-8">
                   <div className="text-center">

@@ -15,6 +15,7 @@ interface ContactBody {
   location: string;
   monthlyBill?: string;
   message?: string;
+  source?: 'calculator';
   website?: string; // honeypot
 }
 
@@ -63,6 +64,11 @@ function buildEmailHTML(body: ContactBody): string {
           <tr>
             <td style="padding: 8px 0; color: #6B7280; font-size: 14px;">Monthly Bill</td>
             <td style="padding: 8px 0; font-weight: 600; font-size: 14px;">${body.monthlyBill}</td>
+          </tr>` : ''}
+          ${body.source ? `
+          <tr>
+            <td style="padding: 8px 0; color: #6B7280; font-size: 14px;">Source</td>
+            <td style="padding: 8px 0; font-size: 14px; text-transform: capitalize;">${body.source}</td>
           </tr>` : ''}
           ${body.message ? `
           <tr>
@@ -124,6 +130,10 @@ export async function POST(request: NextRequest) {
   if (!body.location || body.location.length < 3) {
     return NextResponse.json({ error: 'Invalid location' }, { status: 400 });
   }
+  // Only record known lead sources
+  if (body.source !== 'calculator') {
+    body.source = undefined;
+  }
 
   try {
     // Send email notification
@@ -132,7 +142,7 @@ export async function POST(request: NextRequest) {
       await resend.emails.send({
         from: process.env.RESEND_FROM_EMAIL || 'Raytrix Energy <onboarding@resend.dev>',
         to: process.env.CONTACT_EMAIL_TO,
-        subject: `New Lead: ${body.name} — ${body.propertyType} — ${body.location}`,
+        subject: `New Lead${body.source === 'calculator' ? ' (Calculator)' : ''}: ${body.name} — ${body.propertyType} — ${body.location}`,
         html: buildEmailHTML(body),
       });
     }
@@ -151,6 +161,7 @@ export async function POST(request: NextRequest) {
           location: body.location,
           monthlyBill: body.monthlyBill || '',
           message: body.message || '',
+          source: body.source || 'contact',
           status: 'New',
         }),
       }).catch(console.error);

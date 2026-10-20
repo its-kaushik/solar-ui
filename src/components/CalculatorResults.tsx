@@ -1,24 +1,24 @@
 'use client';
 
-import { IndianRupee, Zap, TrendingDown, ArrowRight } from 'lucide-react';
+import { IndianRupee, Zap, TrendingDown } from 'lucide-react';
 import { motion } from 'framer-motion';
-import type { CalculatorResult } from '@/types';
+import type { CalculatorInput, CalculatorResult } from '@/types';
 import CTAButton from '@/components/CTAButton';
+import CalculatorLeadCapture from '@/components/CalculatorLeadCapture';
+import { formatCurrency } from '@/lib/format';
 
 interface CalculatorResultsProps {
+  input: CalculatorInput;
   result: CalculatorResult;
-  onGetQuote: () => void;
 }
 
-function formatCurrency(amount: number): string {
-  return new Intl.NumberFormat('en-IN', {
-    style: 'currency',
-    currency: 'INR',
-    maximumFractionDigits: 0,
-  }).format(amount);
+function formatPayback(minYears: number, maxYears: number): string {
+  if (maxYears <= 1) return 'Within 1 year';
+  if (minYears < 1) return `Within ${Math.ceil(maxYears)} years`;
+  return `${minYears} – ${maxYears} years`;
 }
 
-export default function CalculatorResults({ result, onGetQuote }: CalculatorResultsProps) {
+export default function CalculatorResults({ input, result }: CalculatorResultsProps) {
   // Commercial > 15KW — show "contact us" instead of estimates
   if (result.showContactForQuote) {
     return (
@@ -68,55 +68,44 @@ export default function CalculatorResults({ result, onGetQuote }: CalculatorResu
         </p>
       </div>
 
-      {/* Cost breakdown */}
-      <div className="rounded-2xl border border-gray-200 bg-bg-white p-6">
-        <h3 className="mb-3 flex items-center gap-2 font-heading text-sm font-semibold uppercase tracking-wider text-text-light">
-          <IndianRupee className="h-4 w-4" />
-          Cost Breakdown
-        </h3>
-        <div className="space-y-2.5">
-          <div className="flex items-center justify-between text-sm">
-            <span className="text-text-light">Estimated System Cost</span>
-            <span className="font-semibold text-text">
-              {formatCurrency(result.estimatedCostMin)} – {formatCurrency(result.estimatedCostMax)}
-            </span>
-          </div>
-          {result.centralSubsidy > 0 && (
-            <div className="flex items-center justify-between text-sm">
-              <span className="text-text-light">PM Surya Ghar Subsidy</span>
-              <span className="font-semibold text-accent">
-                -{formatCurrency(result.centralSubsidy)}
-              </span>
-            </div>
-          )}
-          {result.stateSubsidy > 0 && (
-            <div className="flex items-center justify-between text-sm">
-              <span className="text-text-light">Delhi State Subsidy</span>
-              <span className="font-semibold text-accent">
-                -{formatCurrency(result.stateSubsidy)}
-              </span>
-            </div>
-          )}
-          {result.totalSubsidy > 0 && (
-            <div className="border-t border-gray-100 pt-2.5">
+      {/* Subsidy */}
+      {result.totalSubsidy > 0 && (
+        <div className="rounded-2xl border border-gray-200 bg-bg-white p-6">
+          <h3 className="mb-3 flex items-center gap-2 font-heading text-sm font-semibold uppercase tracking-wider text-text-light">
+            <IndianRupee className="h-4 w-4" />
+            Your Government Subsidy
+          </h3>
+          <div className="space-y-2.5">
+            {result.centralSubsidy > 0 && (
               <div className="flex items-center justify-between text-sm">
-                <span className="font-semibold text-text">Total Subsidy</span>
-                <span className="font-bold text-accent">
-                  -{formatCurrency(result.totalSubsidy)}
+                <span className="text-text-light">PM Surya Ghar (Central)</span>
+                <span className="font-semibold text-text">
+                  {formatCurrency(result.centralSubsidy)}
+                </span>
+              </div>
+            )}
+            {result.stateSubsidy > 0 && (
+              <div className="flex items-center justify-between text-sm">
+                <span className="text-text-light">Delhi Government Subsidy</span>
+                <span className="font-semibold text-text">
+                  {formatCurrency(result.stateSubsidy)}
+                </span>
+              </div>
+            )}
+            <div className="border-t border-gray-200 pt-2.5">
+              <div className="flex items-center justify-between">
+                <span className="font-heading text-base font-bold text-text">Total Subsidy</span>
+                <span className="font-heading text-xl font-bold text-accent">
+                  {formatCurrency(result.totalSubsidy)}
                 </span>
               </div>
             </div>
-          )}
-          <div className="border-t border-gray-200 pt-2.5">
-            <div className="flex items-center justify-between">
-              <span className="font-heading text-base font-bold text-text">Your Net Cost</span>
-              <span className="font-heading text-xl font-bold text-primary">
-                {formatCurrency(result.netCostMin)} – {formatCurrency(result.netCostMax)}
-              </span>
-            </div>
           </div>
+          <p className="mt-3 text-xs text-text-light">
+            Credited to your bank account after installation. We file all the paperwork.
+          </p>
         </div>
-      </div>
+      )}
 
       {/* Savings */}
       <div className="rounded-2xl border border-gray-200 bg-bg-white p-6">
@@ -147,7 +136,7 @@ export default function CalculatorResults({ result, onGetQuote }: CalculatorResu
               Payback Period
             </p>
             <p className="mt-1 font-heading text-2xl font-bold text-text">
-              {result.paybackYearsMin} – {result.paybackYearsMax} years
+              {formatPayback(result.paybackYearsMin, result.paybackYearsMax)}
             </p>
           </div>
           <div className="rounded-xl bg-accent/5 p-4">
@@ -161,31 +150,16 @@ export default function CalculatorResults({ result, onGetQuote }: CalculatorResu
         </div>
       </div>
 
-      {/* CTA */}
-      <div className="flex flex-col gap-3 rounded-2xl bg-primary/5 p-6 sm:flex-row sm:items-center sm:justify-between">
-        <div>
-          <p className="font-heading text-base font-bold text-text">
-            Ready to get an exact quote?
-          </p>
-          <p className="mt-0.5 text-sm text-text-light">
-            Free site survey. No obligation.
-          </p>
-        </div>
-        <button
-          onClick={onGetQuote}
-          className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-primary px-6 font-heading text-sm font-semibold text-text-inverse transition-colors hover:bg-primary-light"
-        >
-          Get Exact Quote
-          <ArrowRight className="h-4 w-4" />
-        </button>
-      </div>
+      {/* Lead capture */}
+      <CalculatorLeadCapture input={input} result={result} />
 
       {/* Disclaimer */}
       <p className="text-xs leading-relaxed text-text-light">
         <span className="font-semibold">Disclaimer:</span> These are approximate estimates based
-        on average Delhi conditions. Actual system cost, generation, and savings may vary based on
-        roof area, orientation, shading, equipment chosen, and current electricity tariff rates.
-        Contact us for an accurate assessment.
+        on average Delhi conditions and current central and Delhi government subsidy policy. Actual
+        generation, subsidy, and savings may vary based on roof area, orientation, shading,
+        equipment chosen, and current electricity tariff rates. Contact us for an accurate
+        assessment.
       </p>
     </motion.div>
   );
