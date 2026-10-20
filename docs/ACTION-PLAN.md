@@ -26,7 +26,7 @@
 
 ## 1. Already shipped ✅ (for context — don't redo)
 
-Registered address + CIN + GSTIN (footer, contact, about, JSON-LD) · LocalBusiness / Organization / Service / FAQPage / WebSite / BreadcrumbList / BlogPosting schema · homepage FAQ block · Google 5.0★ trust strip under hero · 25 real verified reviews replacing placeholders · "Book a Free Site Survey" CTA rewrite · optional monthly-bill dropdown on the form · 6-step timeline durations · blog-post CTAs · **Faridabad & Gurgaon service-area pages** · footer polish (icons, tagline, credentials) · lazy-loaded contact map · per-page OpenGraph · **corrected the Haryana "non-subsidy" error everywhere** · "Enjoy Free Solar Power" → "Start Generating Your Own Power" · **Delhi state subsidy raised to ₹78,000 (Sept 2026 policy) — ₹1,56,000 combined, rolled out sitewide + calculator; GBI limited to Delhi** · **calculator → WhatsApp / email lead capture** (pre-filled numbers, `source: calculator` tagged in email + Sheet).
+Registered address + CIN + GSTIN (footer, contact, about, JSON-LD) · LocalBusiness / Organization / Service / FAQPage / WebSite / BreadcrumbList / BlogPosting schema · homepage FAQ block · Google 5.0★ trust strip under hero · 25 real verified reviews replacing placeholders · "Book a Free Site Survey" CTA rewrite · optional monthly-bill dropdown on the form · 6-step timeline durations · blog-post CTAs · **Faridabad & Gurgaon service-area pages** · footer polish (icons, tagline, credentials) · lazy-loaded contact map · per-page OpenGraph · **corrected the Haryana "non-subsidy" error everywhere** · "Enjoy Free Solar Power" → "Start Generating Your Own Power" · **Delhi state subsidy raised to ₹78,000 (Sept 2026 policy) — ₹1,56,000 combined, rolled out sitewide + calculator; GBI limited to Delhi** · **calculator → WhatsApp / email lead capture** (pre-filled numbers, `source: calculator` tagged in email + Sheet) · **real logo** sitewide (header, footer, favicon/app icons, OG, schema) · **Faridabad branch office** (A-140, Ashoka Enclave - 2) on contact/footer/home, Faridabad page map + FAQ, and as a second location in schema.
 
 ---
 
@@ -70,7 +70,8 @@ Registered address + CIN + GSTIN (footer, contact, about, JSON-LD) · LocalBusin
 | Per-city **"can I run AC" / price FAQ** | `SS` | ⬜ | S | code | Their city FAQs all lead with price + AC answers. |
 | **`/service-areas` hub index** page (bare URL currently 404s) | `A§9` | ⬜ | S | code | Nothing links to it yet; tidy + linkable. |
 | **Google Business Profile** review-request loop (WhatsApp the review link at subsidy-credit = peak happiness) | `A4` `A§9-1` | 🟡 | S | process | GBP exists w/ 25 reviews & is surfaced on-site. Systematise the ask. |
-| **NAP consistency** across Justdial / IndiaMART / Sulekha / socials | `A§9-3` | ⬜ | S | process | Same Name/Address/Phone everywhere now that we have an address. |
+| **NAP consistency** across Justdial / IndiaMART / Sulekha / socials | `A§9-3` | ⬜ | S | process | Same Name/Address/Phone everywhere — now for **both** offices. Copy addresses exactly from `src/data/offices.ts`. |
+| **Google Business Profile for the Faridabad office** | `A§9` | ⬜ | S | process | Separate verified GBP listing at A-140, Ashoka Enclave - 2 — the biggest local-pack lever for Faridabad searches. Then swap its share link into `faridabadOffice.mapsUrl`. |
 
 ### 🟢 P2 — Copy, growth levers & polish
 

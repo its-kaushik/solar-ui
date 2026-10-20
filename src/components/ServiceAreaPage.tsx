@@ -9,6 +9,7 @@ import TestimonialCard from '@/components/TestimonialCard';
 import GoogleRating from '@/components/GoogleRating';
 import FAQSection from '@/components/FAQSection';
 import type { ServiceArea } from '@/data/service-areas';
+import { postalAddress } from '@/data/offices';
 import { projects } from '@/data/projects';
 import { testimonials } from '@/data/testimonials';
 import { googleReviews } from '@/data/reviews';
@@ -37,10 +38,21 @@ export default function ServiceAreaPage({ area }: { area: ServiceArea }) {
             '@context': 'https://schema.org',
             '@type': 'Service',
             name: `Solar Panel Installation in ${area.city}`,
-            provider: {
-              '@type': 'Organization',
-              name: 'Raytrix Energy (OPC) Private Limited',
-            },
+            provider: area.office
+              ? {
+                  '@type': 'LocalBusiness',
+                  name: `Raytrix Energy — ${area.office.label}`,
+                  parentOrganization: {
+                    '@type': 'Organization',
+                    name: 'Raytrix Energy (OPC) Private Limited',
+                  },
+                  address: postalAddress(area.office),
+                  hasMap: area.office.mapsUrl,
+                }
+              : {
+                  '@type': 'Organization',
+                  name: 'Raytrix Energy (OPC) Private Limited',
+                },
             areaServed: { '@type': 'City', name: area.city },
             serviceType: 'Rooftop Solar Panel Installation',
           }),
@@ -179,7 +191,7 @@ export default function ServiceAreaPage({ area }: { area: ServiceArea }) {
         <div className="mx-auto max-w-3xl">
           <div className="overflow-hidden rounded-2xl">
             <iframe
-              src={`https://maps.google.com/maps?q=${encodeURIComponent(area.mapQuery)}&t=&z=12&ie=UTF8&iwloc=&output=embed`}
+              src={`https://maps.google.com/maps?q=${encodeURIComponent(area.mapQuery)}&t=&z=${area.office ? 13 : 12}&ie=UTF8&iwloc=&output=embed`}
               width="100%"
               height="256"
               style={{ border: 0 }}
@@ -189,6 +201,19 @@ export default function ServiceAreaPage({ area }: { area: ServiceArea }) {
               title={`${area.city} service area on Google Maps`}
             />
           </div>
+          {area.office && (
+            <a
+              href={area.office.mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 flex items-start justify-center gap-2 text-center text-sm text-text hover:text-primary"
+            >
+              <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+              <span>
+                <span className="font-semibold">Our {area.office.label}:</span> {area.office.fullAddress}
+              </span>
+            </a>
+          )}
           <div className="mt-4 flex flex-wrap justify-center gap-2">
             {area.localities.map((loc) => (
               <span

@@ -24,6 +24,7 @@ import {
 } from 'lucide-react';
 
 import SocialLinks from '@/components/SocialLinks';
+import { faridabadOffice, offices, postalAddress, registeredOffice } from '@/data/offices';
 import HeroSection from '@/components/HeroSection';
 import SubsidyStrip from '@/components/SubsidyStrip';
 import SectionWrapper from '@/components/SectionWrapper';
@@ -201,14 +202,7 @@ export default function HomePage() {
             image: 'https://www.raytrixenergy.com/brand/logo-stacked.png',
             telephone: phone ? `+91${phone}` : undefined,
             email: 'raytrixenergy@gmail.com',
-            address: {
-              '@type': 'PostalAddress',
-              streetAddress: 'A-85/A, Sangam Vihar, Deoli',
-              addressLocality: 'New Delhi',
-              addressRegion: 'Delhi',
-              postalCode: '110062',
-              addressCountry: 'IN',
-            },
+            address: postalAddress(registeredOffice),
             taxID: '07AAPCR7379M1ZB',
             identifier: {
               '@type': 'PropertyValue',
@@ -220,7 +214,19 @@ export default function HomePage() {
               { '@type': 'City', name: 'Faridabad' },
               { '@type': 'City', name: 'Gurgaon' },
             ],
-            hasMap: 'https://maps.app.goo.gl/Uq22636vrX41PDYP9',
+            hasMap: registeredOffice.mapsUrl,
+            department: [
+              {
+                '@type': 'LocalBusiness',
+                name: 'Raytrix Energy — Faridabad Office',
+                url: 'https://www.raytrixenergy.com/service-areas/faridabad',
+                image: 'https://www.raytrixenergy.com/brand/logo-stacked.png',
+                telephone: phone ? `+91${phone}` : undefined,
+                email: 'raytrixenergy@gmail.com',
+                address: postalAddress(faridabadOffice),
+                hasMap: faridabadOffice.mapsUrl,
+              },
+            ],
             serviceType: 'Solar Panel Installation',
             sameAs: [
               'https://www.instagram.com/raytrixenergy',
@@ -413,10 +419,15 @@ export default function HomePage() {
                   raytrixenergy@gmail.com
                 </a>
 
-                <div className="flex items-start gap-3 rounded-xl bg-primary/10 p-3 text-sm text-text">
-                  <MapPin className="h-5 w-5 flex-shrink-0 text-primary" />
-                  <span>A-85/A, Sangam Vihar, Deoli, South Delhi, New Delhi &ndash; 110062</span>
-                </div>
+                {offices.map((office) => (
+                  <div key={office.label} className="flex items-start gap-3 rounded-xl bg-primary/10 p-3 text-sm text-text">
+                    <MapPin className="h-5 w-5 flex-shrink-0 text-primary" />
+                    <span>
+                      <span className="block font-semibold">{office.label}</span>
+                      {office.fullAddress}
+                    </span>
+                  </div>
+                ))}
 
                 <SocialLinks iconClassName="text-text-light hover:text-primary" />
               </div>

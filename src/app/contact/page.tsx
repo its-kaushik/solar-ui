@@ -8,6 +8,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import CallButton from '@/components/CallButton';
 import SocialLinks from '@/components/SocialLinks';
+import { offices } from '@/data/offices';
 
 export const metadata: Metadata = {
   title: 'Contact Us — Free Solar Consultation',
@@ -32,12 +33,12 @@ const contactDetails = [
     value: 'raytrixenergy@gmail.com',
     href: 'mailto:raytrixenergy@gmail.com',
   },
-  {
+  ...offices.map((office) => ({
     icon: MapPin,
-    label: 'Registered Office',
-    value: 'A-85/A, Sangam Vihar, Deoli, South Delhi, New Delhi – 110062',
-    href: 'https://www.google.com/maps/search/?api=1&query=A-85%2FA%2C+Sangam+Vihar%2C+Deoli%2C+New+Delhi%2C+110062',
-  },
+    label: office.label,
+    value: office.fullAddress,
+    href: office.mapsUrl,
+  })),
   {
     icon: MapPin,
     label: 'Service Area',
@@ -131,31 +132,40 @@ export default function ContactPage() {
         </div>
       </SectionWrapper>
 
-      {/* Map placeholder */}
+      {/* Offices & service area */}
       <SectionWrapper className="bg-bg-white">
         <SectionHeading
-          title="Service Area"
-          subtitle="We serve Delhi, Faridabad, and Gurgaon — all eligible for the central PM Surya Ghar subsidy, with Delhi also getting the state top-up."
+          title="Our Offices & Service Area"
+          subtitle="Offices in Delhi and Faridabad, serving Delhi, Faridabad, and Gurgaon — all eligible for the central PM Surya Ghar subsidy, with Delhi also getting the state top-up."
         />
         <div className="mx-auto max-w-3xl">
-          <a
-            href="https://maps.app.goo.gl/Uq22636vrX41PDYP9"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block overflow-hidden rounded-2xl"
-          >
-            <iframe
-              src="https://maps.google.com/maps?q=A-85%2FA,+Sangam+Vihar,+Deoli,+New+Delhi,+110062&t=&z=15&ie=UTF8&iwloc=&output=embed"
-              width="100%"
-              height="256"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Raytrix Energy location on Google Maps"
-              className="pointer-events-none"
-            />
-          </a>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {offices.map((office) => (
+              <a
+                key={office.label}
+                href={office.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block overflow-hidden rounded-2xl bg-bg transition-colors hover:bg-primary/5"
+              >
+                <iframe
+                  src={`https://maps.google.com/maps?q=${encodeURIComponent(office.mapQuery)}&t=&z=15&ie=UTF8&iwloc=&output=embed`}
+                  width="100%"
+                  height="200"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title={`Raytrix Energy ${office.label} on Google Maps`}
+                  className="pointer-events-none"
+                />
+                <div className="p-4">
+                  <p className="text-sm font-semibold text-text">{office.label}</p>
+                  <p className="mt-0.5 text-xs text-text-light">{office.fullAddress}</p>
+                </div>
+              </a>
+            ))}
+          </div>
           <div className="mt-4 grid gap-3 sm:grid-cols-3">
             <Link href="/services/residential" className="rounded-xl bg-bg p-4 text-center transition-colors hover:bg-primary/5">
               <p className="text-sm font-semibold text-text">Delhi</p>

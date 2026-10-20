@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
 import SocialLinks from './SocialLinks';
+import { offices } from '@/data/offices';
 
 const footerLinks = {
   services: {
@@ -100,10 +101,15 @@ export default function Footer() {
                 <Mail className="h-4 w-4 shrink-0" />
                 raytrixenergy@gmail.com
               </a>
-              <div className="flex items-start gap-2 text-sm text-gray-300">
-                <MapPin className="h-4 w-4 shrink-0 mt-0.5" />
-                <span>A-85/A, Sangam Vihar, Deoli, South Delhi, New Delhi &ndash; 110062</span>
-              </div>
+              {offices.map((office) => (
+                <div key={office.label} className="flex items-start gap-2 text-sm text-gray-300">
+                  <MapPin className="h-4 w-4 shrink-0 mt-0.5" />
+                  <span>
+                    <span className="block font-medium text-white">{office.label}</span>
+                    {office.fullAddress}
+                  </span>
+                </div>
+              ))}
             </div>
 
             {/* Social media */}

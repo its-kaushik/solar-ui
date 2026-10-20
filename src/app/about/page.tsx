@@ -15,6 +15,7 @@ import {
 import SectionWrapper from '@/components/SectionWrapper';
 import SectionHeading from '@/components/SectionHeading';
 import CTAButton from '@/components/CTAButton';
+import { offices, postalAddress, registeredOffice } from '@/data/offices';
 
 export const metadata: Metadata = {
   title: 'About Us',
@@ -82,14 +83,12 @@ export default function AboutPage() {
             url: 'https://www.raytrixenergy.com',
             logo: 'https://www.raytrixenergy.com/brand/logo-stacked.png',
             email: 'raytrixenergy@gmail.com',
-            address: {
-              '@type': 'PostalAddress',
-              streetAddress: 'A-85/A, Sangam Vihar, Deoli',
-              addressLocality: 'New Delhi',
-              addressRegion: 'Delhi',
-              postalCode: '110062',
-              addressCountry: 'IN',
-            },
+            address: postalAddress(registeredOffice),
+            location: offices.map((office) => ({
+              '@type': 'Place',
+              name: `Raytrix Energy — ${office.label}`,
+              address: postalAddress(office),
+            })),
             taxID: '07AAPCR7379M1ZB',
             identifier: {
               '@type': 'PropertyValue',

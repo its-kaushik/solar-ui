@@ -1,3 +1,5 @@
+import { faridabadOffice, type Office } from '@/data/offices';
+
 export interface ServiceAreaFAQ {
   q: string;
   a: string;
@@ -22,6 +24,8 @@ export interface ServiceArea {
   subsidyNote: string[];
   /** Google Maps embed query. */
   mapQuery: string;
+  /** Local office in this city, if we have one. */
+  office?: Office;
   faqs: ServiceAreaFAQ[];
 }
 
@@ -36,7 +40,7 @@ export const serviceAreas: ServiceArea[] = [
     metaDescription:
       'Rooftop solar installation in Faridabad with up to ₹78,000 PM Surya Ghar subsidy. We handle DHBVN net metering, paperwork, and end-to-end installation. Free site survey.',
     heroSubtitle:
-      'Rooftop solar for Faridabad homes with up to ₹78,000 central subsidy — we handle your DHBVN net metering, PM Surya Ghar application, and installation end to end.',
+      'Rooftop solar for Faridabad homes with up to ₹78,000 central subsidy — from our local office in Ashoka Enclave, we handle your DHBVN net metering, PM Surya Ghar application, and installation end to end.',
     subsidyMax: '₹78,000',
     localities: [
       'NIT Faridabad',
@@ -47,7 +51,7 @@ export const serviceAreas: ServiceArea[] = [
       'Old Faridabad',
     ],
     intro: [
-      "Faridabad's electricity bills climb every summer as cooling load peaks, and with so many independent houses and multi-storey homes across the city, rooftop solar is one of the most effective ways to bring those bills down. Raytrix Energy installs grid-connected rooftop solar across Faridabad — from NIT Faridabad and the older sectors to Greater Faridabad (Neharpar), Ballabgarh, and Surajkund.",
+      "Faridabad's electricity bills climb every summer as cooling load peaks, and with so many independent houses and multi-storey homes across the city, rooftop solar is one of the most effective ways to bring those bills down. Raytrix Energy installs grid-connected rooftop solar across Faridabad — from NIT Faridabad and the older sectors to Greater Faridabad (Neharpar), Ballabgarh, and Surajkund — and our Faridabad office in Ashoka Enclave - 2 means site surveys, installs, and maintenance visits are handled by a team that is close by.",
       'Because Faridabad falls under Dakshin Haryana Bijli Vitran Nigam (DHBVN) rather than Delhi’s BSES, net metering and approvals are processed through DHBVN. We know the DHBVN application flow and manage the feasibility approval, bi-directional meter change, and inspection on your behalf — so you never have to navigate the DISCOM yourself.',
       'A typical Faridabad home installs a 2–5 kW system. At roughly 4 units per day for every 1 kW, a 3 kW system generates about 360 units a month — enough to offset most of a mid-sized household’s consumption, with surplus units exported to the grid and credited on your DHBVN bill through net metering.',
     ],
@@ -55,8 +59,13 @@ export const serviceAreas: ServiceArea[] = [
       'Faridabad homeowners are eligible for the central PM Surya Ghar Muft Bijli Yojana subsidy of up to ₹78,000 for a 3 kW or larger residential system — ₹30,000 per kW for the first 2 kW plus ₹18,000 for the third kW. This is a national scheme and applies in Haryana exactly as it does elsewhere in India; the application is filed on the national portal with DHBVN as your DISCOM.',
       'One honest clarification: the additional Delhi state subsidy (up to ₹78,000) and the Delhi Generation-Based Incentive are specific to Delhi (BSES) connections and do not apply in Haryana. So a Faridabad system qualifies for the ₹78,000 central subsidy rather than the ₹1,56,000 combined figure quoted for Delhi. We confirm the exact amount for your system upfront — no surprises.',
     ],
-    mapQuery: 'Faridabad, Haryana',
+    mapQuery: faridabadOffice.mapQuery,
+    office: faridabadOffice,
     faqs: [
+      {
+        q: 'Do you have an office in Faridabad?',
+        a: `Yes. Our Faridabad office is at ${faridabadOffice.fullAddress}. You are welcome to visit, or book a free site survey and we will come to you.`,
+      },
       {
         q: 'Do I get a solar subsidy in Faridabad?',
         a: 'Yes. Faridabad homes qualify for the central PM Surya Ghar subsidy of up to ₹78,000 for a 3 kW or larger residential system. The Delhi state subsidy and GBI are Delhi-only, so they do not apply here — your benefit is the ₹78,000 central subsidy.',
