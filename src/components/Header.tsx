@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Menu, X, Phone, MessageCircle } from 'lucide-react';
 
 const navLinks = [
@@ -38,10 +39,15 @@ export default function Header() {
       <header className="sticky top-0 z-50 border-b border-gray-200 bg-white/95 backdrop-blur-sm">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <span className="font-heading text-lg font-bold text-primary sm:text-xl">
-              Raytrix Energy
-            </span>
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/brand/logo-horizontal.png"
+              alt="Raytrix Energy"
+              width={196}
+              height={48}
+              priority
+              className="h-10 w-auto sm:h-12"
+            />
           </Link>
 
           {/* Desktop nav */}

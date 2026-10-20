@@ -197,6 +197,8 @@ export default function HomePage() {
             name: 'Raytrix Energy (OPC) Private Limited',
             description: 'Rooftop solar panel installation in Delhi with government subsidy assistance.',
             url: 'https://www.raytrixenergy.com',
+            logo: 'https://www.raytrixenergy.com/brand/logo-stacked.png',
+            image: 'https://www.raytrixenergy.com/brand/logo-stacked.png',
             telephone: phone ? `+91${phone}` : undefined,
             email: 'raytrixenergy@gmail.com',
             address: {

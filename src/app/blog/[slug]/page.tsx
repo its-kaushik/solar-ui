@@ -57,6 +57,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     publisher: {
       '@type': 'Organization',
       name: 'Raytrix Energy (OPC) Private Limited',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://www.raytrixenergy.com/brand/logo-stacked.png',
+      },
     },
   };
 

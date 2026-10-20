@@ -80,6 +80,7 @@ export default function AboutPage() {
             name: 'Raytrix Energy (OPC) Private Limited',
             description: 'Delhi-based solar power installation company.',
             url: 'https://www.raytrixenergy.com',
+            logo: 'https://www.raytrixenergy.com/brand/logo-stacked.png',
             email: 'raytrixenergy@gmail.com',
             address: {
               '@type': 'PostalAddress',

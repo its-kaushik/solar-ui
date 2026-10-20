@@ -1,10 +1,16 @@
+import { readFile } from 'node:fs/promises';
+import { join } from 'node:path';
 import { ImageResponse } from 'next/og';
 
 export const alt = 'Raytrix Energy — Rooftop Solar Installation in Delhi';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
-export default function OGImage() {
+export default async function OGImage() {
+  // Logo is navy on white, so the card uses a light background
+  const logo = await readFile(join(process.cwd(), 'public/brand/logo-stacked-legal.png'));
+  const logoSrc = `data:image/png;base64,${logo.toString('base64')}`;
+
   return new ImageResponse(
     (
       <div
@@ -15,50 +21,20 @@ export default function OGImage() {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          background: 'linear-gradient(135deg, #1E3A5F 0%, #142942 100%)',
+          background: '#FFFFFF',
+          borderBottom: '16px solid #F59E0B',
           fontFamily: 'sans-serif',
         }}
       >
-        {/* Sun icon */}
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 32 32"
-          width="80"
-          height="80"
-          fill="none"
-        >
-          <circle cx="16" cy="16" r="6" fill="#F59E0B" />
-          <g stroke="#F59E0B" strokeWidth="2" strokeLinecap="round">
-            <line x1="16" y1="4" x2="16" y2="7" />
-            <line x1="16" y1="25" x2="16" y2="28" />
-            <line x1="4" y1="16" x2="7" y2="16" />
-            <line x1="25" y1="16" x2="28" y2="16" />
-            <line x1="7.5" y1="7.5" x2="9.6" y2="9.6" />
-            <line x1="22.4" y1="22.4" x2="24.5" y2="24.5" />
-            <line x1="7.5" y1="24.5" x2="9.6" y2="22.4" />
-            <line x1="22.4" y1="9.6" x2="24.5" y2="7.5" />
-          </g>
-        </svg>
+        <img src={logoSrc} width={497} height={300} alt="" />
 
         <div
           style={{
             display: 'flex',
-            fontSize: 48,
-            fontWeight: 800,
-            color: '#FFFFFF',
-            marginTop: 24,
-            textAlign: 'center',
-          }}
-        >
-          Raytrix Energy
-        </div>
-
-        <div
-          style={{
-            display: 'flex',
-            fontSize: 24,
-            color: '#F59E0B',
-            marginTop: 12,
+            fontSize: 32,
+            fontWeight: 700,
+            color: '#1E3A5F',
+            marginTop: 36,
           }}
         >
           Powering Delhi, One Rooftop at a Time
@@ -67,9 +43,9 @@ export default function OGImage() {
         <div
           style={{
             display: 'flex',
-            fontSize: 18,
-            color: '#9CA3AF',
-            marginTop: 24,
+            fontSize: 22,
+            color: '#5F6774',
+            marginTop: 16,
           }}
         >
           Up to Rs 1,56,000 Government Subsidy | BSES Registered | MNRE Enrolled

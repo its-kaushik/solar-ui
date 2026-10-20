@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
 import SocialLinks from './SocialLinks';
 
@@ -56,8 +57,15 @@ export default function Footer() {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-6">
           {/* Brand column */}
           <div className="lg:col-span-1">
-            <Link href="/" className="font-heading text-xl font-bold text-white">
-              Raytrix Energy
+            {/* Logo is navy on white, so it sits on a white card */}
+            <Link href="/" className="inline-block rounded-xl bg-white px-4 py-3">
+              <Image
+                src="/brand/logo-stacked.png"
+                alt="Raytrix Energy"
+                width={116}
+                height={64}
+                className="h-16 w-auto"
+              />
             </Link>
             <p className="mt-2 text-sm text-gray-300">
               Powering Delhi, One Rooftop at a Time
