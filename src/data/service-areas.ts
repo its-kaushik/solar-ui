@@ -53,7 +53,7 @@ export const serviceAreas: ServiceArea[] = [
     ],
     subsidyNote: [
       'Faridabad homeowners are eligible for the central PM Surya Ghar Muft Bijli Yojana subsidy of up to ₹78,000 for a 3 kW or larger residential system — ₹30,000 per kW for the first 2 kW plus ₹18,000 for the third kW. This is a national scheme and applies in Haryana exactly as it does elsewhere in India; the application is filed on the national portal with DHBVN as your DISCOM.',
-      'One honest clarification: the additional Delhi state subsidy (₹30,000) and the Delhi Generation-Based Incentive are specific to Delhi (BSES) connections and do not apply in Haryana. So a Faridabad system qualifies for the ₹78,000 central subsidy rather than the ₹1,08,000 combined figure quoted for Delhi. We confirm the exact amount for your system upfront — no surprises.',
+      'One honest clarification: the additional Delhi state subsidy (up to ₹78,000) and the Delhi Generation-Based Incentive are specific to Delhi (BSES) connections and do not apply in Haryana. So a Faridabad system qualifies for the ₹78,000 central subsidy rather than the ₹1,56,000 combined figure quoted for Delhi. We confirm the exact amount for your system upfront — no surprises.',
     ],
     mapQuery: 'Faridabad, Haryana',
     faqs: [
@@ -108,7 +108,7 @@ export const serviceAreas: ServiceArea[] = [
     ],
     subsidyNote: [
       'Gurgaon homeowners are eligible for the central PM Surya Ghar Muft Bijli Yojana subsidy of up to ₹78,000 for a 3 kW or larger residential system — ₹30,000 per kW for the first 2 kW plus ₹18,000 for the third kW. It is a national scheme, filed on the national portal with DHBVN as your DISCOM, and applies in Haryana just as it does across India.',
-      'To be clear: because Gurgaon is in Haryana and not on the Delhi BSES grid, the extra Delhi state subsidy and the Delhi GBI do not apply — your system qualifies for the ₹78,000 central subsidy, not the ₹1,08,000 Delhi figure. We confirm the exact amount for your roof before you commit.',
+      'To be clear: because Gurgaon is in Haryana and not on the Delhi BSES grid, the extra Delhi state subsidy and the Delhi GBI do not apply — your system qualifies for the ₹78,000 central subsidy, not the ₹1,56,000 Delhi figure. We confirm the exact amount for your roof before you commit.',
     ],
     mapQuery: 'Gurgaon, Haryana',
     faqs: [

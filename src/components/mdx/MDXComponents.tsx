@@ -114,13 +114,13 @@ function SubsidyTable({ type }: { type: 'central' | 'state' | 'gbi' }) {
           <tbody>
             <tr className="border-b border-gray-100">
               <td className="px-4 py-3 text-text-light">Capital Subsidy</td>
-              <td className="px-4 py-3 text-text-light">Rs 2,000/KW (max Rs 10,000)</td>
-              <td className="px-4 py-3 text-text-light">All residential</td>
+              <td className="px-4 py-3 text-text-light">Rs 52,000</td>
+              <td className="px-4 py-3 text-text-light">2 KW home systems</td>
             </tr>
             <tr>
-              <td className="px-4 py-3 text-text-light">Additional Subsidy</td>
-              <td className="px-4 py-3 font-semibold text-accent">Rs 30,000</td>
-              <td className="px-4 py-3 text-text-light">3 KW+ systems</td>
+              <td className="px-4 py-3 text-text-light">Capital Subsidy</td>
+              <td className="px-4 py-3 font-semibold text-accent">Rs 78,000</td>
+              <td className="px-4 py-3 text-text-light">3 KW+ home systems</td>
             </tr>
           </tbody>
         </table>

@@ -28,7 +28,7 @@ export default function HeroSection() {
 
           <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-gray-300 sm:mt-6 sm:text-lg">
             End-to-end rooftop solar installation with full government subsidy assistance.
-            Get up to <span className="font-semibold text-secondary">Rs 1,08,000</span> in subsidies.
+            Get up to <span className="font-semibold text-secondary">Rs 1,56,000</span> in subsidies.
             5 years free maintenance included.
           </p>
 

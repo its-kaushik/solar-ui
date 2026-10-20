@@ -2,10 +2,10 @@ import { TrendingUp, Zap, IndianRupee, Sun } from 'lucide-react';
 import CTAButton from './CTAButton';
 
 const stats = [
-  { icon: IndianRupee, label: 'Subsidy (Central + State)', value: 'Up to Rs 1,08,000' },
+  { icon: IndianRupee, label: 'Subsidy (Central + State)', value: 'Up to Rs 1,56,000' },
   { icon: Zap, label: 'Annual Bill Savings', value: '~Rs 50,000/yr' },
   { icon: TrendingUp, label: 'GBI Income (5 years)', value: 'Rs 3/unit' },
-  { icon: Sun, label: 'Payback Period', value: '~3-4 Years' },
+  { icon: Sun, label: 'Payback Period', value: '~1 Year' },
 ];
 
 export default function SavingsSnapshot() {

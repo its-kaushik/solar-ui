@@ -17,11 +17,11 @@ import CTAButton from '@/components/CTAButton';
 export const metadata: Metadata = {
   title: 'Residential Solar Installation',
   description:
-    'Get rooftop solar panels installed at your home in Delhi. On-Grid, Off-Grid & Hybrid systems. Up to Rs 1,08,000 subsidy under PM Surya Ghar Yojana. Free consultation.',
+    'Get rooftop solar panels installed at your home in Delhi. On-Grid, Off-Grid & Hybrid systems. Up to Rs 1,56,000 in central and Delhi government subsidy. Free consultation.',
   openGraph: {
     title: 'Residential Solar Installation — Raytrix Energy',
     description:
-      'Get rooftop solar panels installed at your home in Delhi. On-Grid, Off-Grid & Hybrid systems. Up to Rs 1,08,000 subsidy under PM Surya Ghar Yojana. Free consultation.',
+      'Get rooftop solar panels installed at your home in Delhi. On-Grid, Off-Grid & Hybrid systems. Up to Rs 1,56,000 in central and Delhi government subsidy. Free consultation.',
     type: 'website',
     siteName: 'Raytrix Energy',
     locale: 'en_IN',
@@ -106,7 +106,7 @@ export default function ResidentialSolarPage() {
             Residential Solar Installation
           </h1>
           <p className="mx-auto mt-3 max-w-2xl text-base text-gray-300 sm:text-lg">
-            Power your home with clean solar energy. Get up to Rs 1,08,000 in government subsidies.
+            Power your home with clean solar energy. Get up to Rs 1,56,000 in government subsidies.
           </p>
         </div>
       </section>
@@ -228,7 +228,7 @@ export default function ResidentialSolarPage() {
           </h2>
           <p className="mt-2 text-sm text-text-light sm:text-base">
             Residential on-grid systems in Delhi are eligible for up to{' '}
-            <span className="font-bold text-primary">Rs 1,08,000</span> in combined central and state subsidies.
+            <span className="font-bold text-primary">Rs 1,56,000</span> in combined central and state subsidies.
             We handle the complete application process on your behalf.
           </p>
           <div className="mt-4">
@@ -247,7 +247,7 @@ export default function ResidentialSolarPage() {
         faqs={[
           {
             q: 'How much does rooftop solar cost for a home in Delhi?',
-            a: 'A 3KW on-grid system typically costs Rs 1.8–2.2 lakh before subsidy. After the combined central and Delhi state subsidy of up to Rs 1,08,000, your effective cost can be as low as Rs 70,000–1,10,000.',
+            a: 'It depends on your roof, system size, panel brand and inverter, so we give you an exact price after a free site survey. A 3KW home system in Delhi qualifies for up to Rs 1,56,000 in combined central and Delhi government subsidy, which covers most of the cost, and most families recover the rest within about a year. Try our solar calculator for your subsidy and savings, or ask us for your exact price on WhatsApp.',
           },
           {
             q: 'How much electricity can a residential solar system generate?',

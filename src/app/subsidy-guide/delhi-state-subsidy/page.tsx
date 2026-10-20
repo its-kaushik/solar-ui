@@ -10,11 +10,11 @@ import CTAButton from '@/components/CTAButton';
 export const metadata: Metadata = {
   title: 'Delhi State Solar Subsidy & GBI',
   description:
-    'Delhi state solar subsidy: Rs 2,000/KW + Rs 30,000 for 3KW systems. Plus Generation-Based Incentive (GBI) of Rs 2-3 per kWh for 5 years. Complete guide.',
+    'Delhi state solar subsidy: up to Rs 78,000 for a 3KW home system, on top of the central Rs 78,000. Plus Generation-Based Incentive (GBI) of Rs 2-3 per kWh for 5 years. Complete guide.',
   openGraph: {
     title: 'Delhi State Solar Subsidy & GBI — Raytrix Energy',
     description:
-      'Delhi state solar subsidy: Rs 2,000/KW + Rs 30,000 for 3KW systems. Plus Generation-Based Incentive (GBI) of Rs 2-3 per kWh for 5 years. Complete guide.',
+      'Delhi state solar subsidy: up to Rs 78,000 for a 3KW home system, on top of the central Rs 78,000. Plus Generation-Based Incentive (GBI) of Rs 2-3 per kWh for 5 years. Complete guide.',
     type: 'website',
     siteName: 'Raytrix Energy',
     locale: 'en_IN',
@@ -59,22 +59,22 @@ export default function DelhiStateSubsidyPage() {
               </thead>
               <tbody>
                 <tr className="border-b border-gray-100">
-                  <td className="py-3 pr-4 font-medium text-text">Basic State Subsidy</td>
-                  <td className="py-3 text-text-light">Rs 2,000/KW (up to Rs 10,000 per consumer)</td>
+                  <td className="py-3 pr-4 font-medium text-text">2 KW system</td>
+                  <td className="py-3 text-text-light">Rs 52,000</td>
                 </tr>
                 <tr className="border-b border-gray-100">
-                  <td className="py-3 pr-4 font-medium text-text">Additional Subsidy (3KW)</td>
-                  <td className="py-3 text-text-light">Rs 30,000 for 3 KW rooftop solar installations</td>
+                  <td className="py-3 pr-4 font-medium text-text">3 KW system and above</td>
+                  <td className="py-3 text-text-light">Rs 78,000 (matches the central subsidy)</td>
                 </tr>
                 <tr>
                   <td className="py-3 pr-4 font-medium text-text">Maximum State Subsidy</td>
-                  <td className="py-3 font-semibold text-primary">Up to Rs 30,000</td>
+                  <td className="py-3 font-semibold text-primary">Up to Rs 78,000</td>
                 </tr>
               </tbody>
             </table>
           </div>
           <p className="mt-4 text-xs text-text-light">
-            State subsidy is available for residential consumers in the BSES area (Delhi) and is stackable with the central PM Surya Ghar subsidy.
+            Approved by the Delhi Cabinet in September 2026 under the amended Delhi Solar Energy Policy. State subsidy is available for residential consumers in the BSES area (Delhi) and is stackable with the central PM Surya Ghar subsidy.
           </p>
         </div>
       </SectionWrapper>
@@ -91,11 +91,11 @@ export default function DelhiStateSubsidyPage() {
               </div>
               <div className="flex items-center justify-between border-b border-gray-200 pb-3">
                 <span className="text-sm text-text">Delhi State Subsidy</span>
-                <span className="font-semibold text-text">Up to Rs 30,000</span>
+                <span className="font-semibold text-text">Up to Rs 78,000</span>
               </div>
               <div className="flex items-center justify-between pt-1">
                 <span className="font-heading font-bold text-text">Total Subsidy</span>
-                <span className="font-heading text-xl font-bold text-primary">Up to Rs 1,08,000</span>
+                <span className="font-heading text-xl font-bold text-primary">Up to Rs 1,56,000</span>
               </div>
             </div>
           </div>
@@ -178,7 +178,7 @@ export default function DelhiStateSubsidyPage() {
           },
           {
             q: 'Can I get both central and Delhi state subsidy?',
-            a: 'Yes. The PM Surya Ghar (central) and Delhi state subsidy are separate schemes and can be combined. For a 3KW system, you can get up to Rs 78,000 + Rs 30,000 = Rs 1,08,000 total.',
+            a: 'Yes. The PM Surya Ghar (central) and Delhi state subsidy are separate schemes and can be combined. For a 3KW system, you can get up to Rs 78,000 + Rs 78,000 = Rs 1,56,000 total.',
           },
           {
             q: 'How is the GBI amount credited?',

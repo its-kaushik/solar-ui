@@ -10,11 +10,11 @@ import CTAButton from '@/components/CTAButton';
 export const metadata: Metadata = {
   title: 'Solar Subsidy Guide — Delhi',
   description:
-    'Complete guide to solar panel subsidies in Delhi. PM Surya Ghar Yojana (up to Rs 78,000), Delhi state subsidy (up to Rs 30,000), and Generation-Based Incentive (Rs 3/kWh).',
+    'Complete guide to solar panel subsidies in Delhi. PM Surya Ghar Yojana (up to Rs 78,000), Delhi state subsidy (up to Rs 78,000), and Generation-Based Incentive (Rs 3/kWh).',
   openGraph: {
     title: 'Solar Subsidy Guide — Delhi — Raytrix Energy',
     description:
-      'Complete guide to solar panel subsidies in Delhi. PM Surya Ghar Yojana (up to Rs 78,000), Delhi state subsidy (up to Rs 30,000), and Generation-Based Incentive (Rs 3/kWh).',
+      'Complete guide to solar panel subsidies in Delhi. PM Surya Ghar Yojana (up to Rs 78,000), Delhi state subsidy (up to Rs 78,000), and Generation-Based Incentive (Rs 3/kWh).',
     type: 'website',
     siteName: 'Raytrix Energy',
     locale: 'en_IN',
@@ -35,8 +35,8 @@ const subsidyCards = [
     icon: Building,
     title: 'Delhi State Subsidy',
     subtitle: 'Delhi Government',
-    amount: 'Up to Rs 30,000',
-    description: 'Additional state subsidy of Rs 2,000/KW + Rs 30,000 extra for 3KW systems.',
+    amount: 'Up to Rs 78,000',
+    description: 'Matching Delhi government capital subsidy for homes: Rs 52K for 2KW, Rs 78K for 3KW+.',
     href: '/subsidy-guide/delhi-state-subsidy',
     color: 'bg-secondary/10 text-secondary',
   },
@@ -73,10 +73,10 @@ export default function SubsidyGuidePage() {
             Total Available Subsidy for 3KW Residential System
           </p>
           <p className="mt-2 font-heading text-4xl font-bold text-primary sm:text-5xl">
-            Up to Rs 1,08,000
+            Up to Rs 1,56,000
           </p>
           <p className="mt-2 text-sm text-text-light">
-            Central (Rs 78,000) + Delhi State (up to Rs 30,000) — disbursed directly to your bank account
+            Central (Rs 78,000) + Delhi State (up to Rs 78,000) — disbursed directly to your bank account
           </p>
         </div>
       </SectionWrapper>
@@ -132,7 +132,7 @@ export default function SubsidyGuidePage() {
         faqs={[
           {
             q: 'How much subsidy can I get for solar panels in Delhi?',
-            a: 'You can get up to Rs 1,08,000 in combined subsidies — Rs 78,000 from the central government (PM Surya Ghar) and up to Rs 30,000 from the Delhi state government for a 3KW residential system.',
+            a: 'You can get up to Rs 1,56,000 in combined subsidies for a 3KW residential system — Rs 78,000 from the central government (PM Surya Ghar) and a matching Rs 78,000 from the Delhi government.',
           },
           {
             q: 'Who is eligible for solar subsidy in Delhi?',

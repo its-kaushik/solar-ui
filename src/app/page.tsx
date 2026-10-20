@@ -48,11 +48,11 @@ import { getAllPosts } from '@/lib/blog';
 export const metadata: Metadata = {
   title: 'Raytrix Energy — Rooftop Solar Installation in Delhi',
   description:
-    'Get rooftop solar panels installed in Delhi with up to ₹1,08,000 government subsidy. BSES registered, MNRE enrolled. Free consultation & 5 years maintenance.',
+    'Get rooftop solar panels installed in Delhi with up to ₹1,56,000 government subsidy. BSES registered, MNRE enrolled. Free consultation & 5 years maintenance.',
   openGraph: {
     title: 'Raytrix Energy — Rooftop Solar Installation in Delhi',
     description:
-      'Get rooftop solar panels installed in Delhi with up to ₹1,08,000 government subsidy.',
+      'Get rooftop solar panels installed in Delhi with up to ₹1,56,000 government subsidy.',
     type: 'website',
     siteName: 'Raytrix Energy',
     locale: 'en_IN',
@@ -161,7 +161,7 @@ const homeFaqs = [
   },
   {
     q: 'What do I pay upfront before the subsidy arrives?',
-    a: 'You pay the full system cost at installation. The PM Surya Ghar subsidy (up to Rs 1,08,000 in Delhi) is credited directly to your bank account, typically 60–90 days after commissioning and net-meter installation. We also help you apply for a solar loan to bridge this if needed.',
+    a: 'You pay the full system cost at installation. The central PM Surya Ghar and Delhi government subsidies (up to Rs 1,56,000 combined in Delhi) are credited directly to your bank account, typically 60–90 days after commissioning and net-meter installation. We also help you apply for a solar loan to bridge this if needed.',
   },
   {
     q: 'Will solar panels damage or leak my roof?',
@@ -177,7 +177,7 @@ const homeFaqs = [
   },
   {
     q: 'How long until I recover my investment?',
-    a: 'After subsidy, most Delhi homeowners recover their net cost in about 3–4 years. Panels are warranted for 25 years, so you get roughly two decades of nearly free power after payback.',
+    a: 'With the combined central and Delhi government subsidy of up to Rs 1,56,000, most Delhi homeowners recover their share of the cost within about a year. In Faridabad and Gurgaon, where only the central subsidy applies, payback is about 3–4 years. Panels are warranted for 25 years, so you get two decades or more of nearly free power after payback.',
   },
 ];
 
@@ -422,7 +422,7 @@ export default function HomePage() {
               {/* Service area note */}
               <div className="mt-6 rounded-xl border border-secondary/30 bg-secondary/5 p-3">
                 <p className="text-xs text-text-light">
-                  <span className="font-semibold text-text">Service Areas:</span> Delhi (up to ₹1,08,000 subsidy), Faridabad &amp; Gurgaon (up to ₹78,000 central subsidy)
+                  <span className="font-semibold text-text">Service Areas:</span> Delhi (up to ₹1,56,000 subsidy), Faridabad &amp; Gurgaon (up to ₹78,000 central subsidy)
                 </p>
               </div>
             </div>

@@ -108,7 +108,7 @@ export default function CalculatorForm({ onCalculate }: CalculatorFormProps) {
           <p className="mt-1 text-xs text-red-500">{errors.area}</p>
         )}
         <p className="mt-1 text-xs text-text-light">
-          PM Surya Ghar & Delhi state subsidy available only for Delhi (BSES area).
+          PM Surya Ghar subsidy applies in all areas. Delhi government subsidy and GBI apply to Delhi only.
         </p>
       </div>
 

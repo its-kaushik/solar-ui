@@ -131,9 +131,11 @@ The website must clearly distinguish between **manufacturer warranties** on equi
 
 | Benefit | Details |
 |---------|---------|
-| **State capital subsidy** | Rs 2,000/kW (up to Rs 10,000 per consumer) |
-| **Additional state subsidy** | Rs 30,000 for 3 KW rooftop solar installations |
-| **Combined max (Central + State) for 3 KW** | Up to Rs 1,08,000 |
+| **State capital subsidy** | Rs 26,000/kW, capped at 3 KW — Rs 52,000 for 2 KW, Rs 78,000 for 3 KW and above |
+| **Eligibility** | Residential consumers in Delhi only (not commercial, not Haryana) |
+| **Combined max (Central + State) for 3 KW** | Up to Rs 1,56,000 |
+
+> Updated Oct 2026: the Delhi Cabinet raised the state subsidy in September 2026 under the amended Delhi Solar Energy Policy. It previously stood at Rs 2,000/kW (max Rs 10,000) plus Rs 30,000 for 3 KW systems, for a combined Rs 1,08,000.
 
 ### 4.3 Delhi Generation-Based Incentive (GBI)
 
@@ -160,12 +162,12 @@ This should be presented as a clear infographic/card on the website:
 | Benefit | Value |
 |---------|-------|
 | Central subsidy | Rs 78,000 (one-time) |
-| Delhi state subsidy | Up to Rs 30,000 (one-time) |
+| Delhi state subsidy | Up to Rs 78,000 (one-time) |
 | GBI income (Rs 3/kWh x 5 years) | ~Rs 50,000/year |
 | Electricity bill savings | ~Rs 50,000/year |
 | Free net meter | Included |
 
-**Key message:** With subsidies covering a significant portion of the cost and ongoing GBI + bill savings, the system pays for itself in approximately 3-4 years, then generates free electricity for 20+ more years.
+**Key message:** With subsidies covering a significant portion of the cost and ongoing GBI + bill savings, a Delhi homeowner's share of the cost is recovered within about a year (about 3-4 years in Faridabad/Gurgaon, where only the central subsidy applies), then generates free electricity for 20+ more years.
 
 ---
 
@@ -255,7 +257,7 @@ Home
    - Trust badges: MNRE enrolled, BSES Rajdhani registered, PM Surya Ghar empaneled
 
 2. **Subsidy Highlight Strip**
-   - Eye-catching banner showing: "Get up to Rs 1,08,000 in government subsidies on your rooftop solar system"
+   - Eye-catching banner showing: "Get up to Rs 1,56,000 in government subsidies on your rooftop solar system"
    - Brief breakdown: Central + State subsidy amounts
    - CTA: "Learn More" → Subsidy Guide page
 
@@ -374,7 +376,7 @@ Home
 
 **b) Delhi State Subsidy**
 - State capital subsidy details
-- Additional Rs 30,000 subsidy for 3 KW
+- Up to Rs 78,000 for 3 KW+ systems (Rs 26,000/kW)
 - Generation-Based Incentive (GBI) explanation with calculation examples
 - Other Delhi benefits (free meter, charge exemptions, inspection exemption)
 
@@ -454,7 +456,7 @@ Home
 **Lead Handling Workflow:**
 - All form submissions are emailed to the designated company email (e.g., sales@kaushiksolar.com or the founder's email).
 - **Additionally**, form submissions should be appended to a Google Sheet via the Google Sheets API (or a webhook service like Make/Zapier). This serves as a lightweight CRM — prevents leads from getting buried in an inbox, provides a searchable/filterable list, and helps track the 24-hour response SLA.
-- The Google Sheet should capture: timestamp, name, phone, email, property type, location, message, and a manually-updated "Status" column (New / Contacted / Converted / Closed).
+- The Google Sheet should capture: timestamp, name, phone, email, property type, location, monthly bill, message, lead source (`contact` or `calculator`), and a manually-updated "Status" column (New / Contacted / Converted / Closed).
 - This is a P0 launch requirement — not optional — since losing even one lead due to a missed email is costly for a new business.
 
 **Other Contact Methods (displayed prominently):**

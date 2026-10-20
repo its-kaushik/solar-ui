@@ -4,7 +4,7 @@ const CONSTANTS = {
   // Generation
   UNITS_PER_KW_PER_MONTH: 120, // 4 units/day × 30 days (Delhi average)
 
-  // Cost per KW (indicative, before subsidy)
+  // Cost per KW (indicative, before subsidy) — used for payback only, never shown
   COST_PER_KW_MIN: 55000,
   COST_PER_KW_MAX: 65000,
 
@@ -16,15 +16,15 @@ const CONSTANTS = {
     MAX_AMOUNT: 78000,
   },
 
-  // Delhi State Subsidy — Delhi only (BSES area)
+  // Delhi State Capital Subsidy — Delhi residential only (Delhi Solar Energy
+  // Policy, amended Sept 2026). Matches the central subsidy at 3 KW:
+  // Rs 52,000 for 2 KW, Rs 78,000 for 3 KW and above.
   STATE_SUBSIDY: {
-    RATE_PER_KW: 2000,
-    MAX_BASIC: 10000,
-    ADDITIONAL_3KW: 30000,
-    MIN_CAPACITY_FOR_ADDITIONAL: 3,
+    RATE_PER_KW: 26000,
+    MAX_CAPACITY_KW: 3,
   },
 
-  // Generation-Based Incentive (GBI) — Delhi
+  // Generation-Based Incentive (GBI) — Delhi only
   GBI: {
     RATE_UPTO_3KW: 3,    // Rs per kWh
     RATE_3_TO_10KW: 2,    // Rs per kWh
@@ -67,23 +67,21 @@ export function calculateCentralSubsidy(
 
 export function calculateStateSubsidy(
   systemSizeKW: number,
+  area: 'south-delhi' | 'faridabad' | 'gurgaon',
+  propertyType: 'residential' | 'commercial'
+): number {
+  if (area !== 'south-delhi' || propertyType === 'commercial') return 0;
+
+  const cappedSize = Math.min(systemSizeKW, CONSTANTS.STATE_SUBSIDY.MAX_CAPACITY_KW);
+  return cappedSize * CONSTANTS.STATE_SUBSIDY.RATE_PER_KW;
+}
+
+export function calculateGBI(
+  systemSizeKW: number,
   area: 'south-delhi' | 'faridabad' | 'gurgaon'
 ): number {
   if (area !== 'south-delhi') return 0;
 
-  let subsidy = Math.min(
-    systemSizeKW * CONSTANTS.STATE_SUBSIDY.RATE_PER_KW,
-    CONSTANTS.STATE_SUBSIDY.MAX_BASIC
-  );
-
-  if (systemSizeKW >= CONSTANTS.STATE_SUBSIDY.MIN_CAPACITY_FOR_ADDITIONAL) {
-    subsidy += CONSTANTS.STATE_SUBSIDY.ADDITIONAL_3KW;
-  }
-
-  return subsidy;
-}
-
-export function calculateGBI(systemSizeKW: number): number {
   const annualGeneration = systemSizeKW * CONSTANTS.UNITS_PER_KW_PER_MONTH * 12;
 
   const ratePerKWh =
@@ -105,7 +103,7 @@ export function calculate(input: CalculatorInput): CalculatorResult {
   const estimatedCostMax = systemSizeKW * CONSTANTS.COST_PER_KW_MAX;
 
   const centralSubsidy = calculateCentralSubsidy(systemSizeKW, input.propertyType);
-  const stateSubsidy = calculateStateSubsidy(systemSizeKW, input.area);
+  const stateSubsidy = calculateStateSubsidy(systemSizeKW, input.area, input.propertyType);
   const totalSubsidy = centralSubsidy + stateSubsidy;
 
   const netCostMin = Math.max(0, estimatedCostMin - totalSubsidy);
@@ -115,7 +113,7 @@ export function calculate(input: CalculatorInput): CalculatorResult {
   const monthlySavings = monthlyGeneration * CONSTANTS.AVG_ELECTRICITY_RATE;
   const annualSavings = monthlySavings * 12;
 
-  const annualGBI = calculateGBI(systemSizeKW);
+  const annualGBI = calculateGBI(systemSizeKW, input.area);
 
   const totalAnnualBenefit = annualSavings + annualGBI;
   const paybackYearsMin = totalAnnualBenefit > 0 ? netCostMin / totalAnnualBenefit : 0;

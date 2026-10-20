@@ -159,7 +159,7 @@ export default function ContactPage() {
           <div className="mt-4 grid gap-3 sm:grid-cols-3">
             <Link href="/services/residential" className="rounded-xl bg-bg p-4 text-center transition-colors hover:bg-primary/5">
               <p className="text-sm font-semibold text-text">Delhi</p>
-              <p className="mt-0.5 text-xs text-accent font-medium">Up to ₹1,08,000 subsidy</p>
+              <p className="mt-0.5 text-xs text-accent font-medium">Up to ₹1,56,000 subsidy</p>
             </Link>
             <Link href="/service-areas/faridabad" className="rounded-xl bg-bg p-4 text-center transition-colors hover:bg-primary/5">
               <p className="text-sm font-semibold text-text">Faridabad</p>

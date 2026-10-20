@@ -63,7 +63,7 @@ const credentials = [
 ];
 
 const serviceAreas = [
-  { area: 'Delhi', type: 'Up to ₹1,08,000 subsidy (central + Delhi state + GBI)', highlight: true },
+  { area: 'Delhi', type: 'Up to ₹1,56,000 subsidy (central + Delhi state), plus GBI', highlight: true },
   { area: 'Faridabad', type: 'Up to ₹78,000 central PM Surya Ghar subsidy', highlight: false },
   { area: 'Gurgaon', type: 'Up to ₹78,000 central PM Surya Ghar subsidy', highlight: false },
 ];
@@ -171,7 +171,7 @@ export default function AboutPage() {
             <p>
               We serve homes and businesses across Delhi, Faridabad, and Gurgaon — and we handle the
               subsidy paperwork everywhere we work. Delhi customers get the maximum benefit (central
-              PM Surya Ghar plus the Delhi state subsidy and GBI, up to ₹1,08,000), while Faridabad
+              PM Surya Ghar plus the Delhi state subsidy, up to ₹1,56,000, and GBI), while Faridabad
               and Gurgaon customers get the central PM Surya Ghar subsidy of up to ₹78,000.
             </p>
           </div>
